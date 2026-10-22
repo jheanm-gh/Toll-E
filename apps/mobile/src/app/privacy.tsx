@@ -3,14 +3,16 @@ import { Alert } from 'react-native';
 import { ContentSections } from '@/components/ContentSection';
 import { AppText, Button, Screen } from '@/components/ui';
 import { env } from '@/config/env';
+import { useEntitlement } from '@/monetisation/purchases/EntitlementProvider';
 import { openExternal } from '@/services/linking';
 import { colors } from '@/theme/tokens';
 
 /**
- * Plain-language privacy summary. Must stay consistent with docs/legal/privacy-policy.md and
+ * Plain-language privacy summary. Must stay consistent with site/privacy.html and
  * with the SDKs actually enabled in the build.
  */
 export default function PrivacyScreen() {
+  const { purchasesOffered } = useEntitlement();
   return (
     <Screen edges={['bottom']}>
       <AppText variant="body" color={colors.ink700}>
@@ -47,15 +49,19 @@ export default function PrivacyScreen() {
             heading: 'Advertising (free version)',
             paragraphs: [
               'Ads are provided by Google AdMob. To show and measure ads, Google receives information such as your IP address, device and app details, ad interactions and, on Android, the device advertising ID. Toll-E asks for non-personalised ads unless you switch on personalised ads in More → Privacy. Toll-E does not ask iOS for permission to track you. Where the law requires consent (for example in the EU or UK), Google’s consent message is shown.',
-              'If you buy ad removal, the ads SDK is not started at all.',
+              ...(purchasesOffered ? ['If you buy ad removal, the ads SDK is not started at all.'] : []),
             ],
           },
-          {
-            heading: 'Purchases',
-            paragraphs: [
-              'Ad removal is paid through the App Store or Google Play; Toll-E never sees your card details. RevenueCat, our purchase service, receives an anonymous app user ID and the store receipt to confirm the purchase and allow restores.',
-            ],
-          },
+          ...(purchasesOffered
+            ? [
+                {
+                  heading: 'Purchases',
+                  paragraphs: [
+                    'Ad removal is paid through the App Store or Google Play; Toll-E never sees your card details. RevenueCat, our purchase service, receives an anonymous app user ID and the store receipt to confirm the purchase and allow restores.',
+                  ],
+                },
+              ]
+            : []),
           {
             heading: 'What Toll-E does not do',
             bullets: [

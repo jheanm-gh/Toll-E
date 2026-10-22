@@ -38,7 +38,7 @@ export function Badge({
       accessibilityLabel={accessibilityLabel ?? label}
       style={[styles.badge, { backgroundColor: t.bg, borderColor: t.border }]}>
       {icon ? <Icon name={icon} size={13} color={t.fg} /> : null}
-      <AppText variant="smallStrong" color={t.fg} numberOfLines={1} style={styles.text}>
+      <AppText variant="smallStrong" color={t.fg} numberOfLines={2} style={styles.text}>
         {label}
       </AppText>
     </View>
@@ -72,11 +72,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'flex-start',
+    maxWidth: '100%',
     gap: spacing.xs,
     paddingHorizontal: spacing.sm,
     paddingVertical: 3,
     borderRadius: radii.pill,
     borderWidth: 1,
   },
-  text: { fontSize: 12, lineHeight: 16 },
+  // Long labels wrap inside the badge instead of overflowing narrow screens.
+  text: { fontSize: 12, lineHeight: 16, flexShrink: 1 },
 });
