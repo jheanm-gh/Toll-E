@@ -1,0 +1,4 @@
+# Chapman's Peak Drive standard tolls from 1 July 2026 (Provincial Notice 138/2026).
+plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
+m6-chapmans-peak,cp-motorcycle,45.00,chapmans-peak-2026,2026-07-01,,any,,unverified,published,chapmans-peak-gazette-2026,Schedule A - Class 1 motorcycles,2026-10-21,,,
+m6-chapmans-peak,cp-light,68.00,chapmans-peak-2026,2026-07-01,,any,,pending_review,published,chapmans-peak-gazette-2026,Schedule A,2026-10-21,,,"Seen in one extract of the gazette; a second extract could not confirm it."

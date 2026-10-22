@@ -1,0 +1,75 @@
+[
+  {
+    "id": "sanral",
+    "name": "South African National Roads Agency SOC Ltd",
+    "shortName": "SANRAL",
+    "kind": "national_agency",
+    "website": "https://www.nra.co.za/",
+    "contactStatus": "unverified",
+    "payment": {
+      "methods": ["cash", "contactless_card", "e_tag"],
+      "status": "unverified",
+      "sourceIds": ["pretorianews-tap-to-pay", "businesstech-toll-payments"],
+      "notes": "News reports: magstripe cards replaced by contactless (EMV) bank cards and mobile wallets from 1 December 2025. American Express, Diners Club and RCS cards are not accepted. Cash and SANRAL tags remain accepted."
+    },
+    "sourceIds": ["sanral-tariffs-2026-poster", "sanral-toll-plaza-list"]
+  },
+  {
+    "id": "n3tc",
+    "name": "N3 Toll Concession",
+    "shortName": "N3TC",
+    "kind": "concessionaire",
+    "website": "https://www.n3tc.co.za/",
+    "contactStatus": "unverified",
+    "payment": {
+      "methods": ["cash", "contactless_card", "e_tag"],
+      "status": "unverified",
+      "sourceIds": ["pretorianews-tap-to-pay", "businesstech-toll-payments"],
+      "notes": "News reports: tap-and-go card payments introduced in 2024. Cash and SANRAL tags reported as accepted."
+    },
+    "sourceIds": ["n3tc-toll-tariffs"],
+    "notes": "Concession for the N3 between Cedara (KwaZulu-Natal) and Heidelberg (Gauteng). Mariannhill plaza is a SANRAL plaza outside the concession."
+  },
+  {
+    "id": "trac",
+    "name": "Trans African Concessions",
+    "shortName": "TRAC",
+    "kind": "concessionaire",
+    "website": "https://tracn4.co.za/",
+    "contactStatus": "unverified",
+    "payment": {
+      "methods": ["cash", "contactless_card", "e_tag"],
+      "status": "unverified",
+      "sourceIds": ["pretorianews-tap-to-pay", "businesstech-toll-payments"],
+      "notes": "News reports: tap-and-go card payments introduced in 2024. Cash and SANRAL tags reported as accepted."
+    },
+    "sourceIds": ["trac-toll-fees"],
+    "notes": "N4 Maputo Development Corridor (South African section)."
+  },
+  {
+    "id": "bakwena",
+    "name": "Bakwena Platinum Corridor Concessionaire",
+    "shortName": "Bakwena",
+    "kind": "concessionaire",
+    "website": "https://www.bakwena.co.za/",
+    "contactStatus": "unverified",
+    "payment": {
+      "methods": ["cash", "e_tag"],
+      "status": "unverified",
+      "sourceIds": ["pretorianews-tap-to-pay"],
+      "notes": "News reports: contactless card payments targeted for Q4 2025 — not confirmed as live. Cash and SANRAL tags reported as accepted."
+    },
+    "sourceIds": ["bakwena-tolls-and-tariffs"],
+    "notes": "N1 (Pretoria–Bela-Bela section) and N4 Platinum Corridor."
+  },
+  {
+    "id": "chapmans-peak",
+    "name": "Chapman's Peak Drive toll concession",
+    "shortName": "Chapman's Peak Drive",
+    "kind": "provincial_concession",
+    "website": "https://www.chapmanspeakdrive.co.za/",
+    "contactStatus": "unverified",
+    "sourceIds": ["chapmans-peak-website", "chapmans-peak-gazette-2026"],
+    "notes": "Tolls levied under the Western Cape Toll Roads Act, 1999. The concessionaire's registered name has not been confirmed. Payment methods not yet researched."
+  }
+]

@@ -1,0 +1,7 @@
+# Bakwena tariffs 1 March 2025 – 28 February 2026 (expired). Secondary sources, consistent with 2026 values.
+plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
+n4-swartruggens,class1,99.00,bakwena-2025,2025-03-01,2026-02-28,any,,unverified,published,sapeople-2025,,2026-10-21,,,
+n4-swartruggens,class2,249.00,bakwena-2025,2025-03-01,2026-02-28,any,,unverified,published,sapeople-2025,,2026-10-21,,,
+n4-swartruggens,class3,302.00,bakwena-2025,2025-03-01,2026-02-28,any,,unverified,published,sapeople-2025,,2026-10-21,,,
+n4-swartruggens,class4,355.00,bakwena-2025,2025-03-01,2026-02-28,any,,unverified,published,sapeople-2025,,2026-10-21,,,
+n1-pumulani,class1,16.00,bakwena-2025,2025-03-01,2026-02-28,any,,unverified,published,joburgetc-2025,,2026-10-21,,,"A second table gives R13.91 excluding VAT (R16.00 including VAT)."

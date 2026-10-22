@@ -1,0 +1,321 @@
+[
+  {
+    "id": "jhb-dbn-n3",
+    "name": "Johannesburg → Durban",
+    "origin": {
+      "label": "Johannesburg",
+      "query": "Johannesburg, South Africa"
+    },
+    "destination": {
+      "label": "Durban",
+      "query": "Durban, South Africa"
+    },
+    "via": "N3",
+    "description": "N3 mainline from Gauteng to Durban: four N3TC plazas and SANRAL's Mariannhill plaza.",
+    "events": [
+      {
+        "plazaId": "n3-de-hoek",
+        "direction": "southbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n3-wilge",
+        "direction": "southbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n3-tugela",
+        "direction": "southbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n3-mooi",
+        "direction": "southbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n3-mariannhill",
+        "direction": "southbound",
+        "requirement": "required"
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": [
+      "Assumes you stay on the N3 mainline the whole way.",
+      "Ramp plazas (Tugela East, Bergville, Treverton, Mooi South) apply only if you use those interchanges. Add them with “Choose plazas”."
+    ],
+    "sourceIds": ["iol-2026-routes", "wikipedia-n3", "foresight-n3-2026"],
+    "publicationStatus": "published"
+  },
+  {
+    "id": "jhb-cpt-n1",
+    "name": "Johannesburg → Cape Town",
+    "origin": {
+      "label": "Johannesburg",
+      "query": "Johannesburg, South Africa"
+    },
+    "destination": {
+      "label": "Cape Town",
+      "query": "Cape Town, South Africa"
+    },
+    "via": "N1",
+    "description": "N1 south through the Free State and the Huguenot Tunnel.",
+    "events": [
+      {
+        "plazaId": "n1-grasmere",
+        "direction": "southbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n1-vaal",
+        "direction": "southbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n1-verkeerdevlei",
+        "direction": "southbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n1-huguenot",
+        "direction": "southbound",
+        "requirement": "conditional",
+        "condition": "Only if you use the Huguenot Tunnel rather than Du Toitskloof Pass."
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": [
+      "Grasmere ramp plazas apply only if you join or leave the N1 at those ramps.",
+      "Assumes the N1 the whole way; the N12 alternative is not covered."
+    ],
+    "sourceIds": ["sanral-toll-plaza-list", "wikipedia-n1"],
+    "publicationStatus": "published"
+  },
+  {
+    "id": "pta-polokwane-n1",
+    "name": "Pretoria → Polokwane",
+    "origin": {
+      "label": "Pretoria",
+      "query": "Pretoria, South Africa"
+    },
+    "destination": {
+      "label": "Polokwane",
+      "query": "Polokwane, South Africa"
+    },
+    "via": "N1",
+    "description": "N1 north through Bakwena's and SANRAL's plazas.",
+    "events": [
+      {
+        "plazaId": "n1-pumulani",
+        "direction": "northbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n1-carousel",
+        "direction": "northbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n1-kranskop",
+        "direction": "northbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n1-nyl",
+        "direction": "northbound",
+        "requirement": "required"
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": [
+      "Assumes you join the N1 south of the Pumulani plaza. Pretoria ramp plazas (Stormvoël, Zambesi, Wallmannsthal) depend on where you join.",
+      "Ramp plazas at Kranskop and Nyl apply only if you use those interchanges.",
+      "The position of the Sebetiela plaza relative to this route has not been confirmed."
+    ],
+    "sourceIds": ["sanral-toll-plaza-list", "bakwena-tolls-and-tariffs", "randtools-pta-polokwane"],
+    "publicationStatus": "published"
+  },
+  {
+    "id": "polokwane-beitbridge-n1",
+    "name": "Polokwane → Beitbridge",
+    "origin": {
+      "label": "Polokwane",
+      "query": "Polokwane, South Africa"
+    },
+    "destination": {
+      "label": "Beitbridge border",
+      "query": "Beitbridge Border Post, South Africa"
+    },
+    "via": "N1",
+    "description": "N1 north from Polokwane to the Zimbabwe border.",
+    "events": [
+      {
+        "plazaId": "n1-capricorn",
+        "direction": "northbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n1-baobab",
+        "direction": "northbound",
+        "requirement": "required"
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": [],
+    "sourceIds": ["sanral-toll-plaza-list"],
+    "publicationStatus": "published"
+  },
+  {
+    "id": "pta-mbombela-n4",
+    "name": "Pretoria → Mbombela",
+    "origin": {
+      "label": "Pretoria",
+      "query": "Pretoria, South Africa"
+    },
+    "destination": {
+      "label": "Mbombela (Nelspruit)",
+      "query": "Mbombela, South Africa"
+    },
+    "via": "N4",
+    "description": "N4 east through TRAC's three mainline plazas.",
+    "events": [
+      {
+        "plazaId": "n4-diamond-hill",
+        "direction": "eastbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n4-middelburg",
+        "direction": "eastbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n4-machado",
+        "direction": "eastbound",
+        "requirement": "required"
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": [
+      "Ramp plazas (Donkerhoek, Valtaki, Ekandustria) apply depending on where you join or leave the N4. Add them with “Choose plazas”."
+    ],
+    "sourceIds": ["trac-toll-fees", "randtools-n4"],
+    "publicationStatus": "published"
+  },
+  {
+    "id": "plett-gqeberha-n2",
+    "name": "Plettenberg Bay → Gqeberha",
+    "origin": {
+      "label": "Plettenberg Bay",
+      "query": "Plettenberg Bay, South Africa"
+    },
+    "destination": {
+      "label": "Gqeberha",
+      "query": "Gqeberha, South Africa"
+    },
+    "via": "N2",
+    "description": "N2 Garden Route east through the Tsitsikamma plaza.",
+    "events": [
+      {
+        "plazaId": "n2-tsitsikamma",
+        "direction": "eastbound",
+        "requirement": "required"
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": [],
+    "sourceIds": ["iol-2026-routes"],
+    "publicationStatus": "published"
+  },
+  {
+    "id": "pta-rustenburg-n4",
+    "name": "Pretoria → Rustenburg",
+    "origin": {
+      "label": "Pretoria",
+      "query": "Pretoria, South Africa"
+    },
+    "destination": {
+      "label": "Rustenburg",
+      "query": "Rustenburg, South Africa"
+    },
+    "via": "N4",
+    "description": "N1 north to the Doornpoort interchange, then the N4 Platinum Highway west past Brits.",
+    "events": [
+      {
+        "plazaId": "n1-pumulani",
+        "direction": "northbound",
+        "requirement": "conditional",
+        "condition": "Only if you join the N1 south of the Pumulani plaza. Its position relative to the Doornpoort interchange has not been confirmed."
+      },
+      {
+        "plazaId": "n4-doornpoort",
+        "direction": "westbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n4-brits",
+        "direction": "westbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n4-marikana",
+        "direction": "westbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n4-kroondal-ramp",
+        "direction": "westbound",
+        "requirement": "conditional",
+        "condition": "Only if your route uses the Kroondal ramps near Rustenburg."
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": [
+      "Bakwena's 2026 tariffs are valid until 28 February 2027.",
+      "Routes avoiding the Platinum Highway (for example via Hartbeespoort) pass different plazas or none."
+    ],
+    "sourceIds": ["wikipedia-platinum-highway", "bakwena-tolls-and-tariffs"],
+    "publicationStatus": "published"
+  },
+  {
+    "id": "dbn-richards-bay-n2",
+    "name": "Durban → Richards Bay",
+    "origin": {
+      "label": "Durban",
+      "query": "Durban, South Africa"
+    },
+    "destination": {
+      "label": "Richards Bay",
+      "query": "Richards Bay, South Africa"
+    },
+    "via": "N2",
+    "description": "N2 North Coast through oThongathi, Mvoti and Mtunzini.",
+    "events": [
+      {
+        "plazaId": "n2-othongathi",
+        "direction": "northbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n2-mvoti",
+        "direction": "northbound",
+        "requirement": "required"
+      },
+      {
+        "plazaId": "n2-dokodweni-ramp",
+        "direction": "northbound",
+        "requirement": "conditional",
+        "condition": "Only if your route uses the Dokodweni ramps."
+      },
+      {
+        "plazaId": "n2-mtunzini",
+        "direction": "northbound",
+        "requirement": "required"
+      }
+    ],
+    "sequenceStatus": "unverified",
+    "limitations": ["The Mtunzini south ramp plaza applies only if you join or leave the N2 there."],
+    "sourceIds": ["foresight-n2-2026", "sanral-sst-locations"],
+    "publicationStatus": "published"
+  }
+]

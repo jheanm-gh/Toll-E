@@ -1,0 +1,12 @@
+# N3TC tariffs 1 March 2025 – 28 February 2026 (expired). Two sources agree for these rows.
+plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
+n3-de-hoek,class1,65.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-de-hoek,class2,101.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-de-hoek,class3,154.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-de-hoek,class4,222.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-wilge,class1,90.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-tugela,class1,96.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-mooi,class1,67.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-mooi,class2,165.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-mooi,class3,231.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-mooi,class4,313.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,

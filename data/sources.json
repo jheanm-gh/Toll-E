@@ -1,0 +1,345 @@
+[
+  {
+    "id": "sanral-tariffs-2026-poster",
+    "title": "New toll tariffs from 1 March 2026 (tariff poster)",
+    "publisher": "South African National Roads Agency SOC Ltd (SANRAL)",
+    "url": "https://www.nra.co.za/uploads/17/SANRAL%20Toll%20Tariff%202026%20A3%20Poster%20v2.pdf",
+    "kind": "agency_publication",
+    "official": true,
+    "publishedOn": "2026-02-05",
+    "retrievedOn": "2026-10-21",
+    "reference": "Government Gazette Nos. 54087 and 54088 (5 February 2026)",
+    "notes": "Tariffs include VAT. The poster states it does not replace the Gazette. Values were read from search-result extracts; the PDF itself could not be opened from the build environment. Verify against the Gazette before marking any value verified."
+  },
+  {
+    "id": "sanews-2026-toll-increase",
+    "title": "SANRAL increases toll tariffs",
+    "publisher": "SAnews (Government Communication and Information System)",
+    "url": "https://www.sanews.gov.za/south-africa/sanral-increases-toll-tariffs",
+    "kind": "news",
+    "official": true,
+    "publishedOn": "2026-02-05",
+    "retrievedOn": "2026-10-21",
+    "notes": "Reports the 3.12% CPI-linked adjustment effective 1 March 2026."
+  },
+  {
+    "id": "sanral-tariffs-2025-booklet",
+    "title": "1 March 2025 toll tariff adjustment booklet",
+    "publisher": "South African National Roads Agency SOC Ltd (SANRAL)",
+    "url": "https://www.nra.co.za/uploads/17/SANRAL%20Toll%20Adjustment%20Booklet%20-%20Online.pdf",
+    "kind": "agency_publication",
+    "official": true,
+    "publishedOn": "2025-02-07",
+    "retrievedOn": "2026-10-21",
+    "reference": "Government Gazette No. 52073 (7 February 2025)",
+    "notes": "4.84% CPI-linked adjustment. Defines classes by axle count. Extract text was partly garbled."
+  },
+  {
+    "id": "satrucker-2025",
+    "title": "New Toll Fees Effective 1 March 2025",
+    "publisher": "SA Trucker",
+    "url": "https://satrucker.co.za/new-toll-fees-effective-1-march-2025/",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Third-party table of the 2025 schedule. Used only where it agrees with another source."
+  },
+  {
+    "id": "n3tc-toll-tariffs",
+    "title": "Toll Tariffs",
+    "publisher": "N3 Toll Concession (N3TC)",
+    "url": "https://www.n3tc.co.za/toll-tariffs/",
+    "kind": "operator_website",
+    "official": true,
+    "retrievedOn": "2026-10-21",
+    "notes": "As indexed, the page is headed '1 March 2026' but its figures are identical to the published 2025 schedule. Conflict recorded; N3 rows are under review."
+  },
+  {
+    "id": "foresight-n3-2026",
+    "title": "N3 Toll Fees (tariffs effective 1 March 2026)",
+    "publisher": "Foresight Publications",
+    "url": "https://www.foresightpublications.co.za/TollroadsN3.html",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Third-party table. Class 1 values match the SANRAL 2026 poster."
+  },
+  {
+    "id": "trac-toll-fees",
+    "title": "Toll plazas & toll fees",
+    "publisher": "Trans African Concessions (TRAC N4)",
+    "url": "https://tracn4.co.za/toll-plazas-toll-fees/",
+    "kind": "operator_website",
+    "official": true,
+    "retrievedOn": "2026-10-21",
+    "notes": "2026 tariffs for all four classes. The page lists two Class 3 lines for Middelburg (R277 and R281)."
+  },
+  {
+    "id": "bakwena-tolls-and-tariffs",
+    "title": "Tolls and Tariffs",
+    "publisher": "Bakwena Platinum Corridor Concessionaire",
+    "url": "https://www.bakwena.co.za/tolls-and-tariffs/",
+    "kind": "operator_website",
+    "official": true,
+    "retrievedOn": "2026-10-21",
+    "notes": "Tariffs valid 1 March 2026 to 28 February 2027, VAT inclusive. Adjusted annually with CPI, subject to the Minister's approval."
+  },
+  {
+    "id": "joburgetc-2026",
+    "title": "Sanral Toll Fees 2026: New N1, N2, N3, N4 Prices: Route Costs",
+    "publisher": "Joburg ETC",
+    "url": "https://www.joburgetc.com/news/sanral-toll-fee-increase-2026-south-africa/",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "joburgetc-2025",
+    "title": "Toll Fee Increases for 2025: What You'll Pay on Major Routes",
+    "publisher": "Joburg ETC",
+    "url": "https://www.joburgetc.com/news/411/toll-fee-increases-2025/",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "sapeople-2025",
+    "title": "Toll fee hikes 2025: What it will cost to drive on SA roads",
+    "publisher": "SA People",
+    "url": "https://www.sapeople.com/news/toll-fee-hikes-2025-what-it-will-cost-to-drive-on-sa-roads/",
+    "kind": "news",
+    "official": false,
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "tripcost-tolls",
+    "title": "South African toll plazas: 2026 tariffs by road",
+    "publisher": "tripcost.co.za",
+    "url": "https://tripcost.co.za/tolls/",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Third-party site. Some plaza pages give coordinates and are internally inconsistent; used only as a corroborating signal."
+  },
+  {
+    "id": "tollguru-za",
+    "title": "South Africa Toll Roads Complete Guide",
+    "publisher": "TollGuru",
+    "url": "https://tollguru.com/south-africa-tolls-highways-e-tolls",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Third-party guide; describes several plaza locations inconsistently."
+  },
+  {
+    "id": "topauto-2026",
+    "title": "Toll price hikes for all major roads in South Africa",
+    "publisher": "TopAuto",
+    "url": "https://topauto.co.za/news/143061/toll-price-hikes-for-all-major-roads-in-south-africa/",
+    "kind": "news",
+    "official": false,
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "iol-2026-routes",
+    "title": "Here's how much you'll pay in toll fees on South Africa's major routes after Sanral's 2026 increase",
+    "publisher": "IOL",
+    "url": "https://iol.co.za/motoring/industry-news/2026-03-11-heres-how-much-youll-pay-in-toll-fees-on-south-africas-major-routes-after-sanrals-2026-increase/",
+    "kind": "news",
+    "official": false,
+    "publishedOn": "2026-03-11",
+    "retrievedOn": "2026-10-21",
+    "notes": "Lists the five N3 plazas between Johannesburg and Durban and the Tsitsikamma plaza as the only N2 Garden Route mainline toll."
+  },
+  {
+    "id": "chapmans-peak-gazette-2026",
+    "title": "Provincial Notice 138/2026 — levying and collection of tolls, Chapman's Peak Drive",
+    "publisher": "Western Cape Government (Provincial Gazette Extraordinary 9246)",
+    "url": "https://www.chapmanspeakdrive.co.za/images/assets_downloads/Government_Gazette_2026_06.pdf",
+    "kind": "government_gazette",
+    "official": true,
+    "publishedOn": "2026-06-05",
+    "retrievedOn": "2026-10-21",
+    "reference": "Provincial Notice 138/2026; repeals Provincial Notice 61/2025",
+    "notes": "Tolls effective 1 July 2026 under the Western Cape Toll Roads Act, 1999. Table text was partly garbled in the extract."
+  },
+  {
+    "id": "chapmans-peak-website",
+    "title": "Chapman's Peak Drive",
+    "publisher": "Chapman's Peak Drive",
+    "url": "https://www.chapmanspeakdrive.co.za/",
+    "kind": "operator_website",
+    "official": true,
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "sanral-sst-locations",
+    "title": "Self-service terminal locations",
+    "publisher": "South African National Roads Agency SOC Ltd (SANRAL)",
+    "url": "https://www.sanral.co.za/e-toll/portal/publicpages/SST_Locations.pdf",
+    "kind": "agency_publication",
+    "official": true,
+    "retrievedOn": "2026-10-21",
+    "notes": "Lists terminal positions, many at toll plazas. Not every terminal is at a plaza (at least one is at a petroport), so positions are treated as approximate."
+  },
+  {
+    "id": "sanral-toll-plaza-list",
+    "title": "Toll plaza list",
+    "publisher": "South African National Roads Agency SOC Ltd (SANRAL)",
+    "url": "https://www.sanral.co.za/e-toll/portal/publicpages/Toll_Plaza.pdf",
+    "kind": "agency_publication",
+    "official": true,
+    "retrievedOn": "2026-10-21",
+    "notes": "Groups plazas by section, e.g. N1 South: Grasmere, Vaal (Kroonvaal), Verkeerdevlei; N1 Great North: Kranskop, Nyl, Capricorn, Baobab."
+  },
+  {
+    "id": "wikipedia-n1",
+    "title": "N1 (South Africa)",
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/N1_(South_Africa)",
+    "kind": "map_data",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Coordinates for several N1 plazas (read via Wikiwand mirror)."
+  },
+  {
+    "id": "wikipedia-n3",
+    "title": "N3 (South Africa)",
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/N3_(South_Africa)",
+    "kind": "map_data",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "De Hoek is the last plaza before Heidelberg northbound; Mariannhill plaza is on the Mariannhill Toll Road section outside the N3TC concession."
+  },
+  {
+    "id": "southafricaexplorer-toll-gates",
+    "title": "South African toll gates and locations map",
+    "publisher": "South Africa Explorer",
+    "url": "http://southafricaexplorer.co.za/articles/maps/map-toll-gates.html",
+    "kind": "map_data",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Undated third-party GPS list with several rows demonstrably misaligned. Used only where another source supports the position."
+  },
+  {
+    "id": "randtools-de-hoek",
+    "title": "De Hoek Toll Plaza — fees, location & map",
+    "publisher": "Rand Tools",
+    "url": "https://randtools.co.za/drive/toll-gate/de-hoek",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Describes De Hoek as about 65 km south of Johannesburg, between Heidelberg and Villiers."
+  },
+  {
+    "id": "businesstech-toll-payments",
+    "title": "Big payment changes for N3 and N4 tolls in South Africa this holiday season",
+    "publisher": "BusinessTech",
+    "url": "https://businesstech.co.za/news/?p=800767",
+    "kind": "news",
+    "official": false,
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "pretorianews-tap-to-pay",
+    "title": "South Africa to roll out tap-to-pay at toll plazas by end of 2025",
+    "publisher": "Pretoria News",
+    "url": "https://pretorianews.co.za/business/2025-09-17-south-africa-to-roll-out-tap-to-pay-at-toll-plazas-by-end-of-2025/",
+    "kind": "news",
+    "official": false,
+    "publishedOn": "2025-09-17",
+    "retrievedOn": "2026-10-21",
+    "notes": "SANRAL plazas replace magstripe cards with contactless EMV from 1 December 2025; N3TC and TRAC introduced tap-and-go in 2024; Bakwena targeted Q4 2025. Cash and SANRAL tags remain accepted."
+  },
+  {
+    "id": "sanral-etoll-end-information-pack",
+    "title": "Government ends e-tolls in Gauteng — information pack (10 April 2024)",
+    "publisher": "South African National Roads Agency SOC Ltd (SANRAL)",
+    "url": "https://www.nra.co.za/uploads/184/FAQ_Infromation%20Pack%20-%2010April24.pdf",
+    "kind": "agency_publication",
+    "official": true,
+    "publishedOn": "2024-04-10",
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "engineeringnews-etoll-debt-2026",
+    "title": "Govt writes off e-toll debt, but those who paid will not receive refunds",
+    "publisher": "Engineering News",
+    "url": "https://www.engineeringnews.co.za/print-version/govt-writes-off-e-toll-debt-but-those-who-paid-will-not-receive-refunds-2026-06-08",
+    "kind": "news",
+    "official": false,
+    "publishedOn": "2026-06-08",
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "foresight-n2-2026",
+    "title": "N2 Toll Fees (tariffs effective 1 March 2026)",
+    "publisher": "Foresight Publications",
+    "url": "https://www.foresightpublications.co.za/TollroadsN2.html",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Third-party table. Agrees with Joburg ETC for the South Coast ramps and with TollGuru for oThongathi."
+  },
+  {
+    "id": "foresight-n17-2026",
+    "title": "N17 Toll Fees (tariffs effective 1 March 2026)",
+    "publisher": "Foresight Publications",
+    "url": "https://www.foresightpublications.co.za/TollroadsN17.html",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Third-party table. Leandra, Trichardt and Ermelo values agree with the 2025 values plus 3.12%."
+  },
+  {
+    "id": "limpopo-chronicle-2026",
+    "title": "Toll fees increase 2026 – how much you'll pay on N1 Limpopo",
+    "publisher": "Limpopo Chronicle",
+    "url": "https://www.limpopochronicle.co.za/2026/02/21/toll-fees-increase-2026-how-much-youll-pay-on-n1-limpopo/",
+    "kind": "news",
+    "official": false,
+    "publishedOn": "2026-02-21",
+    "retrievedOn": "2026-10-21"
+  },
+  {
+    "id": "wikipedia-platinum-highway",
+    "title": "Platinum Highway",
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Platinum_Highway",
+    "kind": "map_data",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Four toll plazas on the N4 Platinum Highway: at the N1 interchange (Doornpoort), east of Brits, east of Rustenburg (Marikana) and west of Swartruggens."
+  },
+  {
+    "id": "randtools-n4",
+    "title": "N4 toll gates 2026",
+    "publisher": "Rand Tools",
+    "url": "https://randtools.co.za/drive/road/n4",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Pretoria to Mbombela passes Diamond Hill, Middelburg and Machado, in that order."
+  },
+  {
+    "id": "randtools-pta-polokwane",
+    "title": "Polokwane to Pretoria: toll gates",
+    "publisher": "Rand Tools",
+    "url": "https://randtools.co.za/drive/limpopo-to-gauteng",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Lists Pumulani, Carousel, Kranskop and Nyl as the four mainline plazas between Pretoria and Polokwane."
+  },
+  {
+    "id": "fncalculator-2025",
+    "title": "Toll Gate Fees Calculator South Africa 2025",
+    "publisher": "fncalculator.co.za",
+    "url": "https://fncalculator.co.za/toll-calculator-south-africa",
+    "kind": "secondary_compilation",
+    "official": false,
+    "retrievedOn": "2026-10-21",
+    "notes": "Matches the SA Trucker 2025 table for N17 plazas."
+  }
+]

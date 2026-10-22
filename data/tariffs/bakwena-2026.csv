@@ -1,0 +1,54 @@
+# Bakwena tariffs valid 1 March 2026 – 28 February 2027 (VAT inclusive), operator website.
+plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
+n1-stormvoel,class1,12.50,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-stormvoel,class2,31.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-stormvoel,class3,36.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-stormvoel,class4,44.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-zambesi,class1,15.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-zambesi,class2,38.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-zambesi,class3,44.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-zambesi,class4,53.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-pumulani,class1,16.50,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-pumulani,class2,41.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-pumulani,class3,47.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-pumulani,class4,57.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-wallmannsthal,class1,7.50,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-wallmannsthal,class2,19.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-wallmannsthal,class3,22.50,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-wallmannsthal,class4,26.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-carousel,class1,75.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-carousel,class2,202.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-carousel,class3,224.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n1-carousel,class4,258.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table,2026-10-21,,,
+n4-doornpoort,class1,20.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-doornpoort,class2,50.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-doornpoort,class3,58.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-doornpoort,class4,70.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-brits,class1,20.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-brits,class2,70.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-brits,class3,77.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-brits,class4,90.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-marikana,class1,30.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-marikana,class2,72.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-marikana,class3,81.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-marikana,class4,96.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-kroondal-ramp,class1,20.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-kroondal-ramp,class2,48.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-kroondal-ramp,class3,54.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-kroondal-ramp,class4,64.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-swartruggens,class1,103.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-swartruggens,class2,258.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-swartruggens,class3,313.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n4-swartruggens,class4,368.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N4 table,2026-10-21,,,
+n1-murrayhill,class1,15.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-murrayhill,class2,38.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-murrayhill,class3,45.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-murrayhill,class4,52.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-hammanskraal,class1,35.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-hammanskraal,class2,120.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-hammanskraal,class3,130.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-hammanskraal,class4,150.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-maubane,class1,33.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-maubane,class2,88.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-maubane,class3,97.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.
+n1-maubane,class4,112.00,bakwena-2026,2026-03-01,2027-02-28,any,,unverified,published,bakwena-tolls-and-tariffs,N1 table - ramps,2026-10-21,,,The SANRAL 2026 poster lists the same values.

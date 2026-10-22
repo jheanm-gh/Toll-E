@@ -1,0 +1,134 @@
+# SANRAL conventional plaza tariffs effective 1 March 2026 (VAT inclusive).
+# Official reference: Government Gazette Nos. 54087 and 54088. No row has been verified by a person yet.
+plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
+n1-huguenot,class1,54.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Huguenot,2026-10-21,,,
+n1-huguenot,class2,151.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Huguenot,2026-10-21,,,
+n1-huguenot,class3,236.00,sanral-2026,2026-03-01,,any,,pending_review,published,sanral-tariffs-2026-poster,N1 Huguenot,2026-10-21,,,"Extract shows R236, but the 2025 value (R299) plus 3.12% implies about R308. One of the two extracts is wrong."
+n1-huguenot,class4,383.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Huguenot,2026-10-21,,,
+n1-grasmere,class1,27.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere mainline,2026-10-21,,,
+n1-grasmere,class2,82.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere mainline,2026-10-21,,,
+n1-grasmere,class3,96.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere mainline,2026-10-21,,,
+n1-grasmere,class4,126.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere mainline,2026-10-21,,,
+n1-grasmere-ramp-north,class1,14.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-grasmere-ramp-north,class2,41.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-grasmere-ramp-north,class3,48.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-grasmere-ramp-north,class4,63.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-grasmere-ramp-south,class1,14.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-grasmere-ramp-south,class2,41.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-grasmere-ramp-south,class3,48.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-grasmere-ramp-south,class4,63.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Grasmere ramps,2026-10-21,,,
+n1-vaal,class1,91.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Vaal,2026-10-21,,,
+n1-vaal,class2,172.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Vaal,2026-10-21,,,
+n1-vaal,class3,207.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Vaal,2026-10-21,,,
+n1-vaal,class4,275.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Vaal,2026-10-21,,,
+n1-verkeerdevlei,class1,78.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Verkeerdevlei,2026-10-21,,,
+n1-verkeerdevlei,class2,157.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Verkeerdevlei,2026-10-21,,,
+n1-verkeerdevlei,class3,236.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Verkeerdevlei,2026-10-21,,,
+n1-verkeerdevlei,class4,331.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 South - Verkeerdevlei,2026-10-21,,,
+n2-tsitsikamma,class1,73.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 Tsitsikamma,2026-10-21,,,
+n2-tsitsikamma,class2,183.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 Tsitsikamma,2026-10-21,,,
+n2-tsitsikamma,class3,438.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 Tsitsikamma,2026-10-21,,,
+n2-tsitsikamma,class4,619.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 Tsitsikamma,2026-10-21,,,
+n2-oribi,class1,41.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 South Coast - Oribi mainline,2026-10-21,,,
+n2-oribi,class2,73.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 South Coast - Oribi mainline,2026-10-21,,,
+n2-oribi,class3,100.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 South Coast - Oribi mainline,2026-10-21,,,
+n2-oribi,class4,162.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 South Coast - Oribi mainline,2026-10-21,,,
+n2-mvoti,class1,18.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mvoti mainline,2026-10-21,,,
+n2-mvoti,class2,52.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mvoti mainline,2026-10-21,,,
+n2-mvoti,class3,70.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mvoti mainline,2026-10-21,,,
+n2-mvoti,class4,104.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mvoti mainline,2026-10-21,,,
+n2-dokodweni-ramp,class1,27.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Dokodweni ramp,2026-10-21,,,
+n2-dokodweni-ramp,class2,53.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Dokodweni ramp,2026-10-21,,,
+n2-dokodweni-ramp,class3,62.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Dokodweni ramp,2026-10-21,,,
+n2-dokodweni-ramp,class4,84.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Dokodweni ramp,2026-10-21,,,
+n2-mtunzini,class1,63.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini mainline,2026-10-21,,,
+n2-mtunzini,class2,122.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini mainline,2026-10-21,,,
+n2-mtunzini,class3,146.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini mainline,2026-10-21,,,
+n2-mtunzini,class4,217.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini mainline,2026-10-21,,,
+n2-mtunzini-ramp-south,class1,53.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini ramp (S),2026-10-21,,,
+n2-mtunzini-ramp-south,class2,99.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini ramp (S),2026-10-21,,,
+n2-mtunzini-ramp-south,class3,119.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini ramp (S),2026-10-21,,,
+n2-mtunzini-ramp-south,class4,172.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N2 North Coast - Mtunzini ramp (S),2026-10-21,,,
+n3-mariannhill,class1,16.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N3 Mariannhill mainline,2026-10-21,,,"One news report gives R16.60; the poster value is used."
+n3-mariannhill,class2,30.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N3 Mariannhill mainline,2026-10-21,,,
+n3-mariannhill,class3,37.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N3 Mariannhill mainline,2026-10-21,,,
+n3-mariannhill,class4,57.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N3 Mariannhill mainline,2026-10-21,,,
+n17-gosforth,class1,17.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Gosforth mainline,2026-10-21,,,
+n17-gosforth,class2,46.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Gosforth mainline,2026-10-21,,,
+n17-gosforth,class3,50.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Gosforth mainline,2026-10-21,,,
+n17-gosforth,class4,69.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Gosforth mainline,2026-10-21,,,
+n17-gosforth-ramp-west,class1,9.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Gosforth ramp (W),2026-10-21,,,"Only the Class 1 value was legible in the extract."
+n17-gosforth-ramp-east,class1,7.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Gosforth ramp (E),2026-10-21,,,"Only the Class 1 value was legible in the extract."
+n17-dalpark,class1,15.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Dalpark mainline,2026-10-21,,,
+n17-dalpark,class2,32.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Dalpark mainline,2026-10-21,,,
+n17-dalpark,class3,42.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Dalpark mainline,2026-10-21,,,
+n17-dalpark,class4,58.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Dalpark mainline,2026-10-21,,,
+n17-denne-ramp,class1,13.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Denne ramp,2026-10-21,,,
+n17-denne-ramp,class2,27.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Denne ramp,2026-10-21,,,
+n17-denne-ramp,class3,35.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Denne ramp,2026-10-21,,,
+n17-denne-ramp,class4,46.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N17 Denne ramp,2026-10-21,,,
+n1-kranskop,class1,61.50,sanral-2026,2026-03-01,,any,,unverified,published,topauto-2026,,2026-10-21,,,Two independent sources agree (TopAuto reproduction of the SANRAL table; TollGuru). Consistent with the 2025 SANRAL booklet value plus 3.12%.
+n1-kranskop,class2,157.00,sanral-2026,2026-03-01,,any,,unverified,published,topauto-2026,,2026-10-21,,,Two independent sources agree (TopAuto reproduction of the SANRAL table; TollGuru).
+n1-kranskop,class3,210.00,sanral-2026,2026-03-01,,any,,unverified,published,topauto-2026,,2026-10-21,,,Two independent sources agree (TopAuto reproduction of the SANRAL table; TollGuru).
+n1-kranskop,class4,257.00,sanral-2026,2026-03-01,,any,,unverified,published,topauto-2026,,2026-10-21,,,Two independent sources agree (TopAuto reproduction of the SANRAL table; TollGuru). Consistent with the 2025 SANRAL booklet value plus 3.12%.
+n1-nyl,class1,79.50,sanral-2026,2026-03-01,,any,,unverified,published,topauto-2026,,2026-10-21,,,Consistent with the 2025 SANRAL booklet value plus 3.12%; Class 1 also reported by the Limpopo Chronicle.
+n1-nyl,class2,149.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source (TopAuto reproduction of the SANRAL table) found for this class.
+n1-nyl,class3,180.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source (TopAuto reproduction of the SANRAL table) found for this class.
+n1-nyl,class4,241.00,sanral-2026,2026-03-01,,any,,unverified,published,topauto-2026,,2026-10-21,,,Consistent with the 2025 SANRAL booklet value plus 3.12%; Class 1 also reported by the Limpopo Chronicle.
+n1-capricorn,class1,63.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-capricorn,class2,175.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-capricorn,class3,205.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-capricorn,class4,256.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-baobab,class1,61.50,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-baobab,class2,168.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-baobab,class3,231.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-baobab,class4,278.00,sanral-2026,2026-03-01,,any,,unverified,published,sanral-tariffs-2026-poster,N1 Great North,2026-10-21,,,Also reported by the Limpopo Chronicle and Joburg ETC.
+n1-kranskop-ramp,class1,17.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source (TopAuto reproduction of the SANRAL table) found.
+n1-kranskop-ramp,class2,46.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source (TopAuto reproduction of the SANRAL table) found.
+n1-kranskop-ramp,class3,54.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source (TopAuto reproduction of the SANRAL table) found.
+n1-kranskop-ramp,class4,81.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source (TopAuto reproduction of the SANRAL table) found.
+n1-nyl-ramp,class1,24.50,sanral-2026,2026-03-01,,any,,unverified,published,topauto-2026,,2026-10-21,,,Class 1 also reported by Rand Tools.
+n1-nyl-ramp,class2,46.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source found for this class.
+n1-nyl-ramp,class3,54.00,sanral-2026,2026-03-01,,any,,pending_review,published,topauto-2026,,2026-10-21,,,Only one secondary source found for this class.
+n2-izotsha-ramp,class1,12.50,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-izotsha-ramp,class2,23.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-izotsha-ramp,class3,31.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-izotsha-ramp,class4,54.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-south,class1,18.50,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-south,class2,34.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-south,class3,46.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-south,class4,73.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-north,class1,22.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-north,class2,38.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-north,class3,54.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-oribi-ramp-north,class4,100.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, Joburg ETC); the SANRAL poster row could not be read."
+n2-umtentweni-ramp,class1,17.50,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n2-2026,,2026-10-21,,,"Two secondary sources give this row, but one also lists a second Umtentweni ramp row (R7.50 / R17 / R21 / R31)."
+n2-umtentweni-ramp,class2,31.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n2-2026,,2026-10-21,,,"Two secondary sources give this row, but one also lists a second Umtentweni ramp row (R7.50 / R17 / R21 / R31)."
+n2-umtentweni-ramp,class3,42.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n2-2026,,2026-10-21,,,"Two secondary sources give this row, but one also lists a second Umtentweni ramp row (R7.50 / R17 / R21 / R31)."
+n2-umtentweni-ramp,class4,69.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n2-2026,,2026-10-21,,,"Two secondary sources give this row, but one also lists a second Umtentweni ramp row (R7.50 / R17 / R21 / R31)."
+n2-othongathi,class1,15.50,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, TollGuru)."
+n2-othongathi,class2,32.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, TollGuru)."
+n2-othongathi,class3,42.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, TollGuru)."
+n2-othongathi,class4,62.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n2-2026,,2026-10-21,,,"Two independent secondary sources agree (Foresight, TollGuru)."
+n17-leandra,class1,50.50,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-leandra,class2,127.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-leandra,class3,190.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-leandra,class4,253.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-trichardt,class1,25.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-trichardt,class2,63.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-trichardt,class3,96.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-trichardt,class4,127.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-ermelo,class1,45.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-ermelo,class2,114.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-ermelo,class3,170.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-ermelo,class4,226.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 value plus 3.12%.
+n17-leandra-ramp,class1,30.50,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 excluding-VAT table (Truckscience) plus VAT and 3.12%.
+n17-leandra-ramp,class2,77.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 excluding-VAT table (Truckscience) plus VAT and 3.12%.
+n17-leandra-ramp,class3,113.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 excluding-VAT table (Truckscience) plus VAT and 3.12%.
+n17-leandra-ramp,class4,152.00,sanral-2026,2026-03-01,,any,,unverified,published,foresight-n17-2026,,2026-10-21,,,Secondary source; consistent with the 2025 excluding-VAT table (Truckscience) plus VAT and 3.12%.
+n17-gosforth-ramp-west,class2,19.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n17-2026,,2026-10-21,,,Only one secondary source found for this class; sources also label these ramps inconsistently (W/E vs N/S).
+n17-gosforth-ramp-west,class3,25.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n17-2026,,2026-10-21,,,Only one secondary source found for this class; sources also label these ramps inconsistently (W/E vs N/S).
+n17-gosforth-ramp-west,class4,33.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n17-2026,,2026-10-21,,,Only one secondary source found for this class; sources also label these ramps inconsistently (W/E vs N/S).
+n17-gosforth-ramp-east,class2,29.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n17-2026,,2026-10-21,,,Only one secondary source found for this class; sources also label these ramps inconsistently (W/E vs N/S).
+n17-gosforth-ramp-east,class3,31.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n17-2026,,2026-10-21,,,Only one secondary source found for this class; sources also label these ramps inconsistently (W/E vs N/S).
+n17-gosforth-ramp-east,class4,42.00,sanral-2026,2026-03-01,,any,,pending_review,published,foresight-n17-2026,,2026-10-21,,,Only one secondary source found for this class; sources also label these ramps inconsistently (W/E vs N/S).

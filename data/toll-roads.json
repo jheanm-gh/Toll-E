@@ -1,0 +1,115 @@
+[
+  {
+    "id": "sanral-n1-huguenot",
+    "name": "N1 Huguenot",
+    "routes": ["N1"],
+    "operatorId": "sanral",
+    "provinces": ["WC"],
+    "description": "N1 through the Huguenot Tunnel between Paarl and Worcester.",
+    "sourceIds": ["sanral-tariffs-2026-poster"]
+  },
+  {
+    "id": "sanral-n1-south",
+    "name": "N1 South",
+    "routes": ["N1"],
+    "operatorId": "sanral",
+    "provinces": ["GP", "FS"],
+    "description": "SANRAL N1 plazas south of Johannesburg: Grasmere, Vaal (Kroonvaal) and Verkeerdevlei.",
+    "sourceIds": ["sanral-toll-plaza-list"]
+  },
+  {
+    "id": "sanral-n1-great-north",
+    "name": "N1 Great North",
+    "routes": ["N1"],
+    "operatorId": "sanral",
+    "provinces": ["LP"],
+    "description": "SANRAL N1 plazas in Limpopo: Kranskop, Nyl, Capricorn and Baobab.",
+    "sourceIds": ["sanral-toll-plaza-list"]
+  },
+  {
+    "id": "sanral-n2-tsitsikamma",
+    "name": "N2 Tsitsikamma",
+    "routes": ["N2"],
+    "operatorId": "sanral",
+    "provinces": ["WC", "EC"],
+    "sourceIds": ["sanral-tariffs-2026-poster"]
+  },
+  {
+    "id": "sanral-n2-south-coast",
+    "name": "N2 South Coast",
+    "routes": ["N2"],
+    "operatorId": "sanral",
+    "provinces": ["KZN"],
+    "sourceIds": ["sanral-tariffs-2026-poster"]
+  },
+  {
+    "id": "sanral-n2-north-coast",
+    "name": "N2 North Coast",
+    "routes": ["N2"],
+    "operatorId": "sanral",
+    "provinces": ["KZN"],
+    "sourceIds": ["sanral-tariffs-2026-poster"]
+  },
+  {
+    "id": "sanral-n3-mariannhill",
+    "name": "N3 Mariannhill",
+    "routes": ["N3"],
+    "operatorId": "sanral",
+    "provinces": ["KZN"],
+    "description": "Short SANRAL toll section on the N3 west of Durban, outside the N3TC concession.",
+    "sourceIds": ["sanral-tariffs-2026-poster", "wikipedia-n3"]
+  },
+  {
+    "id": "sanral-n17",
+    "name": "N17",
+    "routes": ["N17"],
+    "operatorId": "sanral",
+    "provinces": ["GP", "MP"],
+    "sourceIds": ["sanral-tariffs-2026-poster", "sanral-sst-locations"]
+  },
+  {
+    "id": "n3tc-n3",
+    "name": "N3 Toll Route",
+    "routes": ["N3"],
+    "operatorId": "n3tc",
+    "provinces": ["GP", "FS", "KZN"],
+    "description": "N3 between Heidelberg and Cedara, operated by N3TC.",
+    "sourceIds": ["n3tc-toll-tariffs"]
+  },
+  {
+    "id": "trac-n4",
+    "name": "N4 Maputo Corridor",
+    "routes": ["N4"],
+    "operatorId": "trac",
+    "provinces": ["GP", "MP"],
+    "description": "N4 east of Pretoria to the Mozambique border, operated by TRAC.",
+    "sourceIds": ["trac-toll-fees"]
+  },
+  {
+    "id": "bakwena-n1",
+    "name": "N1 Platinum Corridor",
+    "routes": ["N1"],
+    "operatorId": "bakwena",
+    "provinces": ["GP", "NW", "LP"],
+    "description": "Bakwena's N1 section north of Pretoria.",
+    "sourceIds": ["bakwena-tolls-and-tariffs"]
+  },
+  {
+    "id": "bakwena-n4",
+    "name": "N4 Platinum Corridor",
+    "routes": ["N4"],
+    "operatorId": "bakwena",
+    "provinces": ["GP", "NW"],
+    "description": "Bakwena's N4 section west of Pretoria towards Botswana.",
+    "sourceIds": ["bakwena-tolls-and-tariffs"]
+  },
+  {
+    "id": "chapmans-peak-drive",
+    "name": "Chapman's Peak Drive",
+    "routes": ["M6"],
+    "operatorId": "chapmans-peak",
+    "provinces": ["WC"],
+    "description": "Scenic toll road between Hout Bay and Noordhoek, Cape Town.",
+    "sourceIds": ["chapmans-peak-gazette-2026"]
+  }
+]

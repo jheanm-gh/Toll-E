@@ -1,0 +1,55 @@
+# SANRAL tariffs 1 March 2025 – 28 February 2026 (expired). Kept for history and cross-checks.
+plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
+n1-huguenot,class1,53.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Consistent with the 2026 poster value less 3.12%."
+n1-huguenot,class2,146.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Consistent with the 2026 poster value less 3.12%."
+n1-huguenot,class3,299.00,sanral-2025,2025-03-01,2026-02-28,any,,pending_review,published,satrucker-2025,,2026-10-21,,,"Conflicts with the 2026 extract (R236). The SANRAL booklet extract was garbled at this cell."
+n1-huguenot,class4,371.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Consistent with the 2026 poster value less 3.12%."
+n1-grasmere,class1,27.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere,class2,80.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere,class3,92.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere,class4,122.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-north,class1,14.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-north,class2,40.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-north,class3,46.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-north,class4,61.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-south,class1,14.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-south,class2,40.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-south,class3,46.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-grasmere-ramp-south,class4,61.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-vaal,class1,89.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-vaal,class2,167.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-vaal,class3,200.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-vaal,class4,267.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-verkeerdevlei,class1,76.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-verkeerdevlei,class2,152.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-verkeerdevlei,class3,229.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-verkeerdevlei,class4,321.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n1-kranskop,class1,60.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,,2026-10-21,,,
+n1-kranskop,class4,249.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,,2026-10-21,,,
+n1-nyl,class1,77.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,,2026-10-21,,,
+n1-nyl,class4,233.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,,2026-10-21,,,
+n2-tsitsikamma,class1,71.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,N2 Tsitsikamma,2026-10-21,,,"Column alignment in the extract was unclear; values are consistent with the 2026 poster."
+n2-tsitsikamma,class2,178.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,N2 Tsitsikamma,2026-10-21,,,"Column alignment in the extract was unclear; values are consistent with the 2026 poster."
+n2-tsitsikamma,class3,424.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,N2 Tsitsikamma,2026-10-21,,,"Column alignment in the extract was unclear; values are consistent with the 2026 poster."
+n2-tsitsikamma,class4,600.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,sanral-tariffs-2025-booklet,N2 Tsitsikamma,2026-10-21,,,"Column alignment in the extract was unclear; values are consistent with the 2026 poster."
+n3-mariannhill,class1,16.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n17-gosforth,class1,16.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-gosforth,class2,44.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-gosforth,class3,48.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-gosforth,class4,67.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-dalpark,class1,15.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-dalpark,class2,31.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-dalpark,class3,41.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-dalpark,class4,56.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-ermelo,class1,44.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-ermelo,class2,110.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-ermelo,class3,164.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-ermelo,class4,219.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-leandra,class1,49.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-leandra,class2,123.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-leandra,class3,184.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-leandra,class4,244.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-trichardt,class1,24.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-trichardt,class2,61.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-trichardt,class3,93.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."
+n17-trichardt,class4,122.00,sanral-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,"Two secondary sources agree (SA Trucker, fncalculator)."

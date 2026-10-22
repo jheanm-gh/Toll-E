@@ -1,0 +1,76 @@
+[
+  {
+    "id": "sanral-2026",
+    "name": "SANRAL tariffs from 1 March 2026",
+    "operatorIds": ["sanral"],
+    "effectiveFrom": "2026-03-01",
+    "effectiveTo": null,
+    "nextReviewExpected": "2027-03-01",
+    "adjustmentBps": 312,
+    "sourceIds": ["sanral-tariffs-2026-poster", "sanews-2026-toll-increase"],
+    "notes": "3.12% CPI-linked adjustment, Government Gazette Nos. 54087 and 54088."
+  },
+  {
+    "id": "sanral-2025",
+    "name": "SANRAL tariffs from 1 March 2025",
+    "operatorIds": ["sanral"],
+    "effectiveFrom": "2025-03-01",
+    "effectiveTo": "2026-02-28",
+    "adjustmentBps": 484,
+    "sourceIds": ["sanral-tariffs-2025-booklet"],
+    "notes": "4.84% CPI-linked adjustment, Government Gazette No. 52073. Superseded on 1 March 2026."
+  },
+  {
+    "id": "n3tc-2026",
+    "name": "N3TC tariffs from 1 March 2026",
+    "operatorIds": ["n3tc"],
+    "effectiveFrom": "2026-03-01",
+    "effectiveTo": null,
+    "nextReviewExpected": "2027-03-01",
+    "sourceIds": ["sanral-tariffs-2026-poster", "n3tc-toll-tariffs", "foresight-n3-2026"],
+    "notes": "Under review: the N3TC website (as indexed) shows the 2025 figures under a 2026 heading. Values follow the SANRAL 2026 poster."
+  },
+  {
+    "id": "n3tc-2025",
+    "name": "N3TC tariffs from 1 March 2025",
+    "operatorIds": ["n3tc"],
+    "effectiveFrom": "2025-03-01",
+    "effectiveTo": "2026-02-28",
+    "sourceIds": ["satrucker-2025", "n3tc-toll-tariffs"]
+  },
+  {
+    "id": "trac-2026",
+    "name": "TRAC N4 tariffs from 1 March 2026",
+    "operatorIds": ["trac"],
+    "effectiveFrom": "2026-03-01",
+    "effectiveTo": null,
+    "nextReviewExpected": "2027-03-01",
+    "sourceIds": ["trac-toll-fees", "topauto-2026"]
+  },
+  {
+    "id": "bakwena-2026",
+    "name": "Bakwena tariffs 1 March 2026 – 28 February 2027",
+    "operatorIds": ["bakwena"],
+    "effectiveFrom": "2026-03-01",
+    "effectiveTo": "2027-02-28",
+    "sourceIds": ["bakwena-tolls-and-tariffs"]
+  },
+  {
+    "id": "bakwena-2025",
+    "name": "Bakwena tariffs from 1 March 2025",
+    "operatorIds": ["bakwena"],
+    "effectiveFrom": "2025-03-01",
+    "effectiveTo": "2026-02-28",
+    "sourceIds": ["sapeople-2025", "joburgetc-2025"]
+  },
+  {
+    "id": "chapmans-peak-2026",
+    "name": "Chapman's Peak Drive tolls from 1 July 2026",
+    "operatorIds": ["chapmans-peak"],
+    "effectiveFrom": "2026-07-01",
+    "effectiveTo": null,
+    "nextReviewExpected": "2027-07-01",
+    "sourceIds": ["chapmans-peak-gazette-2026"],
+    "notes": "Provincial Notice 138/2026. Frequent-user reduced tariffs exist and are not modelled."
+  }
+]

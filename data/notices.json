@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tariffs-2026-unverified",
+    "title": "2026 tariffs — not yet verified by Toll-E",
+    "body": "Toll tariffs were adjusted on 1 March 2026 (SANRAL +3.12%, Government Gazette Nos. 54087 and 54088). Toll-E has loaded the published values but a person has not yet checked them against the Gazette. Every price shows its status and source — confirm with the operator before relying on it.",
+    "severity": "warning",
+    "showFrom": "2026-03-01",
+    "showUntil": null,
+    "sourceIds": ["sanral-tariffs-2026-poster", "sanews-2026-toll-increase"]
+  },
+  {
+    "id": "n3-tariffs-under-review",
+    "title": "N3 tariffs under review",
+    "body": "N3 Toll Concession's website and SANRAL's 2026 tariff poster show different N3 tariffs. Toll-E shows the poster figures and marks every N3TC plaza as under review until the Gazette is checked.",
+    "severity": "warning",
+    "showFrom": "2026-03-01",
+    "showUntil": null,
+    "sourceIds": ["n3tc-toll-tariffs", "sanral-tariffs-2026-poster"]
+  },
+  {
+    "id": "gauteng-etolls-ended",
+    "title": "Gauteng e-tolls have ended",
+    "body": "E-toll gantries on Gauteng freeways were switched off at midnight on 11 April 2024, so Toll-E includes no e-toll charges. In June 2026 Cabinet approved writing off historical e-toll debt; amounts already paid are not refunded.",
+    "severity": "info",
+    "showFrom": "2024-04-11",
+    "showUntil": null,
+    "sourceIds": ["sanral-etoll-end-information-pack", "engineeringnews-etoll-debt-2026"]
+  },
+  {
+    "id": "contactless-card-payments",
+    "title": "Card payments are now tap-to-pay",
+    "body": "News reports say SANRAL plazas stopped accepting magstripe (swipe) cards from 1 December 2025 in favour of contactless bank cards and mobile wallets. American Express, Diners Club and RCS cards are reported as not accepted. Cash and SANRAL tags remain accepted.",
+    "severity": "info",
+    "showFrom": "2025-12-01",
+    "showUntil": null,
+    "sourceIds": ["pretorianews-tap-to-pay", "businesstech-toll-payments"]
+  }
+]

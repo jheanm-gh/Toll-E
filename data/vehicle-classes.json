@@ -1,0 +1,54 @@
+[
+  {
+    "id": "za-standard",
+    "name": "SANRAL / national concession classes",
+    "classes": [
+      {
+        "id": "class1",
+        "label": "Class 1",
+        "shortDescription": "Light vehicle",
+        "description": "Light vehicles such as cars, bakkies and SUVs."
+      },
+      {
+        "id": "class2",
+        "label": "Class 2",
+        "shortDescription": "Medium heavy (2 axles)",
+        "description": "Heavy vehicles with two axles."
+      },
+      {
+        "id": "class3",
+        "label": "Class 3",
+        "shortDescription": "Large heavy (3–4 axles)",
+        "description": "Heavy vehicles with three or four axles."
+      },
+      {
+        "id": "class4",
+        "label": "Class 4",
+        "shortDescription": "Extra-large heavy (5+ axles)",
+        "description": "Heavy vehicles with five or more axles."
+      }
+    ],
+    "fromStandard": { "class1": "class1", "class2": "class2", "class3": "class3", "class4": "class4" },
+    "sourceIds": ["sanral-tariffs-2025-booklet", "bakwena-tolls-and-tariffs"]
+  },
+  {
+    "id": "chapmans-peak",
+    "name": "Chapman's Peak Drive classes",
+    "classes": [
+      {
+        "id": "cp-motorcycle",
+        "label": "Motorcycle",
+        "shortDescription": "Motorcycles, tricycles and quadbikes",
+        "description": "Class 1 motorcycles, tricycles and quadbikes (standard toll)."
+      },
+      {
+        "id": "cp-light",
+        "label": "Light vehicle",
+        "shortDescription": "Light vehicle",
+        "description": "Light vehicles (standard toll)."
+      }
+    ],
+    "fromStandard": { "class1": "cp-light" },
+    "sourceIds": ["chapmans-peak-gazette-2026"]
+  }
+]
