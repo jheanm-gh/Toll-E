@@ -37,6 +37,11 @@ const cacheSchema = z.object({
 
 interface EntitlementState {
   adFree: boolean;
+  /**
+   * False until the entitlement saved on this device has been read. Ads wait for this, so an
+   * ad-free user never sees an ad (or starts the ads SDK) while the app is starting.
+   */
+  known: boolean;
   /** Whether the entitlement has been confirmed with the store during this session. */
   confirmedThisSession: boolean;
   serviceKind: PurchaseService['kind'];
@@ -84,6 +89,9 @@ export function EntitlementProvider({ children }: { children: ReactNode }) {
     );
   }, [simulatedStoreEnabled]);
   const confirmedThisSession = confirmedWith === service;
+  // The service whose saved entitlement has been read on this device.
+  const [knownFor, setKnownFor] = useState<PurchaseService | null>(null);
+  const known = knownFor === service;
 
   const persist = useCallback(
     (active: boolean) => {
@@ -110,6 +118,7 @@ export function EntitlementProvider({ children }: { children: ReactNode }) {
       } else {
         setAdFree(false);
       }
+      setKnownFor(service);
       try {
         await service.configure();
       } catch {
@@ -174,6 +183,7 @@ export function EntitlementProvider({ children }: { children: ReactNode }) {
   const value = useMemo<EntitlementState>(
     () => ({
       adFree,
+      known,
       confirmedThisSession,
       serviceKind: service.kind,
       purchasesOffered: service.kind !== 'unavailable',
@@ -195,7 +205,7 @@ export function EntitlementProvider({ children }: { children: ReactNode }) {
       simulatedPrompt,
       answerSimulatedPrompt: simulatedStore.answer,
     }),
-    [adFree, confirmedThisSession, service, product, productStatus, purchase, restore, reloadProduct, simulatedPrompt],
+    [adFree, known, confirmedThisSession, service, product, productStatus, purchase, restore, reloadProduct, simulatedPrompt],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

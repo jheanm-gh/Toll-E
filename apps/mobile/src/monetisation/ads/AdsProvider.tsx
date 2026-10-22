@@ -31,12 +31,12 @@ interface AdsState {
 const Ctx = createContext<AdsState | null>(null);
 
 export function AdsProvider({ children }: { children: ReactNode }) {
-  const { adFree } = useEntitlement();
+  const { adFree, known: entitlementKnown } = useEntitlement();
   const { personalisedAds } = usePreferences();
   const [sdkStatus, setSdkStatus] = useState<'initialising' | 'ready' | 'no_consent' | 'error'>('initialising');
   const [privacyOptionsRequired, setPrivacyOptionsRequired] = useState(false);
   const unitId = useMemo(() => bannerUnitId(), []);
-  const eligible = !adFree && ADS_ENABLED && adsSupported() && !!unitId;
+  const eligible = entitlementKnown && !adFree && ADS_ENABLED && adsSupported() && !!unitId;
   const status: AdsStatus = adFree
     ? 'ad_free'
     : !ADS_ENABLED
