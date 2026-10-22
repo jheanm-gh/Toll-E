@@ -127,7 +127,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
   },
   chips: { gap: spacing.sm, paddingRight: spacing.lg },
-  overlayBottom: { position: 'absolute', bottom: spacing.lg, left: spacing.lg, right: spacing.lg },
+  // Raised clear of the map attribution in the bottom corner.
+  overlayBottom: { position: 'absolute', bottom: 44, left: spacing.lg, right: spacing.lg },
   legend: {
     backgroundColor: colors.surface,
     borderRadius: radii.md,

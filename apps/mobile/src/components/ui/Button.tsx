@@ -5,7 +5,7 @@ import { colors, fonts, radii, spacing, touchTarget } from '@/theme/tokens';
 import { AppText } from './AppText';
 import { Icon, type IconName } from './Icon';
 
-type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent';
+type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent' | 'onDark';
 
 export interface ButtonProps extends Omit<PressableProps, 'children' | 'style'> {
   label: string;
@@ -23,6 +23,8 @@ const palette: Record<Variant, { bg: string; fg: string; border: string; pressed
   secondary: { bg: colors.teal50, fg: colors.teal700, border: colors.teal100, pressed: colors.teal100 },
   outline: { bg: colors.surface, fg: colors.navy900, border: colors.borderStrong, pressed: colors.surfaceMuted },
   ghost: { bg: 'transparent', fg: colors.teal700, border: 'transparent', pressed: colors.teal50 },
+  /** For dark (navy) backgrounds such as the home hero. */
+  onDark: { bg: 'transparent', fg: colors.white, border: 'rgba(255,255,255,0.55)', pressed: colors.navy700 },
 };
 
 export function Button({

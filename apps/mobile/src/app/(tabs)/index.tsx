@@ -17,7 +17,6 @@ import { PlazaRow, formatDistance } from '@/components/plaza/PlazaRow';
 import { RouteBadge } from '@/components/plaza/RouteBadge';
 import {
   AppText,
-  Banner,
   Button,
   Card,
   Divider,
@@ -28,6 +27,7 @@ import {
   TextField,
   TrustBadge,
 } from '@/components/ui';
+import { Notices } from '@/components/Notices';
 import { useData } from '@/data/DataProvider';
 import { useOfferedJourneys } from '@/data/journeys';
 import { computePlazaInfo } from '@/hooks/usePlazaInfo';
@@ -109,15 +109,11 @@ export default function HomeScreen() {
             size="sm"
             onPress={() => router.push({ pathname: '/plazas', params: { q: query } })}
           />
-          <Button label="Browse all plazas" variant="ghost" size="sm" onPress={() => router.push('/plazas')} />
+          <Button label="Browse all plazas" variant="onDark" size="sm" onPress={() => router.push('/plazas')} />
         </View>
       </View>
 
-      {notices.map((n) => (
-        <Banner key={n.id} tone={n.severity === 'warning' ? 'warning' : 'info'} title={n.title}>
-          {n.body}
-        </Banner>
-      ))}
+      <Notices notices={notices} />
 
       {quick.length > 0 ? (
         <>

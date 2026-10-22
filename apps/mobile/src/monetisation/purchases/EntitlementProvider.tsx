@@ -205,7 +205,18 @@ export function EntitlementProvider({ children }: { children: ReactNode }) {
       simulatedPrompt,
       answerSimulatedPrompt: simulatedStore.answer,
     }),
-    [adFree, known, confirmedThisSession, service, product, productStatus, purchase, restore, reloadProduct, simulatedPrompt],
+    [
+      adFree,
+      known,
+      confirmedThisSession,
+      service,
+      product,
+      productStatus,
+      purchase,
+      restore,
+      reloadProduct,
+      simulatedPrompt,
+    ],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
