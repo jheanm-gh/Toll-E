@@ -14,7 +14,6 @@ apps/mobile/android/
 .kotlin/
 
 # builds
-apps/admin/dist/
 coverage/
 *.tsbuildinfo
 
