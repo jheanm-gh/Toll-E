@@ -25,6 +25,7 @@ jest.mock('@/config/env', () => ({
   isDevelopment: false,
   usesTestAds: false,
   backendConfigured: false,
+  supabaseHeaders: () => ({}),
 }));
 
 /* eslint-disable import/first -- the mock above must be registered before these load */

@@ -103,6 +103,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     },
     extra: {
       buildProfile: profile,
+      // After `eas init`, paste the project id it prints here (it is not a secret), e.g.
+      // eas: { projectId: '00000000-0000-0000-0000-000000000000' },
     },
   };
 };

@@ -1,6 +1,6 @@
 import { parseAndValidate, saLocalDate, type Dataset } from '@toll-e/core';
 
-import { env } from '@/config/env';
+import { env, supabaseHeaders } from '@/config/env';
 
 export class RemoteDataError extends Error {
   override name = 'RemoteDataError';
@@ -21,8 +21,7 @@ export async function fetchPublishedDataset(signal?: AbortSignal): Promise<Datas
     const res = await fetch(`${env.supabaseUrl.replace(/\/$/, '')}/rest/v1/rpc/published_dataset`, {
       method: 'POST',
       headers: {
-        apikey: env.supabaseAnonKey,
-        Authorization: `Bearer ${env.supabaseAnonKey}`,
+        ...supabaseHeaders(),
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },

@@ -1,4 +1,4 @@
-import { appVersion, backendConfigured, env } from '@/config/env';
+import { appVersion, backendConfigured, env, supabaseHeaders } from '@/config/env';
 import { getClientId } from '@/state/storage';
 
 export type CorrectionCategory = 'tariff' | 'location' | 'plaza_details' | 'payment' | 'journey' | 'other';
@@ -26,8 +26,7 @@ export async function submitCorrection(input: CorrectionInput): Promise<SubmitRe
     const res = await fetch(`${env.supabaseUrl.replace(/\/$/, '')}/rest/v1/rpc/submit_correction`, {
       method: 'POST',
       headers: {
-        apikey: env.supabaseAnonKey,
-        Authorization: `Bearer ${env.supabaseAnonKey}`,
+        ...supabaseHeaders(),
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

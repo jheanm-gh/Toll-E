@@ -38,3 +38,13 @@ export const isDevelopment = __DEV__ || buildProfile === 'development' || buildP
 export const usesTestAds = buildProfile !== 'production';
 
 export const backendConfigured = !!(env.supabaseUrl && env.supabaseAnonKey);
+
+/**
+ * Request headers for the public Supabase API. Works with both kinds of public key: a legacy
+ * "anon" key (a JWT, also sent as the bearer token) and a newer publishable key (sb_publishable_…),
+ * which is not a JWT and must only be sent as `apikey`.
+ */
+export function supabaseHeaders(): Record<string, string> {
+  const key = env.supabaseAnonKey ?? '';
+  return key.startsWith('eyJ') ? { apikey: key, Authorization: `Bearer ${key}` } : { apikey: key };
+}
