@@ -30,4 +30,11 @@ export const buildProfile = (Constants.expoConfig?.extra?.buildProfile as string
 /** True for Metro development and EAS development/preview builds. */
 export const isDevelopment = __DEV__ || buildProfile === 'development' || buildProfile === 'preview';
 
+/**
+ * Every build except the EAS production profile shows Google's test ads, including the
+ * closed-test build that testers install from Google Play, so real ad inventory is never
+ * used for testing.
+ */
+export const usesTestAds = buildProfile !== 'production';
+
 export const backendConfigured = !!(env.supabaseUrl && env.supabaseAnonKey);

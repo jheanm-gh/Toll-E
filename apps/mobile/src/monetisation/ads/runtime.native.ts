@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 
-import { env, isDevelopment } from '@/config/env';
+import { env, usesTestAds } from '@/config/env';
 
 type RNGMA = typeof import('react-native-google-mobile-ads');
 
@@ -20,13 +20,13 @@ function sdk(): RNGMA | null {
 export const adsSupported = () => sdk() !== null;
 
 /**
- * Banner unit id. Development and preview builds ALWAYS use Google's test unit so real
- * inventory is never used for testing. Production uses the configured unit or shows no ads.
+ * Banner unit id. Every non-production build ALWAYS uses Google's test unit so real inventory is
+ * never used for testing. Production uses the configured unit or shows no ads.
  */
 export function bannerUnitId(): string | null {
   const s = sdk();
   if (!s) return null;
-  if (isDevelopment) return s.TestIds.ADAPTIVE_BANNER;
+  if (usesTestAds) return s.TestIds.ADAPTIVE_BANNER;
   return Platform.OS === 'ios' ? env.admobBannerIos : Platform.OS === 'android' ? env.admobBannerAndroid : null;
 }
 

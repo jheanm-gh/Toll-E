@@ -23,6 +23,7 @@ jest.mock('@/config/env', () => ({
   appVersion: '1.0.0',
   buildProfile: 'production',
   isDevelopment: false,
+  usesTestAds: false,
   backendConfigured: false,
 }));
 

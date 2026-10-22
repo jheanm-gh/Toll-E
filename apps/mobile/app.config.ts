@@ -22,10 +22,14 @@ export default ({ config }: ConfigContext): ExpoConfig => {
   const androidAppId = process.env.ADMOB_ANDROID_APP_ID ?? ADMOB_SAMPLE_ANDROID;
   const iosAppId = process.env.ADMOB_IOS_APP_ID ?? ADMOB_SAMPLE_IOS;
 
-  if (isProductionBuild && (androidAppId === ADMOB_SAMPLE_ANDROID || iosAppId === ADMOB_SAMPLE_IOS)) {
-    throw new Error(
-      'Production builds need real AdMob app ids. Set ADMOB_ANDROID_APP_ID and ADMOB_IOS_APP_ID in the EAS environment.',
-    );
+  // EAS sets EAS_BUILD_PLATFORM; only the platform being built needs its real AdMob app id.
+  const platform = process.env.EAS_BUILD_PLATFORM;
+  const missing = [
+    platform !== 'ios' && androidAppId === ADMOB_SAMPLE_ANDROID ? 'ADMOB_ANDROID_APP_ID' : null,
+    platform !== 'android' && iosAppId === ADMOB_SAMPLE_IOS ? 'ADMOB_IOS_APP_ID' : null,
+  ].filter(Boolean);
+  if (isProductionBuild && missing.length) {
+    throw new Error(`Production builds need real AdMob app ids. Set ${missing.join(' and ')} in the EAS environment.`);
   }
 
   return {
