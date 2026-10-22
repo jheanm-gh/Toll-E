@@ -13,6 +13,7 @@ import { join } from 'node:path';
 import { formatZAR, isISODate, toCsv, type TariffSchedule } from '../packages/core/src/index.ts';
 import { parseArgs } from './lib/args.ts';
 import { DATA_DIR, loadDataset, today } from './lib/data.ts';
+import { writeJsonFile } from './lib/json-file.ts';
 
 const { flags } = parseArgs(process.argv.slice(2));
 const from = String(flags.from ?? '');
@@ -92,6 +93,7 @@ schedules.push({
   sourceIds: [sourceId],
   notes: 'Set adjustmentBps to the published percentage × 100 (e.g. 3.12% → 312) so unusual changes are flagged.',
 });
-writeFileSync(join(DATA_DIR, 'schedules.json'), JSON.stringify(schedules, null, 2) + '\n');
-console.log(`Created ${csvPath} with ${rows.length} rows to fill in, and schedule ${to} in data/schedules.json.`);
-console.log('Check the schedule name, end date and adjustmentBps in data/schedules.json.');
+void writeJsonFile(join(DATA_DIR, 'schedules.json'), schedules).then(() => {
+  console.log(`Created ${csvPath} with ${rows.length} rows to fill in, and schedule ${to} in data/schedules.json.`);
+  console.log('Check the schedule name, end date and adjustmentBps in data/schedules.json.');
+});
