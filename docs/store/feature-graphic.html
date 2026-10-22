@@ -1,0 +1,142 @@
+<!doctype html>
+<!-- Source for feature-graphic.png (1024×500, Google Play). Render: node scripts/store-assets.mjs -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1024px;
+        height: 500px;
+        overflow: hidden;
+      }
+      body {
+        background: #0b1f3a;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        color: #fff;
+        position: relative;
+      }
+      .road {
+        position: absolute;
+        right: -60px;
+        top: -40px;
+        width: 520px;
+        height: 620px;
+        background: #12294a;
+        transform: skewX(-14deg);
+        border-left: 10px solid #1b3a63;
+      }
+      .lane {
+        position: absolute;
+        right: 190px;
+        top: -20px;
+        width: 14px;
+        height: 560px;
+        background: repeating-linear-gradient(#f2a93b 0 46px, transparent 46px 86px);
+        transform: skewX(-14deg);
+        opacity: 0.9;
+      }
+      .content {
+        position: absolute;
+        left: 72px;
+        top: 70px;
+        width: 560px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 34px;
+      }
+      .brand img {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+      }
+      .brand span {
+        font-size: 46px;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 50px;
+        line-height: 1.12;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      h1 em {
+        font-style: normal;
+        color: #f2a93b;
+      }
+      p {
+        margin: 22px 0 0;
+        font-size: 22px;
+        color: #d3efef;
+      }
+      .card {
+        position: absolute;
+        right: 60px;
+        top: 110px;
+        width: 330px;
+        background: #fff;
+        color: #0f172a;
+        border-radius: 22px;
+        padding: 22px 24px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      }
+      .card small {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #5b6475;
+      }
+      .card ul {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0;
+      }
+      .card li {
+        font-size: 19px;
+        font-weight: 600;
+        padding: 10px 0 10px 34px;
+        position: relative;
+        border-top: 1px solid #e3e1da;
+      }
+      .card li:first-child {
+        border-top: 0;
+      }
+      .card li::before {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 16px;
+        width: 16px;
+        height: 9px;
+        border-left: 4px solid #0e8a8c;
+        border-bottom: 4px solid #0e8a8c;
+        transform: rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="road"></div>
+    <div class="lane"></div>
+    <div class="content">
+      <div class="brand"><img src="data:image/png;base64,ICON_B64" alt="" /><span>Toll-E</span></div>
+      <h1>Know your tolls.<br />Know your costs.<br /><em>Know before you go.</em></h1>
+      <p>South African toll prices, map and trip calculator</p>
+    </div>
+    <div class="card">
+      <small>EVERY TOLL PLAZA</small>
+      <ul>
+        <li>Class 1 to Class 4 prices</li>
+        <li>Trip totals, one way or return</li>
+        <li>The source behind every price</li>
+        <li>Works offline</li>
+      </ul>
+    </div>
+  </body>
+</html>
