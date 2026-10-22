@@ -56,4 +56,7 @@ for f in "$ROOT"/supabase/tests/[1-9]*.sql; do
   echo "▸ $(basename "$f")"
   "${PSQL[@]}" -o /dev/null -v drill_sql="$WORK/drill.sql" -f "$f" 2>&1 | sed -e 's/^psql:[^ ]* NOTICE:  /  /'
 done
+echo "▸ the app accepts the feed after corrections, route checks and a schedule publish"
+"${PSQL[@]}" -At -v drill_sql="$WORK/drill.sql" -f "$ROOT/supabase/tests/feed_after_helpers.sql" > "$WORK/after.json"
+(cd "$ROOT" && npx tsx scripts/check-db-dataset.ts --valid-only "$WORK/after.json")
 echo "✔ database tests passed"

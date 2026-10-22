@@ -1,14 +1,17 @@
 /**
  * Check that the database's public feed (published_dataset()) is a valid Dataset and contains
  * exactly the published records from data/. Used by scripts/db-test.sh.
+ *   --valid-only  only check that the app would accept the feed (after dashboard edits).
  */
 import { readFileSync } from 'node:fs';
 
 import { parseDataset, validateDataset, type Dataset } from '../packages/core/src/index.ts';
 import { loadDataset, publishedSubset, today } from './lib/data.ts';
 
-const file = process.argv[2];
-if (!file) throw new Error('usage: check-db-dataset <published.json>');
+const args = process.argv.slice(2);
+const validOnly = args.includes('--valid-only');
+const file = args.find((a) => !a.startsWith('--'));
+if (!file) throw new Error('usage: check-db-dataset [--valid-only] <published.json>');
 
 const parsed = parseDataset(JSON.parse(readFileSync(file, 'utf8')));
 if (!parsed.ok) {
@@ -20,6 +23,13 @@ const errors = validateDataset(parsed.value, { today: today() }).filter((i) => i
 if (errors.length) {
   for (const e of errors) console.error(`✖ ${e.entity} ${e.id}: ${e.message}`);
   process.exit(1);
+}
+
+if (validOnly) {
+  console.log(
+    `✔ the app accepts the feed (${parsed.value.tariffs.length} tariffs, ${parsed.value.journeys.length} journeys)`,
+  );
+  process.exit(0);
 }
 
 const normalise = (d: Dataset) => {
