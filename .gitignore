@@ -1,0 +1,56 @@
+# dependencies
+node_modules/
+
+# Expo / Metro
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+.metro-health-check*
+
+# generated native folders (Continuous Native Generation)
+apps/mobile/ios/
+apps/mobile/android/
+.kotlin/
+
+# builds
+apps/admin/dist/
+coverage/
+*.tsbuildinfo
+
+# test output
+test-results/
+playwright-report/
+artifacts/screenshots/tmp/
+
+# local env files — never commit secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# signing material
+*.jks
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+
+# local database cluster used by scripts/db-test.sh
+.pgdata/
+
+# logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# OS
+.DS_Store
+
+# copied from node_modules by scripts/copy-map-worker.mjs
+apps/mobile/public/maplibre-gl-worker.mjs
+imports/

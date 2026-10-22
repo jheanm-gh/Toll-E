@@ -1,0 +1,12 @@
+node_modules
+dist
+.expo
+coverage
+apps/mobile/ios
+apps/mobile/android
+apps/admin/dist
+data/generated
+apps/mobile/src/data/generated
+supabase/seed.sql
+package-lock.json
+*.md

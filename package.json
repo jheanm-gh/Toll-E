@@ -1,0 +1,49 @@
+{
+  "name": "toll-e",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Toll-E — South African toll-intelligence app. Know your tolls. Know your costs. Know before you go.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "mobile": "npm --workspace apps/mobile run start",
+    "mobile:web": "npm --workspace apps/mobile run web",
+    "admin": "npm --workspace apps/admin run dev",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc -p scripts/tsconfig.json --noEmit",
+    "lint": "eslint apps/mobile packages/core scripts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm run test --workspaces --if-present",
+    "test:db": "bash scripts/db-test.sh",
+    "data:validate": "tsx scripts/data-validate.ts",
+    "data:build": "tsx scripts/data-build.ts",
+    "data:coverage": "tsx scripts/data-coverage.ts",
+    "data:import": "tsx scripts/data-import.ts",
+    "data:export": "tsx scripts/data-export.ts",
+    "build:web": "npm --workspace apps/mobile run export:web",
+    "build:admin": "npm --workspace apps/admin run build",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run data:validate && npm test",
+    "data:verify": "tsx scripts/data-verify.ts",
+    "release:check": "tsx scripts/release-check.ts",
+    "data:worksheet": "tsx scripts/data-worksheet.ts",
+    "data:supabase-sql": "tsx scripts/data-supabase-sql.ts",
+    "data:next-year": "tsx scripts/data-next-year.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^22.20.5",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
+    "prettier": "^3.9.10",
+    "topojson-client": "^3.1.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "world-atlas": "^2.0.2"
+  }
+}
