@@ -15,8 +15,8 @@ record against an official source; nothing in the seed dataset has reached that 
 | …with at least one current tariff | 62 |
 | …with current tariffs for every vehicle class | 61 |
 | …with verified current tariffs | 0 |
-| Published tariff records: unverified | 259 |
-| Published tariff records: pending_review | 54 |
+| Published tariff records: unverified | 247 |
+| Published tariff records: pending_review | 66 |
 
 ## Coverage by corridor and vehicle class
 
@@ -60,12 +60,12 @@ charging conditions verified?), **Payment** (payment methods verified?).
 | Grasmere (mainline) | N1 | SANRAL | Gauteng | ⚠ unverified | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
 | Grasmere North Ramp (ramp) | N1 | SANRAL | Gauteng | ✖ none | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
 | Grasmere South Ramp (ramp) | N1 | SANRAL | Gauteng | ✖ none | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
-| Hammanskraal (ramp) | N1 | Bakwena | Gauteng | ✖ none | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
+| Hammanskraal (ramp) | N1 | Bakwena | Gauteng | ✖ none | ⚠ unverified | ⚠ under review | 4/4 | ⚠ unverified | ⚠ unverified |
 | Huguenot (mainline) | N1 | SANRAL | Western Cape | ⚠ unverified | ⚠ unverified | ⚠ under review | 4/4 | ⚠ unverified | ⚠ unverified |
 | Kranskop (mainline) | N1 | SANRAL | Limpopo | ✖ none | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
 | Kranskop Ramp (ramp) | N1 | SANRAL | Limpopo | ✖ none | ⚠ unverified | ⚠ under review | 4/4 | ⚠ unverified | ⚠ unverified |
-| Maubane (ramp) | N1 | Bakwena | — | ✖ none | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
-| Murrayhill (ramp) | N1 | Bakwena | — | ✖ none | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
+| Maubane (ramp) | N1 | Bakwena | — | ✖ none | ⚠ unverified | ⚠ under review | 4/4 | ⚠ unverified | ⚠ unverified |
+| Murrayhill (ramp) | N1 | Bakwena | — | ✖ none | ⚠ unverified | ⚠ under review | 4/4 | ⚠ unverified | ⚠ unverified |
 | Nyl (mainline) | N1 | SANRAL | Limpopo | ⚠ unverified | ⚠ unverified | ⚠ under review | 4/4 | ⚠ unverified | ⚠ unverified |
 | Nyl Ramp (ramp) | N1 | SANRAL | Limpopo | ✖ none | ⚠ unverified | ⚠ under review | 3/4 | ⚠ unverified | ⚠ unverified |
 | Pumulani (mainline) | N1 | Bakwena | Gauteng | ⚠ unverified | ⚠ unverified | ⚠ unverified | 4/4 | ⚠ unverified | ⚠ unverified |
@@ -120,7 +120,9 @@ charging conditions verified?), **Payment** (payment methods verified?).
 ## Known gaps
 
 - No position, operator detail, tariff or payment method has been verified by a person yet.
+- No current tariff at all: Sebetiela.
+- Missing vehicle classes: Nyl Ramp (3/4).
+- 43 plazas have no map position; the others have approximate positions only.
 - N3TC tariffs are under review: the operator website (as indexed) and SANRAL's 2026 poster disagree.
-- Several ramp plazas and the N17 plazas east of Dalpark have no tariff loaded because only one third-party source was found.
 - Frequent-user, local-user and e-tag discounts are not modelled.
 - R30/R730/R34 toll roads (Free State) listed in older SANRAL gazettes are not yet researched.

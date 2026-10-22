@@ -108,13 +108,20 @@ export function renderCoverageMarkdown(dataset: Dataset, today: string, checks: 
       `| ${p.name} (${p.type}) | ${p.route} | ${operators.get(p.operatorId) ?? p.operatorId} | ${p.province ? PROVINCE_NAMES[p.province] : '—'} | ${FLAG[r.location]} | ${FLAG[r.operator]} | ${tariffCell} | ${r.classCoverage.available}/${r.classCoverage.total} | ${FLAG[r.chargingRules]} | ${FLAG[r.payment]} |`,
     );
   }
+  const noTariff = sorted.filter((r) => r.classCoverage.available === 0).map((r) => r.plaza.name);
+  const partialClasses = sorted
+    .filter((r) => r.classCoverage.available > 0 && r.classCoverage.available < r.classCoverage.total)
+    .map((r) => `${r.plaza.name} (${r.classCoverage.available}/${r.classCoverage.total})`);
+  const noLocation = sorted.filter((r) => r.location === 'no').length;
   lines.push(
     '',
     '## Known gaps',
     '',
     '- No position, operator detail, tariff or payment method has been verified by a person yet.',
+    `- No current tariff at all: ${noTariff.length ? noTariff.join(', ') : 'none'}.`,
+    `- Missing vehicle classes: ${partialClasses.length ? partialClasses.join(', ') : 'none'}.`,
+    `- ${noLocation} plazas have no map position; the others have approximate positions only.`,
     "- N3TC tariffs are under review: the operator website (as indexed) and SANRAL's 2026 poster disagree.",
-    '- Several ramp plazas and the N17 plazas east of Dalpark have no tariff loaded because only one third-party source was found.',
     '- Frequent-user, local-user and e-tag discounts are not modelled.',
     '- R30/R730/R34 toll roads (Free State) listed in older SANRAL gazettes are not yet researched.',
     '',
