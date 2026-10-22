@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-ZA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Toll-E privacy policy</title>
+    <meta name="description" content="How the Toll-E app handles personal information, under POPIA." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="icon.png" />
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="wrap" style="margin: 0"><img src="icon.png" alt="" /><a href="./">Toll-E</a></div>
+        <nav aria-label="Site">
+          <a href="./">About</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a
+          ><a href="support.html">Support</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <h1>Privacy policy</h1>
+        <p class="meta">Effective {{EFFECTIVE_DATE}} · Applies to the Toll-E app for Android</p>
+
+        <p>
+          Toll-E is built to need as little information about you as possible. You do not need an account, and Toll-E
+          has no analytics SDK. This policy explains what information is handled, why, and your rights under the
+          Protection of Personal Information Act, 2013 (POPIA).
+        </p>
+
+        <h2>1. Who is responsible</h2>
+        <p>
+          The responsible party for Toll-E is {{OWNER_NAME}}, South Africa, who is also the Information Officer.
+          Contact: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>.
+        </p>
+
+        <h2>2. Information stored only on your device</h2>
+        <ul>
+          <li>Your default vehicle class and settings, including whether personalised ads are on.</li>
+          <li>Favourite plazas, and saved and recent calculations.</li>
+          <li>A copy of the toll data, so the app works offline.</li>
+          <li>Whether you have removed ads (only in versions that offer ad removal).</li>
+          <li>A random code created by the app, used only to limit spam in correction reports.</li>
+        </ul>
+        <p>
+          This information is not sent to Toll-E. Uninstalling the app, or clearing its storage in Android settings,
+          deletes it.
+        </p>
+
+        <h2>3. Your location</h2>
+        <p>
+          Toll-E asks for location permission only when you tap “Near me” or “Use my location”. Your location is read
+          once, on your device, to sort toll plazas by distance. It is not stored and is not sent to Toll-E or anyone
+          else. Toll-E never uses location in the background.
+        </p>
+
+        <h2>4. Information that leaves your device</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>What</th>
+              <th>Who receives it</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Requests for toll data, which, like any internet request, reveal your IP address</td>
+              <td>The Toll-E server, hosted by Supabase, Inc.</td>
+              <td>To download current toll prices</td>
+            </tr>
+            <tr>
+              <td>Map image requests, which reveal your IP address and the area of the map you view</td>
+              <td>OpenFreeMap, the map tile provider</td>
+              <td>To draw the map</td>
+            </tr>
+            <tr>
+              <td>
+                Correction reports you choose to send: the kind of problem, your message, the plaza concerned, an
+                optional email address, the random device code, and the app and data versions
+              </td>
+              <td>The Toll-E server (Supabase), or your email app if you report by email</td>
+              <td>To check and fix toll information, and to reply if you gave an email address</td>
+            </tr>
+            <tr>
+              <td>The plaza's position, when you ask for directions</td>
+              <td>The navigation app you choose (for example Google Maps or Waze)</td>
+              <td>To open directions; that app's own privacy policy applies</td>
+            </tr>
+            <tr>
+              <td>Advertising data (see section 5)</td>
+              <td>Google (AdMob)</td>
+              <td>To show and measure ads in the free version</td>
+            </tr>
+            <tr>
+              <td>Purchase data (see section 6), only in versions that offer ad removal</td>
+              <td>Google Play and RevenueCat</td>
+              <td>To process and restore the ad-removal purchase</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>5. Advertising</h2>
+        <p>
+          The free version shows banner ads provided by Google AdMob. To show ads, limit fraud and measure performance,
+          Google receives information such as your IP address, device and app information, ad interactions and the
+          device advertising ID. Toll-E asks Google for <strong>non-personalised ads</strong> unless you switch on
+          “Personalised ads” in More → Privacy. Where the law requires consent, for example in the EU or UK, Google's
+          consent message is shown first, and you can change your choice later in More → Privacy.
+        </p>
+        <p>
+          Google's use of this information is described at
+          <a href="https://policies.google.com/technologies/partner-sites"
+            >How Google uses information from sites or apps that use our services</a
+          >. You can reset or delete your advertising ID in your Android settings.
+        </p>
+        <p>
+          Ads are never shown on the map, in the calculator or next to directions. If you remove ads, the advertising
+          SDK is not started at all.
+        </p>
+
+        <h2>6. Purchases</h2>
+        <p>
+          Where Toll-E offers the once-off ad-removal purchase, payment is handled by Google Play. Toll-E never sees
+          your card details. RevenueCat, Inc., the purchase service Toll-E uses, receives an anonymous app user ID and
+          the purchase receipt. This lets it confirm the purchase and restore it on a new device. See
+          <a href="https://www.revenuecat.com/privacy">RevenueCat's privacy policy</a>.
+        </p>
+
+        <h2>7. What Toll-E does not do</h2>
+        <ul>
+          <li>No accounts, no analytics SDK and no crash-reporting SDK.</li>
+          <li>No selling or renting of personal information.</li>
+          <li>No collection of contacts, photos, files or location history.</li>
+        </ul>
+
+        <h2>8. Information sent outside South Africa</h2>
+        <p>
+          Google, Supabase, RevenueCat and OpenFreeMap may process information on servers outside South Africa. Toll-E
+          uses these providers because they are bound by data-protection terms that give protection comparable to POPIA
+          (section 72).
+        </p>
+
+        <h2>9. How long information is kept</h2>
+        <ul>
+          <li>
+            Correction reports and any email address you included are deleted within 12 months of the report being
+            resolved.
+          </li>
+          <li>Server request logs kept by the hosting provider are kept for that provider's standard log period.</li>
+          <li>Information on your device stays until you delete it or uninstall the app.</li>
+        </ul>
+
+        <h2>10. Security</h2>
+        <p>
+          All connections from the app use encryption in transit (HTTPS). The toll database allows the public to read
+          only published toll data. Correction reports are writable but not readable by the public.
+        </p>
+
+        <h2>11. Children</h2>
+        <p>Toll-E is a tool for road users and is not directed at children under 13.</p>
+
+        <h2>12. Your rights</h2>
+        <p>
+          Under POPIA you may ask whether we hold personal information about you and request a copy. You may ask us to
+          correct or delete it, and you may object to its processing. Email
+          <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>. To find a report you sent, we may ask for the date
+          and plaza it concerned, because Toll-E has no accounts.
+        </p>
+        <p>
+          You may also complain to the Information Regulator of South Africa:
+          <a href="https://inforegulator.org.za/">inforegulator.org.za</a>.
+        </p>
+
+        <h2>13. Changes</h2>
+        <p>
+          If this policy changes, the new version will be published here with a new effective date. Material changes
+          will also be noted in the app's release notes.
+        </p>
+      </div>
+    </main>
+    <footer>Toll-E is independent and is not affiliated with SANRAL or any toll operator.</footer>
+  </body>
+</html>
