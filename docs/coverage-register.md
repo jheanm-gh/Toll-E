@@ -18,6 +18,33 @@ record against an official source; nothing in the seed dataset has reached that 
 | Published tariff records: unverified | 259 |
 | Published tariff records: pending_review | 54 |
 
+## Coverage by corridor and vehicle class
+
+One-way totals for the tariffs in force on the evaluation date. Each cell shows the total, how many of the
+route's chargeable plazas have a price, and the weakest status among them. A corridor can only be offered in a
+production build once its plaza sequence is verified (`offeredJourneys`).
+
+| Corridor | Plaza sequence | Class 1 | Class 2 | Class 3 | Class 4 |
+|---|---|---|---|---|---|
+| Johannesburg → Durban (N3) | ⚠ unverified | R347.50 · 5/5 · under review | R632.00 · 5/5 · under review | R912.00 · 5/5 · under review | R1 274.00 · 5/5 · under review |
+| Johannesburg → Cape Town (N1) | ⚠ unverified | R197.50 · 3/3 · unverified | R411.00 · 3/3 · unverified | R539.00 · 3/3 · unverified | R732.00 · 3/3 · unverified |
+| Pretoria → Polokwane (N1) | ⚠ unverified | R232.50 · 4/4 · unverified | R549.00 · 4/4 · under review | R661.00 · 4/4 · under review | R813.00 · 4/4 · unverified |
+| Polokwane → Beitbridge (N1) | ⚠ unverified | R125.00 · 2/2 · unverified | R343.00 · 2/2 · unverified | R436.00 · 2/2 · unverified | R534.00 · 2/2 · unverified |
+| Pretoria → Mbombela (N4) | ⚠ unverified | R261.00 · 3/3 · unverified | R602.00 · 3/3 · unverified | R920.00 · 3/3 · under review | R1 314.00 · 3/3 · unverified |
+| Plettenberg Bay → Gqeberha (N2) | ⚠ unverified | R73.00 · 1/1 · unverified | R183.00 · 1/1 · unverified | R438.00 · 1/1 · unverified | R619.00 · 1/1 · unverified |
+| Pretoria → Rustenburg (N4) | ⚠ unverified | R70.00 · 3/3 · unverified | R192.00 · 3/3 · unverified | R216.00 · 3/3 · unverified | R256.00 · 3/3 · unverified |
+| Durban → Richards Bay (N2) | ⚠ unverified | R97.50 · 3/3 · unverified | R206.00 · 3/3 · unverified | R258.00 · 3/3 · unverified | R383.00 · 3/3 · unverified |
+
+Release gate (`npm run release:check`): **not ready** — 0 of 249 plaza-class prices verified; 257 gaps.
+
+## Verification checks
+
+Recorded in `data/verification-log.json`. Individual verified tariffs also carry `verified_on` and `verified_by`.
+
+| Date | By | Scope | What was attempted | Outcome | Result |
+|---|---|---|---|---|---|
+| 2026-10-21 | Toll-E build (automated research, not a person) | All 2026 tariffs for classes 1-4 and all journey plaza sequences | Open the SANRAL 2026 tariff publication, Government Gazette Nos. 54087 and 54088 (5 February 2026), and the N3TC, TRAC and Bakwena tariff pages. | Not possible from the build environment: those sites are blocked by its network policy. Values were taken from search-indexed extracts of the same publications, corroborated with secondary sources and checked for consistency with the published CPI adjustment. Nothing was marked verified. Disagreements were marked under review (N3TC, Huguenot Class 3). | 0 tariffs verified; 0 journey sequences verified |
+
 ## Per plaza
 
 Columns: **Location** (verified position?), **Operator** (contact details verified?), **Current tariff**

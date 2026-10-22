@@ -1,0 +1,10 @@
+[
+  {
+    "date": "2026-10-21",
+    "by": "Toll-E build (automated research, not a person)",
+    "scope": "All 2026 tariffs for classes 1-4 and all journey plaza sequences",
+    "attempted": "Open the SANRAL 2026 tariff publication, Government Gazette Nos. 54087 and 54088 (5 February 2026), and the N3TC, TRAC and Bakwena tariff pages.",
+    "outcome": "Not possible from the build environment: those sites are blocked by its network policy. Values were taken from search-indexed extracts of the same publications, corroborated with secondary sources and checked for consistency with the published CPI adjustment. Nothing was marked verified. Disagreements were marked under review (N3TC, Huguenot Class 3).",
+    "result": "0 tariffs verified; 0 journey sequences verified"
+  }
+]

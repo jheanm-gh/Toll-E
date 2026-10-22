@@ -6,11 +6,11 @@
  *
  * Refuses to build if validation finds errors.
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 import { parseDataset, validateDataset } from '../packages/core/src/index.ts';
-import { renderCoverageMarkdown } from './lib/coverage-md.ts';
+import { renderCoverageMarkdown, type VerificationCheck } from './lib/coverage-md.ts';
 import { ROOT, loadDataset, publishedSubset, today } from './lib/data.ts';
 import { datasetToSeedSql } from './lib/seed-sql.ts';
 
@@ -43,4 +43,5 @@ const bundle = publishedSubset(dataset);
 bundle.generatedAt = `${dataset.datasetVersion.slice(0, 10)}T00:00:00Z`;
 write('apps/mobile/src/data/generated/dataset.json', JSON.stringify(bundle));
 write('supabase/seed.sql', datasetToSeedSql(dataset));
-write('docs/coverage-register.md', renderCoverageMarkdown(dataset, today()));
+const checks = JSON.parse(readFileSync(join(ROOT, 'data/verification-log.json'), 'utf8')) as VerificationCheck[];
+write('docs/coverage-register.md', renderCoverageMarkdown(dataset, today(), checks));

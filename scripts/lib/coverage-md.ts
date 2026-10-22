@@ -1,11 +1,25 @@
 import {
   PROVINCE_NAMES,
+  STANDARD_CLASSES,
+  TRUST_LABEL,
   computeCoverage,
   formatLongDate,
+  formatZAR,
+  releaseReadiness,
   summariseCoverage,
   type CoverageFlag,
   type Dataset,
 } from '../../packages/core/src/index.ts';
+
+/** A check of the data against sources, recorded in data/verification-log.json. */
+export interface VerificationCheck {
+  date: string;
+  by: string;
+  scope: string;
+  attempted: string;
+  outcome: string;
+  result: string;
+}
 
 const FLAG: Record<CoverageFlag, string> = {
   yes: '✅ verified',
@@ -14,8 +28,9 @@ const FLAG: Record<CoverageFlag, string> = {
   no: '✖ none',
 };
 
-export function renderCoverageMarkdown(dataset: Dataset, today: string): string {
+export function renderCoverageMarkdown(dataset: Dataset, today: string, checks: VerificationCheck[] = []): string {
   const rows = computeCoverage(dataset, today);
+  const release = releaseReadiness(dataset, today);
   const s = summariseCoverage(dataset, today);
   const operators = new Map(dataset.operators.map((o) => [o.id, o.shortName]));
   const lines: string[] = [
@@ -37,6 +52,40 @@ export function renderCoverageMarkdown(dataset: Dataset, today: string): string 
     `| …with current tariffs for every vehicle class | ${s.withCompleteClassCoverage} |`,
     `| …with verified current tariffs | ${s.withVerifiedCurrentTariff} |`,
     ...Object.entries(s.tariffsByStatus).map(([k, v]) => `| Published tariff records: ${k} | ${v} |`),
+    '',
+    '## Coverage by corridor and vehicle class',
+    '',
+    'One-way totals for the tariffs in force on the evaluation date. Each cell shows the total, how many of the',
+    "route's chargeable plazas have a price, and the weakest status among them. A corridor can only be offered in a",
+    'production build once its plaza sequence is verified (`offeredJourneys`).',
+    '',
+    `| Corridor | Plaza sequence | ${STANDARD_CLASSES.map((c) => `Class ${c.slice(-1)}`).join(' | ')} |`,
+    `|---|---|${STANDARD_CLASSES.map(() => '---').join('|')}|`,
+    ...release.corridors.map(
+      (c) =>
+        `| ${c.name} (${c.via}) | ${c.sequenceVerified ? '✅ verified' : '⚠ unverified'} | ${STANDARD_CLASSES.map(
+          (cls) => {
+            const x = c.byClass[cls];
+            if (x.priced === 0) return '✖ no price';
+            const trust = x.trust ? TRUST_LABEL[x.trust].toLowerCase() : 'unknown';
+            return `${formatZAR(x.totalCents)} · ${x.priced}/${x.chargeable} · ${trust}`;
+          },
+        ).join(' | ')} |`,
+    ),
+    '',
+    `Release gate (\`npm run release:check\`): **${release.ready ? 'ready' : 'not ready'}** — ${release.verifiedSlots} of ${release.plazaClassSlots} plaza-class prices verified; ${release.gaps.length} gaps.`,
+    '',
+    '## Verification checks',
+    '',
+    'Recorded in `data/verification-log.json`. Individual verified tariffs also carry `verified_on` and `verified_by`.',
+    '',
+    ...(checks.length === 0
+      ? ['No checks recorded.']
+      : [
+          '| Date | By | Scope | What was attempted | Outcome | Result |',
+          '|---|---|---|---|---|---|',
+          ...checks.map((k) => `| ${k.date} | ${k.by} | ${k.scope} | ${k.attempted} | ${k.outcome} | ${k.result} |`),
+        ]),
     '',
     '## Per plaza',
     '',
