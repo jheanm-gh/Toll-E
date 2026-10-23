@@ -95,6 +95,17 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       ],
       './plugins/withoutLocationServices',
       [
+        'expo-build-properties',
+        {
+          android: {
+            // R8 shrinking removed classes that native code looks up by name (MapLibre, RevenueCat,
+            // Expo's JNI bridge), and the first release build crashed on launch. Keep it off.
+            enableMinifyInReleaseBuilds: false,
+            enableShrinkResourcesInReleaseBuilds: false,
+          },
+        },
+      ],
+      [
         'expo-location',
         {
           locationWhenInUsePermission:
