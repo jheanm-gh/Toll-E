@@ -72,6 +72,8 @@ describe('production build with no services configured', () => {
     expect(screen.queryByText('Remove ads')).toBeNull();
     expect(screen.queryByText('Restore purchase')).toBeNull();
     expect(screen.queryByText('Developer')).toBeNull();
+    // No Supabase and no support email: there is no way to send a report, so no link to one.
+    expect(screen.queryByText('Report incorrect information')).toBeNull();
   });
 
   it('the remove-ads screen, if opened by link, has no purchase controls', async () => {

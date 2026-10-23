@@ -41,6 +41,7 @@ import { useData, usePlaza } from '@/data/DataProvider';
 import { usePlazaInfo } from '@/hooks/usePlazaInfo';
 import { useToday } from '@/hooks/useToday';
 import { AdSlot } from '@/monetisation/ads/AdSlot';
+import { correctionChannel } from '@/services/corrections';
 import { openExternal } from '@/services/linking';
 import { usePreferences } from '@/state/preferences';
 import { useSaved } from '@/state/saved';
@@ -415,12 +416,14 @@ export default function PlazaScreen() {
       <Card padded={false}>
         <SourceList sources={sources} />
       </Card>
-      <Button
-        label="Report incorrect information"
-        variant="outline"
-        icon="flag-outline"
-        onPress={() => router.push({ pathname: '/report', params: { plazaId: plaza.id } })}
-      />
+      {correctionChannel !== 'none' ? (
+        <Button
+          label="Report incorrect information"
+          variant="outline"
+          icon="flag-outline"
+          onPress={() => router.push({ pathname: '/report', params: { plazaId: plaza.id } })}
+        />
+      ) : null}
 
       <AdSlot placement="plaza_detail_footer" />
 

@@ -9,6 +9,7 @@ import { appVersion, buildProfile, env, isDevelopment } from '@/config/env';
 import { useData } from '@/data/DataProvider';
 import { useAds } from '@/monetisation/ads/AdsProvider';
 import { useEntitlement } from '@/monetisation/purchases/EntitlementProvider';
+import { correctionChannel } from '@/services/corrections';
 import { openExternal } from '@/services/linking';
 import { usePreferences } from '@/state/preferences';
 import { colors, spacing } from '@/theme/tokens';
@@ -123,8 +124,12 @@ export default function MoreScreen() {
           subtitle="Where prices come from and how they are checked"
           onPress={() => router.push('/sources')}
         />
-        <Divider inset={spacing.lg} />
-        <ListRow icon="flag-outline" title="Report incorrect information" onPress={() => router.push('/report')} />
+        {correctionChannel !== 'none' ? (
+          <>
+            <Divider inset={spacing.lg} />
+            <ListRow icon="flag-outline" title="Report incorrect information" onPress={() => router.push('/report')} />
+          </>
+        ) : null}
         <Divider inset={spacing.lg} />
         <View style={styles.dataStatus}>
           <DataStatus />

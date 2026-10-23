@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { ContentSections } from '@/components/ContentSection';
 import { Button, Screen } from '@/components/ui';
 import { useEntitlement } from '@/monetisation/purchases/EntitlementProvider';
+import { correctionChannel } from '@/services/corrections';
 
 export default function AdvertisingScreen() {
   const { adFree, purchasesOffered } = useEntitlement();
@@ -30,7 +31,9 @@ export default function AdvertisingScreen() {
             bullets: [
               'Ads are not personalised unless you switch on personalised ads in More → Privacy.',
               ...(purchasesOffered ? ['You can remove all ads with a once-off purchase.'] : []),
-              'If an ad looks misleading or offensive, please report it via More → Report incorrect information.',
+              ...(correctionChannel !== 'none'
+                ? ['If an ad looks misleading or offensive, please report it via More → Report incorrect information.']
+                : []),
             ],
           },
         ]}
