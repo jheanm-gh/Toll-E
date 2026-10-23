@@ -93,6 +93,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
           delayAppMeasurementInit: true,
         },
       ],
+      './plugins/withoutLocationServices',
       [
         'expo-location',
         {
