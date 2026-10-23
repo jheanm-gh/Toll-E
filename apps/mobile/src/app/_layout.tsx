@@ -50,6 +50,11 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded || error) void SplashScreen.hideAsync();
   }, [loaded, error]);
+  // Never leave the user on the splash screen: hide it after a few seconds whatever happens.
+  useEffect(() => {
+    const t = setTimeout(() => void SplashScreen.hideAsync(), 6000);
+    return () => clearTimeout(t);
+  }, []);
 
   // If fonts fail we continue with system fonts rather than block the app.
   if (!loaded && !error) return null;
