@@ -24,7 +24,7 @@ data/ ──scripts──▶ Supabase Postgres ───────────
 
 | Path | What it is |
 | --- | --- |
-| `packages/core` | Platform-independent TypeScript. Contents: the data model, zod schemas, integer-cents money, SAST dates, tariff selection and trust states, the journey calculator, validation (including CPI-consistency checks), CSV import, search, navigation links, coverage, route matching (not used by the app yet), the release gate and display labels. 156 unit tests (vitest). |
+| `packages/core` | Platform-independent TypeScript. Contents: the data model, zod schemas, integer-cents money, SAST dates, tariff selection and trust states, the journey calculator, validation (including CPI-consistency checks), CSV import, search, navigation links, coverage, route matching (not used by the app yet), the release gate and display labels. 158 unit tests (vitest). |
 | `apps/mobile` | Expo SDK 58 / React Native 0.88 app with Expo Router. 23 UI tests (Jest + React Native Testing Library). |
 | `scripts` | Node/tsx tools for the data workflow, the DB test harness, screenshots and store assets. |
 | `supabase` | Postgres migrations, generated seed, and SQL tests run by `scripts/db-test.sh`. |
@@ -71,7 +71,7 @@ data/ ──scripts──▶ Supabase Postgres ───────────
 
 | Layer | Command | What it covers |
 | --- | --- | --- |
-| Core logic | `npm test` (vitest, 156 tests) | money, dates, tariff selection, calculator, validation, CSV import, search, matching, and the real dataset per corridor |
+| Core logic | `npm test` (vitest, 158 tests) | money, dates, tariff selection, calculator, validation, CSV import, search, matching, and the real dataset per corridor |
 | App UI | `npm test` (jest, 23 tests) | plaza search, plaza page, data-origin label, ads (test inventory, ad-free, no consent), purchase states, no-config production build, API headers |
 | Database | `npm run test:db` | RLS for anonymous, editor and publisher roles; tariff integrity triggers; the 1 March drill; route verification; corrections; the feed after every helper, checked with the app's validator |
 | Data | `npm run data:validate`, `npm run release:check` | schema, references, overlaps, CPI consistency, coverage, release readiness |

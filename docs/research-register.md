@@ -2,18 +2,21 @@
 
 All entries checked on **2026-10-21** unless noted.
 
-**How the research was done:** the build environment's network policy refused direct HTTPS fetches of
-most hosts, including `sanral.co.za`, `nra.co.za`, `docs.expo.dev`, `wikipedia.org` and
-`tile.openstreetmap.org`. The npm registry was reachable. So were web search results, which
-summarise the pages they cite. Two consequences:
+**Update, 23 October 2026: official documents opened.** With network access to the official sites, the
+SANRAL 2026 tariff poster (an official SANRAL publication citing Gazette Nos. 54087/54088), the TRAC and Bakwena
+tariff pages, and SANRAL's copies of the 2025 Government Gazettes (Nos. 52072 and 52073) were opened and read in
+full. **Every 2026 price loaded earlier matched the poster exactly** (243 of 243), and the operator pages agree.
+The documents also filled 5 gaps and added 12 plazas. See rows D13–D15. Still not retrievable: the 2026 Gazettes
+themselves (gpwonline serves them through SharePoint, which is not reachable) and the N3TC website (its
+certificate chains to a new Let's Encrypt root the environment does not trust). **No tariff is marked
+`verified`**, because no person has checked it against the Gazette. Upgrading a record is a human step (see
+[data-operations.md](./data-operations.md)).
 
-1. Library APIs were read from the installed packages (`node_modules/**/*.d.ts`, READMEs, bundled
-   docs) rather than from documentation websites.
-2. **No toll tariff in this repository has been verified by a human against a primary document.**
-   The official documents are identified and linked below, but values were read through search-result
-   extracts. Every seeded tariff therefore carries `verification_status: "unverified"` or
-   `"pending_review"`. Upgrading a record to `verified` is a human task (see
-   [data-operations.md](./data-operations.md)).
+**How the first round of research was done (21 October 2026):** the build environment's network policy refused
+direct HTTPS fetches of most hosts, including `sanral.co.za`, `nra.co.za`, `docs.expo.dev`, `wikipedia.org` and
+`tile.openstreetmap.org`. The npm registry was reachable. So were web search results, which summarise the pages
+they cite. Library APIs were therefore read from the installed packages, and tariff values from search-result
+extracts. Those values were later confirmed as described above.
 
 ## Toll data
 
@@ -31,6 +34,9 @@ summarise the pages they cite. Two consequences:
 | D10 | Payment methods | BusinessTech https://businesstech.co.za/news/?p=800767 ; Pretoria News https://pretorianews.co.za/business/2025-09-17-south-africa-to-roll-out-tap-to-pay-at-toll-plazas-by-end-of-2025/ | SANRAL plazas moved from magstripe to EMV tap-to-pay from 1 Dec 2025. N3TC and TRAC had tap-and-go in 2024. Bakwena targeted Q4 2025. Cash and SANRAL e-tag still accepted. Amex, Diners and RCS are not accepted. | These are news reports, not plaza-level confirmation. | Payment information is stored at operator level as `unverified`, with sources. Nothing is shown as confirmed per plaza. |
 | D11 | Discounts | SANRAL 2025 booklet (D2) | Frequent-user and local-user discounts exist at specific plazas and require an e-tag registration. | Percentages were not found. | Discounts are **not** applied in calculations. The app states this limitation. |
 | D12 | Licensing of tariff data | Copyright Act 98 of 1978 s12(8)(a): no copyright in official texts of a legislative, administrative or legal nature | Gazette tariff notices are reusable. Aggregator sites (tollguru, randtools, tripcost and similar) are third-party compilations. | No legal review has been done. | Aggregators are used **only** as cross-check signals or as an explicitly labelled secondary source. Production verification must cite the Gazette or the operator. |
+| D13 | Does the loaded 2026 data match SANRAL's official 2026 publication? (23 Oct 2026) | SANRAL poster "New toll tariffs from 1 March 2026" (PDF, opened in full) | 73 tariff rows, colour-coded by operator (SANRAL, Bakwena, N3TC, TRAC). All 243 loaded 2026 prices match. The poster also gives Sebetiela (ramp) and the Nyl Ramp Class 4, and lists 11 rows for plazas not yet in the data (Mandini, Mtunzini North, King Shaka Airport and oThongathi ramps; Mooi North Ramp; Pelindaba, Quagga; Buffelspoort, K99; Cullinan; Brandfort). | The poster says it does not replace the Gazette. | Gaps filled and 12 plazas added from the poster, all `unverified`. Rows previously cited to secondary sources now cite the poster. |
+| D14 | Operator pages (23 Oct 2026) | TRAC https://tracn4.co.za/toll-plazas-toll-fees/ ; Bakwena https://www.bakwena.co.za/tolls-and-tariffs/ ; N3TC https://www.n3tc.co.za/toll-tariffs/ | TRAC: effective 1 March 2026; all eight South African plazas match the poster; Middelburg now has a single Class 3 amount (R277). Bakwena: valid 1 Mar 2026 – 28 Feb 2027; lists Murrayhill, Hammanskraal, Maubane, Buffelspoort Ramps and 'Doornpoort Ramps' (same tariffs as the poster's K99 Ramp); all match the poster. N3TC: could not be opened (certificate chain). | Whether Bakwena's 'Doornpoort Ramps' is the poster's 'K99 Ramp' is not confirmed. | D5 and D6 disputes resolved; rows moved from `pending_review` to `unverified`. K99 Ramp recorded with that caveat. |
+| D15 | 2025 history against the 2025 Gazettes (23 Oct 2026) | Gazette No. 52073 (SANRAL toll roads) and No. 52072 (N1/N4 Platinum and N3 Cedara–Heidelberg), SANRAL's hosted copies | Scanned pages, read from page images. 67 loaded 2025 rows match; **Huguenot Class 3 was a transcription error (R299; the Gazette gives R229)**, which explains the D3 CPI flag. The N3TC website figures seen in D4 are exactly the 2025 Gazette values, so that snapshot showed the 2025 schedule. | Values read by eye from scans. Each was cross-checked against the 2026 poster value after the 3.12% adjustment. | Huguenot corrected; 196 missing 2025 rows added as history; the N3TC dispute (D4) is resolved in favour of the poster. |
 
 ## Technology
 
