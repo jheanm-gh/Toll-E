@@ -57,7 +57,13 @@ export default ({ config }: ConfigContext): ExpoConfig => {
         monochromeImage: './assets/images/android-icon-monochrome.png',
       },
       // Location is only ever requested in the foreground, when the user asks for nearby plazas.
-      blockedPermissions: ['android.permission.ACCESS_BACKGROUND_LOCATION'],
+      // The others are added by the Expo template but not used by Toll-E.
+      blockedPermissions: [
+        'android.permission.ACCESS_BACKGROUND_LOCATION',
+        'android.permission.SYSTEM_ALERT_WINDOW',
+        'android.permission.READ_EXTERNAL_STORAGE',
+        'android.permission.WRITE_EXTERNAL_STORAGE',
+      ],
       predictiveBackGestureEnabled: false,
     },
     web: {
