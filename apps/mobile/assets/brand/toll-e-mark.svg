@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>Toll-E mark on its navy tile</title>
+  <rect width="64" height="64" rx="16" fill="#0B1F3A"/>
+  <rect x="14" y="16" width="8" height="30" rx="2.5" fill="#FFFFFF"/>
+  <rect x="18" y="18" width="36" height="8" rx="4" fill="#16A3A5"/>
+  <rect x="30" y="18" width="6" height="8" fill="#FFFFFF"/>
+  <rect x="42" y="18" width="6" height="8" fill="#FFFFFF"/>
+  <circle cx="18" cy="22" r="5.5" fill="#F2A93B"/>
+  <rect x="10" y="44" width="16" height="4" rx="2" fill="#D3EFEF"/>
+</svg>
