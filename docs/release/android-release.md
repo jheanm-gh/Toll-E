@@ -1,9 +1,9 @@
 # Building the Android release
 
 Toll-E is built with [EAS Build](https://docs.expo.dev/build/introduction/) into a signed Android App Bundle
-(`.aab`) for Google Play. **None of this has been run yet.** The environment Toll-E was developed in could not
-reach Expo's servers or the Android SDK. Everything below is configured but untested, so expect to fix small
-things on the first build.
+(`.aab`) for Google Play. **No EAS build has been run yet** (that needs your Expo account). On 23 October 2026
+the same native project was compiled locally into a release `.aab` (arm64 only, debug-signed). That shows the
+native code, plugins and JavaScript bundle build cleanly. The app has not yet been run on a phone or emulator.
 
 ## Build profiles (`apps/mobile/eas.json`)
 
@@ -87,6 +87,29 @@ npx eas-cli@latest build --platform android --profile production
 
 The build runs on Expo's servers (about 15–30 minutes on the free plan's queue). When it finishes, download
 the `.aab` from the link it prints.
+
+## Local native build (optional, for developers)
+
+To check native changes without using EAS build minutes. This was done on 23 October 2026: `BUILD SUCCESSFUL`
+in 16 minutes, producing a 46 MB arm64 `app-release.aab`.
+
+Requirements: the Android SDK (platform 37, build-tools 37.0.0, NDK 27.1.12297006, CMake 3.22.1), **JDK 17**
+(React Native's Gradle plugin requires it, even if a newer JDK runs Gradle) and about 10 GB free disk.
+
+```
+cd apps/mobile
+npx expo prebuild --platform android      # generates android/ (git-ignored)
+cd android
+./gradlew -PreactNativeArchitectures=arm64-v8a :app:bundleRelease
+# → android/app/build/outputs/bundle/release/app-release.aab (signed with the debug key; not for upload)
+```
+
+Check the merged permissions in
+`android/app/build/intermediates/merged_manifest/release/processReleaseMainManifest/AndroidManifest.xml`. As of the
+last build: location (coarse and fine, foreground only), internet, network state, vibrate, wake lock, the advertising
+ID permissions added by AdMob, `BILLING` from the purchase library, and `FOREGROUND_SERVICE` from AndroidX
+WorkManager (a dependency of Google's libraries). There are no foreground-service *types*: a config plugin
+(`plugins/withoutLocationServices.js`) removes expo-location's unused background location services.
 
 ## Uploading to Google Play
 
