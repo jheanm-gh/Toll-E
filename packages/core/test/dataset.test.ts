@@ -16,11 +16,12 @@ import {
 
 /**
  * Checks against the real seed dataset in data/. Expected totals are independent figures:
- * - Johannesburg→Durban Class 1 (2026): R347.50, reported by several independent calculators
- *   (see docs/research-register.md D4) and equal to the SANRAL 2026 poster values.
- * - Johannesburg→Durban Class 1 (2025): R334.00, the total implied by the 2025 table.
+ * - Johannesburg→Durban Class 1 (2026): R347.50, the sum of the SANRAL 2026 poster values
+ *   (docs/research-register.md D13).
+ * - Johannesburg→Durban Class 1 (2025): R334.00, the sum of Government Gazette No. 52072/52073 values (D15).
  * - TRAC N4 values are summed by hand from the operator's published table.
  */
+const TODAY = '2026-10-23';
 const { dataset, csvErrors } = loadDataset();
 const index = buildTariffIndex(dataset);
 const journey = (id: string) => {
@@ -33,7 +34,7 @@ describe('seed dataset integrity', () => {
   it('parses, with no CSV errors and no validation errors', () => {
     expect(csvErrors).toEqual([]);
     expect(parseDataset(dataset).ok).toBe(true);
-    const errors = validateDataset(dataset, { today: '2026-10-21' }).filter((i) => i.severity === 'error');
+    const errors = validateDataset(dataset, { today: TODAY }).filter((i) => i.severity === 'error');
     expect(errors).toEqual([]);
   });
 
@@ -45,9 +46,11 @@ describe('seed dataset integrity', () => {
     expect(dataset.tariffs.some((t) => t.verificationStatus === 'illustrative')).toBe(false);
   });
 
-  it('flags the known Huguenot Class 3 conflict automatically', () => {
-    const issues = validateDataset(dataset, { today: '2026-10-21' });
-    expect(issues.some((i) => i.code === 'suspicious_change' && i.id === 'sanral-2026-n1-huguenot-class3')).toBe(true);
+  it('has no CPI-consistency outliers between 2025 and 2026', () => {
+    // Huguenot Class 3 used to be flagged: the 2025 row was a transcription error (R299), and
+    // Gazette No. 52073 gives R229. A new flag here means a value needs checking.
+    const issues = validateDataset(dataset, { today: TODAY });
+    expect(issues.filter((i) => i.code === 'suspicious_change')).toEqual([]);
   });
 
   it('only gives map positions that are labelled approximate (none verified yet)', () => {
@@ -75,9 +78,9 @@ describe('real journey totals', () => {
       ['n3-mariannhill', 1650],
     ]);
     expect(r.totalCents).toBe(34750);
-    // N3TC rows are under review and nothing is verified: this must be labelled an estimate.
+    // Nothing is verified by a person yet: this must be labelled an estimate.
     expect(r.confidence).toBe('estimate');
-    expect(r.trust).toBe('under_review');
+    expect(r.trust).toBe('unverified');
   });
 
   it('Johannesburg → Durban, Class 1, return (2026): R695.00', () => {
@@ -147,10 +150,10 @@ describe('real journey totals', () => {
 
 /**
  * One light and one heavy class per MVP corridor, plaza by plaza. The expected amounts are
- * written out here, apart from the CSV files, as recorded from the publication named in each
- * case, so a slip in data/tariffs/*.csv or in the loader fails the test. They are what Toll-E
- * recorded from those publications during research; a person has not yet checked them against
- * the Government Gazette (see docs/coverage-register.md). Totals are hand-summed.
+ * written out here, apart from the CSV files, as read from the official publication named in
+ * each case (opened in full on 23 Oct 2026), so a slip in data/tariffs/*.csv or in the loader
+ * fails the test. A person has not yet checked them against the Government Gazette itself
+ * (see docs/coverage-register.md). Totals are hand-summed.
  */
 const corridorCases: {
   journeyId: string;
@@ -175,7 +178,7 @@ const corridorCases: {
   {
     journeyId: 'jhb-dbn-n3',
     standardClass: 'class4',
-    source: 'SANRAL 2026 poster (Wilge, Tugela, Mariannhill); Foresight 2026 N3 table (De Hoek, Mooi)',
+    source: 'SANRAL 2026 poster (N3TC and Mariannhill rows)',
     plazas: [
       ['n3-de-hoek', 23000],
       ['n3-wilge', 30400],
@@ -210,7 +213,7 @@ const corridorCases: {
   {
     journeyId: 'pta-polokwane-n1',
     standardClass: 'class1',
-    source: 'Bakwena 2026/27 tariffs (Pumulani, Carousel); TopAuto 2026 (Kranskop, Nyl)',
+    source: 'Bakwena 2026/27 tariffs (Pumulani, Carousel); SANRAL 2026 poster (Kranskop, Nyl)',
     plazas: [
       ['n1-pumulani', 1650],
       ['n1-carousel', 7500],
@@ -222,7 +225,7 @@ const corridorCases: {
   {
     journeyId: 'pta-polokwane-n1',
     standardClass: 'class4',
-    source: 'Bakwena 2026/27 tariffs (Pumulani, Carousel); TopAuto 2026 (Kranskop, Nyl)',
+    source: 'Bakwena 2026/27 tariffs (Pumulani, Carousel); SANRAL 2026 poster (Kranskop, Nyl)',
     plazas: [
       ['n1-pumulani', 5700],
       ['n1-carousel', 25800],
@@ -234,7 +237,7 @@ const corridorCases: {
   {
     journeyId: 'pta-mbombela-n4',
     standardClass: 'class1',
-    source: 'TRAC N4 2026 toll fees',
+    source: 'TRAC N4 2026 toll fees (same as the SANRAL 2026 poster)',
     plazas: [
       ['n4-diamond-hill', 5100],
       ['n4-middelburg', 8400],
@@ -245,7 +248,7 @@ const corridorCases: {
   {
     journeyId: 'pta-mbombela-n4',
     standardClass: 'class2',
-    source: 'TRAC N4 2026 toll fees',
+    source: 'TRAC N4 2026 toll fees (same as the SANRAL 2026 poster)',
     plazas: [
       ['n4-diamond-hill', 7000],
       ['n4-middelburg', 18200],
@@ -342,6 +345,23 @@ describe('release gate on the real data', () => {
 });
 
 describe('effective dates in the real data', () => {
+  it('uses the 2025 Gazette value for Huguenot Class 3 in 2025 (R229.00, corrected from a transcription error)', () => {
+    const r = resolveStandardTariff(index, 'n1-huguenot', 'class3', { date: '2025-07-01' });
+    expect(r.kind === 'current' && r.tariff.amountCents).toBe(22900);
+  });
+
+  it('prices plazas added from the SANRAL 2026 poster', () => {
+    const price = (plaza: string, cls: StandardClassId) => {
+      const r = resolveStandardTariff(index, plaza, cls, { date: TODAY });
+      return r.kind === 'current' ? r.tariff.amountCents : null;
+    };
+    expect(price('n1-sebetiela', 'class1')).toBe(2450);
+    expect(price('n1-nyl-ramp', 'class4')).toBe(6900);
+    expect(price('r30-brandfort', 'class1')).toBe(6250);
+    expect(price('n4-cullinan-ramp', 'class4')).toBe(8600);
+    expect(price('n4-pelindaba', 'class2')).toBe(1500);
+  });
+
   it('treats Bakwena tariffs as expired after their stated validity (28 Feb 2027)', () => {
     const r = resolveStandardTariff(index, 'n1-pumulani', 'class1', { date: '2027-03-01' });
     expect(r).toMatchObject({ kind: 'none', reason: 'expired' });
@@ -366,9 +386,10 @@ describe('effective dates in the real data', () => {
 
 describe('coverage register', () => {
   it('reports honest coverage', () => {
-    const rows = computeCoverage(dataset, '2026-10-21');
+    const rows = computeCoverage(dataset, TODAY);
     expect(rows.every((r) => r.location !== 'yes')).toBe(true);
     expect(rows.every((r) => r.currentTariff !== 'yes')).toBe(true);
-    expect(rows.filter((r) => r.classCoverage.available === 0).length).toBeGreaterThan(0);
+    // Every plaza on the SANRAL 2026 poster now has a price for every class.
+    expect(rows.filter((r) => r.classCoverage.available < r.classCoverage.total)).toEqual([]);
   });
 });

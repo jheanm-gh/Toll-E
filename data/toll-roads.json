@@ -111,5 +111,23 @@
     "provinces": ["WC"],
     "description": "Scenic toll road between Hout Bay and Noordhoek, Cape Town.",
     "sourceIds": ["chapmans-peak-gazette-2026"]
+  },
+  {
+    "id": "sanral-n4-magalies",
+    "name": "N4 Magalies",
+    "routes": ["N4"],
+    "operatorId": "sanral",
+    "provinces": ["GP", "NW"],
+    "description": "SANRAL toll road on the N4 west of Pretoria (Pelindaba and Quagga plazas).",
+    "sourceIds": ["sanral-tariffs-2026-poster", "gazette-52073-2025"]
+  },
+  {
+    "id": "sanral-r30",
+    "name": "R30/R730/R34",
+    "routes": ["R30"],
+    "operatorId": "sanral",
+    "provinces": ["FS"],
+    "description": "SANRAL toll road in the Free State (Brandfort plaza).",
+    "sourceIds": ["sanral-tariffs-2026-poster", "gazette-52073-2025"]
   }
 ]

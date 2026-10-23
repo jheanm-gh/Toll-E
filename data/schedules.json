@@ -17,7 +17,7 @@
     "effectiveFrom": "2025-03-01",
     "effectiveTo": "2026-02-28",
     "adjustmentBps": 484,
-    "sourceIds": ["sanral-tariffs-2025-booklet"],
+    "sourceIds": ["gazette-52073-2025", "sanral-tariffs-2025-booklet"],
     "notes": "4.84% CPI-linked adjustment, Government Gazette No. 52073. Superseded on 1 March 2026."
   },
   {
@@ -27,8 +27,8 @@
     "effectiveFrom": "2026-03-01",
     "effectiveTo": null,
     "nextReviewExpected": "2027-03-01",
-    "sourceIds": ["sanral-tariffs-2026-poster", "n3tc-toll-tariffs", "foresight-n3-2026"],
-    "notes": "Under review: the N3TC website (as indexed) shows the 2025 figures under a 2026 heading. Values follow the SANRAL 2026 poster."
+    "sourceIds": ["sanral-tariffs-2026-poster", "n3tc-toll-tariffs"],
+    "notes": "Values from the SANRAL 2026 poster (checked in full on 23 October 2026). The earlier disagreement came from an index snapshot of the N3TC website that showed the 2025 schedule."
   },
   {
     "id": "n3tc-2025",
@@ -36,7 +36,7 @@
     "operatorIds": ["n3tc"],
     "effectiveFrom": "2025-03-01",
     "effectiveTo": "2026-02-28",
-    "sourceIds": ["satrucker-2025", "n3tc-toll-tariffs"]
+    "sourceIds": ["gazette-52072-2025", "satrucker-2025", "n3tc-toll-tariffs"]
   },
   {
     "id": "trac-2026",
@@ -45,7 +45,7 @@
     "effectiveFrom": "2026-03-01",
     "effectiveTo": null,
     "nextReviewExpected": "2027-03-01",
-    "sourceIds": ["trac-toll-fees", "topauto-2026"]
+    "sourceIds": ["trac-toll-fees", "sanral-tariffs-2026-poster"]
   },
   {
     "id": "bakwena-2026",
@@ -53,7 +53,7 @@
     "operatorIds": ["bakwena"],
     "effectiveFrom": "2026-03-01",
     "effectiveTo": "2027-02-28",
-    "sourceIds": ["bakwena-tolls-and-tariffs"]
+    "sourceIds": ["bakwena-tolls-and-tariffs", "sanral-tariffs-2026-poster"]
   },
   {
     "id": "bakwena-2025",
@@ -61,7 +61,7 @@
     "operatorIds": ["bakwena"],
     "effectiveFrom": "2025-03-01",
     "effectiveTo": "2026-02-28",
-    "sourceIds": ["sapeople-2025", "joburgetc-2025"]
+    "sourceIds": ["gazette-52072-2025", "sapeople-2025", "joburgetc-2025"]
   },
   {
     "id": "chapmans-peak-2026",

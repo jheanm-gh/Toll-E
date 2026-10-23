@@ -7,9 +7,9 @@
     "kind": "agency_publication",
     "official": true,
     "publishedOn": "2026-02-05",
-    "retrievedOn": "2026-10-21",
+    "retrievedOn": "2026-10-23",
     "reference": "Government Gazette Nos. 54087 and 54088 (5 February 2026)",
-    "notes": "Tariffs include VAT. The poster states it does not replace the Gazette. Values were read from search-result extracts; the PDF itself could not be opened from the build environment. Verify against the Gazette before marking any value verified."
+    "notes": "Opened and read in full on 23 October 2026: 73 tariff rows for all SANRAL, N3TC, TRAC and Bakwena conventional plazas, colour-coded by operator. Tariffs include VAT. The poster states it does not replace Government Gazette Nos. 54087 and 54088 (5 February 2026); those could not be retrieved, because gpwonline serves them through SharePoint."
   },
   {
     "id": "sanews-2026-toll-increase",
@@ -32,7 +32,7 @@
     "publishedOn": "2025-02-07",
     "retrievedOn": "2026-10-21",
     "reference": "Government Gazette No. 52073 (7 February 2025)",
-    "notes": "4.84% CPI-linked adjustment. Defines classes by axle count. Extract text was partly garbled."
+    "notes": "4.84% CPI-linked adjustment. Defines classes by axle count. Extract text was partly garbled. Superseded as a reference by the Gazette itself (gazette-52073-2025)."
   },
   {
     "id": "satrucker-2025",
@@ -52,7 +52,7 @@
     "kind": "operator_website",
     "official": true,
     "retrievedOn": "2026-10-21",
-    "notes": "As indexed, the page is headed '1 March 2026' but its figures are identical to the published 2025 schedule. Conflict recorded; N3 rows are under review."
+    "notes": "Could not be opened on 23 October 2026: the site's certificate chains to Let's Encrypt's new ISRG Root YR, which the build environment does not trust. The figures seen earlier in a search index equal the 2025 values in Government Gazette No. 52072, so that snapshot showed the 2025 schedule. The 2026 N3 values follow the SANRAL 2026 poster."
   },
   {
     "id": "foresight-n3-2026",
@@ -71,8 +71,8 @@
     "url": "https://tracn4.co.za/toll-plazas-toll-fees/",
     "kind": "operator_website",
     "official": true,
-    "retrievedOn": "2026-10-21",
-    "notes": "2026 tariffs for all four classes. The page lists two Class 3 lines for Middelburg (R277 and R281)."
+    "retrievedOn": "2026-10-23",
+    "notes": "Effective from 1 March 2026. Opened on 23 October 2026: lists eight South African plazas (including Cullinan Ramp); every value matches the SANRAL 2026 poster. Middelburg now shows a single Class 3 amount (R277)."
   },
   {
     "id": "bakwena-tolls-and-tariffs",
@@ -81,8 +81,8 @@
     "url": "https://www.bakwena.co.za/tolls-and-tariffs/",
     "kind": "operator_website",
     "official": true,
-    "retrievedOn": "2026-10-21",
-    "notes": "Tariffs valid 1 March 2026 to 28 February 2027, VAT inclusive. Adjusted annually with CPI, subject to the Minister's approval."
+    "retrievedOn": "2026-10-23",
+    "notes": "Tariffs valid 1 March 2026 to 28 February 2027, VAT inclusive. Opened on 23 October 2026: lists every Bakwena N1 and N4 plaza, including Murrayhill, Hammanskraal, Maubane, Buffelspoort Ramps and 'Doornpoort Ramps'. Every value matches the SANRAL 2026 poster."
   },
   {
     "id": "joburgetc-2026",
@@ -341,5 +341,29 @@
     "official": false,
     "retrievedOn": "2026-10-21",
     "notes": "Matches the SA Trucker 2025 table for N17 plazas."
+  },
+  {
+    "id": "gazette-52073-2025",
+    "title": "Huguenot, Vaal River, Great North, Tsitsikamma, South Coast, North Coast, Mariannhill, Magalies, N17 and R30/R730/R34 Toll Roads: amounts of toll from 1 March 2025",
+    "publisher": "Government Gazette (Department of Transport)",
+    "url": "https://www.nra.co.za/uploads/17/20250207%20Goverment%20Gazette%20Vol716%20No52073%207-2%20Transport%20-%20SANRAL%20CTROM%20Toll%20Tariffs%2020250301_0.pdf",
+    "kind": "government_gazette",
+    "official": true,
+    "publishedOn": "2025-02-07",
+    "retrievedOn": "2026-10-23",
+    "reference": "Government Gazette Vol. 716 No. 52073, Notice 5853 (7 February 2025)",
+    "notes": "Copy hosted by SANRAL. Scanned pages: values were read from the page images on 23 October 2026."
+  },
+  {
+    "id": "gazette-52072-2025",
+    "title": "National Routes 1 and 4 Platinum Toll Road and National Route 3 Cedara to Heidelberg Toll Road: amounts of toll from 1 March 2025",
+    "publisher": "Government Gazette (Department of Transport)",
+    "url": "https://www.nra.co.za/uploads/17/20250207%20Government%20gazette%20Vol716%20No52072%207-2%20Transport%20-%20SANRAL%20Concessionairs%20Toll%20Tariffs%2020250301.pdf",
+    "kind": "government_gazette",
+    "official": true,
+    "publishedOn": "2025-02-07",
+    "retrievedOn": "2026-10-23",
+    "reference": "Government Gazette Vol. 716 No. 52072, Notice 5852 (7 February 2025)",
+    "notes": "Copy hosted by SANRAL. Scanned pages: values were read from the page images on 23 October 2026."
   }
 ]

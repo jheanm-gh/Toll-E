@@ -1,12 +1,39 @@
-# N3TC tariffs 1 March 2025 – 28 February 2026 (expired). Two sources agree for these rows.
+# N3TC tariffs 1 March 2025 – 28 February 2026 (expired), from Government Gazette No. 52072 (7 Feb 2025).
+# Kept for history and the CPI-consistency check. Values were read from the scanned Gazette pages on 23 Oct 2026.
 plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
-n3-de-hoek,class1,65.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-de-hoek,class2,101.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-de-hoek,class3,154.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-de-hoek,class4,222.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-wilge,class1,90.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-tugela,class1,96.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-mooi,class1,67.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-mooi,class2,165.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-mooi,class3,231.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
-n3-mooi,class4,313.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,satrucker-2025,,2026-10-21,,,
+n3-de-hoek,class1,65.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-de-hoek,class2,101.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-de-hoek,class3,154.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-de-hoek,class4,222.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-wilge,class1,90.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-wilge,class2,155.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-wilge,class3,207.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-wilge,class4,294.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-tugela,class1,96.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-tugela,class2,159.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-tugela,class3,251.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-tugela,class4,347.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi,class1,67.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-mooi,class2,165.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-mooi,class3,231.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-mooi,class4,313.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Matches Gazette No. 52072 (checked 23 Oct 2026). Previously cited satrucker-2025.
+n3-mooi-south-ramp,class1,47.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi-south-ramp,class2,115.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi-south-ramp,class3,162.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi-south-ramp,class4,219.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi-north-ramp,class1,20.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi-north-ramp,class2,49.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi-north-ramp,class3,69.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-mooi-north-ramp,class4,94.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-treverton-ramp,class1,20.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-treverton-ramp,class2,49.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-treverton-ramp,class3,69.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-treverton-ramp,class4,94.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-bergville-ramp,class1,29.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-bergville-ramp,class2,34.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-bergville-ramp,class3,63.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-bergville-ramp,class4,96.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-tugela-east-ramp,class1,60.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-tugela-east-ramp,class2,99.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-tugela-east-ramp,class3,147.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.
+n3-tugela-east-ramp,class4,204.00,n3tc-2025,2025-03-01,2026-02-28,any,,unverified,published,gazette-52072-2025,"Table 1, p. 14",2026-10-23,,,Read from the scanned Gazette page on 23 Oct 2026; consistent with the 2026 value after the CPI adjustment.

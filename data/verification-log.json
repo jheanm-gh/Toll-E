@@ -6,5 +6,13 @@
     "attempted": "Open the SANRAL 2026 tariff publication, Government Gazette Nos. 54087 and 54088 (5 February 2026), and the N3TC, TRAC and Bakwena tariff pages.",
     "outcome": "Not possible from the build environment: those sites are blocked by its network policy. Values were taken from search-indexed extracts of the same publications, corroborated with secondary sources and checked for consistency with the published CPI adjustment. Nothing was marked verified. Disagreements were marked under review (N3TC, Huguenot Class 3).",
     "result": "0 tariffs verified; 0 journey sequences verified"
+  },
+  {
+    "date": "2026-10-23",
+    "by": "Toll-E build (automated comparison, not a person)",
+    "scope": "All 2026 tariffs for classes 1-4 at SANRAL, N3TC, TRAC and Bakwena plazas; 2025 history",
+    "attempted": "Opened the SANRAL 2026 tariff poster (nra.co.za), the TRAC and Bakwena tariff pages, and SANRAL's copies of Government Gazette Nos. 52072 and 52073 (2025). Parsed the poster's 73 rows by machine; read the scanned 2025 Gazette tables from page images. Gazette Nos. 54087/54088 (2026) could not be retrieved (served via SharePoint); the N3TC site could not be opened (certificate chain).",
+    "outcome": "All 243 loaded 2026 prices matched the poster exactly, and the TRAC and Bakwena pages agree with it. Added the 5 missing 2026 prices (Sebetiela, Nyl Ramp Class 4) and 12 plazas listed on the poster. Corrected one 2025 history value (Huguenot Class 3: R299 to R229, per Gazette No. 52073) and added the missing 2025 rows. Resolved the N3TC dispute (the indexed N3TC page showed the 2025 Gazette values) and the Bakwena ramp dispute (listed on Bakwena's page).",
+    "result": "296 of 296 standard-class 2026 prices match official SANRAL and operator publications; 0 marked verified, because no person has checked them against the Gazette"
   }
 ]

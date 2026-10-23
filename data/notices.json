@@ -1,8 +1,8 @@
 [
   {
     "id": "tariffs-2026-unverified",
-    "title": "2026 tariffs — not yet verified by Toll-E",
-    "body": "Toll tariffs were adjusted on 1 March 2026 (SANRAL +3.12%, Government Gazette Nos. 54087 and 54088). Toll-E has loaded the published values but a person has not yet checked them against the Gazette. Every price shows its status and source — confirm with the operator before relying on it.",
+    "title": "2026 tariffs: not yet checked against the Gazette",
+    "body": "Toll tariffs were adjusted on 1 March 2026 (SANRAL +3.12%, Government Gazette Nos. 54087 and 54088). Every price in Toll-E matches SANRAL's official 2026 tariff publication and the TRAC and Bakwena tariff pages. A person has not yet checked them against the Gazette itself, so they are still marked Unverified. The amount shown at the plaza is what you pay.",
     "severity": "warning",
     "showFrom": "2026-03-01",
     "showUntil": null,
@@ -14,7 +14,7 @@
     "body": "N3 Toll Concession's website and SANRAL's 2026 tariff poster show different N3 tariffs. Toll-E shows the poster figures and marks every N3TC plaza as under review until the Gazette is checked.",
     "severity": "warning",
     "showFrom": "2026-03-01",
-    "showUntil": null,
+    "showUntil": "2026-10-22",
     "sourceIds": ["n3tc-toll-tariffs", "sanral-tariffs-2026-poster"]
   },
   {

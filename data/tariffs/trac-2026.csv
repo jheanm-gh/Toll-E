@@ -1,30 +1,34 @@
-# TRAC N4 tariffs from 1 March 2026 (operator website; matches the SANRAL-branded table reported by TopAuto).
+# TRAC N4 tariffs from 1 March 2026 (operator website). Every value matches the SANRAL 2026 poster (checked 23 Oct 2026).
 plaza_id,vehicle_class,amount,schedule_id,effective_from,effective_to,direction,condition,verification_status,publication_status,source_id,source_locator,checked_on,verified_on,verified_by,notes
-n4-donkerhoek-ramp,class1,17.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-donkerhoek-ramp,class2,24.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-donkerhoek-ramp,class3,34.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-donkerhoek-ramp,class4,66.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-diamond-hill,class1,51.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-diamond-hill,class2,70.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-diamond-hill,class3,133.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-diamond-hill,class4,220.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-valtaki-ramp,class1,39.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-valtaki-ramp,class2,55.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-valtaki-ramp,class3,81.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-valtaki-ramp,class4,183.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-ekandustria-ramp,class1,31.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-ekandustria-ramp,class2,47.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-ekandustria-ramp,class3,65.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-ekandustria-ramp,class4,130.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-middelburg,class1,84.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-middelburg,class2,182.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-middelburg,class3,277.00,trac-2026,2026-03-01,,any,,pending_review,published,trac-toll-fees,,2026-10-21,,,"The operator page lists two Class 3 lines for Middelburg (R277 and R281). R281 matches Nkomazi's Class 3."
-n4-middelburg,class4,365.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-machado,class1,126.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-machado,class2,350.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-machado,class3,510.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-machado,class4,729.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-nkomazi,class1,95.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-nkomazi,class2,193.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-nkomazi,class3,281.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
-n4-nkomazi,class4,405.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-21,,,
+n4-donkerhoek-ramp,class1,17.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-donkerhoek-ramp,class2,24.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-donkerhoek-ramp,class3,34.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-donkerhoek-ramp,class4,66.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-diamond-hill,class1,51.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-diamond-hill,class2,70.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-diamond-hill,class3,133.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-diamond-hill,class4,220.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-valtaki-ramp,class1,39.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-valtaki-ramp,class2,55.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-valtaki-ramp,class3,81.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-valtaki-ramp,class4,183.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-ekandustria-ramp,class1,31.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-ekandustria-ramp,class2,47.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-ekandustria-ramp,class3,65.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-ekandustria-ramp,class4,130.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-middelburg,class1,84.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-middelburg,class2,182.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-middelburg,class3,277.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The TRAC page now lists a single Class 3 amount (R277). The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-middelburg,class4,365.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-machado,class1,126.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-machado,class2,350.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-machado,class3,510.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-machado,class4,729.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-nkomazi,class1,95.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-nkomazi,class2,193.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-nkomazi,class3,281.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-nkomazi,class4,405.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value (checked 23 Oct 2026).
+n4-cullinan-ramp,class1,21.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value.
+n4-cullinan-ramp,class2,34.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value.
+n4-cullinan-ramp,class3,51.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value.
+n4-cullinan-ramp,class4,86.00,trac-2026,2026-03-01,,any,,unverified,published,trac-toll-fees,,2026-10-23,,,The SANRAL 2026 poster gives the same value.

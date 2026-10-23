@@ -57,10 +57,13 @@ select pg_temp.check((select count(*) from public.plazas where id = 'n1-vaal') =
 reset role;
 select pg_temp.expect_error($$delete from public.tariffs where id = 'sanral-2025-n1-vaal-class1'$$, 'service role deleting a published tariff');
 select pg_temp.expect_error($$delete from public.plazas where id = 'n1-vaal'$$, 'service role deleting a published plaza');
+-- A draft that cites a secondary (non-official) source, for the verification checks below.
+insert into public.tariffs (id, plaza_id, vehicle_class_id, class_scheme_id, amount_cents, effective_from, schedule_id, source_id, checked_on, publication_status)
+values ('test-secondary-n1-kranskop-class1', 'n1-kranskop', 'class1', 'za-standard', 6150, '2027-03-01', 'sanral-2026', 'foresight-n3-2026', '2026-10-21', 'draft');
 set role authenticated;
 
 -- ---- verification needs an official source and a named verifier
-select pg_temp.expect_error($$select public.verify_tariff('sanral-2026-n1-kranskop-class1')$$, 'verifying against a secondary source');
+select pg_temp.expect_error($$select public.verify_tariff('test-secondary-n1-kranskop-class1')$$, 'verifying against a secondary source');
 select pg_temp.check((public.verify_tariff('sanral-2026-n1-vaal-class2', '2026-10-21')).verified_by = 'Test Publisher', 'publisher verifies against the official poster');
 select pg_temp.check((select verification_status from public.tariffs where id = 'sanral-2026-n1-vaal-class2') = 'verified', 'verification recorded');
 select pg_temp.expect_error($$update public.tariffs set verification_status = 'verified', verified_on = null where id = 'sanral-2026-n1-vaal-class3'$$, 'verified without a date');
