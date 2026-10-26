@@ -4,22 +4,23 @@
  *
  * Placement policy (see docs/monetisation.md):
  * - Banners only. No interstitial, rewarded or app-open ads.
- * - Never on the map, the calculator, the purchase screen, or next to navigation actions.
+ * - At most one banner per screen, anchored to the bottom edge outside the scrolling content, so it never sits
+ *   between toll information and never moves under the user's finger while scrolling.
+ * - Never on the map tab (including its list view), the calculator, the purchase screen or the directions sheet,
+ *   and never placed beside a navigation button: the banner sits at the screen edge, below a labelled rule.
  * - Always labelled "Advertisement" and separated from toll information.
  */
-export type AdPlacementId = 'home_footer' | 'directory_inline' | 'plaza_detail_footer';
+export type AdPlacementId = 'home_footer' | 'directory_footer' | 'plaza_detail_footer';
 
 export interface AdPlacement {
   enabled: boolean;
   description: string;
-  /** For list placements: show a single banner after this many results (never more than one). */
-  afterItems?: number;
 }
 
 export const AD_PLACEMENTS: Record<AdPlacementId, AdPlacement> = {
-  home_footer: { enabled: true, description: 'Bottom of the home screen, below notices and shortcuts.' },
-  directory_inline: { enabled: true, afterItems: 8, description: 'One banner after the 8th result in the plaza list.' },
-  plaza_detail_footer: { enabled: true, description: 'Bottom of a plaza page, below sources.' },
+  home_footer: { enabled: true, description: 'Fixed to the bottom of the home screen, above the tab bar.' },
+  directory_footer: { enabled: true, description: 'Fixed to the bottom of the plaza list (not the map tab’s list).' },
+  plaza_detail_footer: { enabled: true, description: 'Fixed to the bottom of a plaza page.' },
 };
 
 /** Master switch, e.g. to pause ads during an incident. */

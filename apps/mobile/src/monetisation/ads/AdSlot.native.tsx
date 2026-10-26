@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AppText } from '@/components/ui';
-import { colors, radii, spacing } from '@/theme/tokens';
+import { colors, spacing } from '@/theme/tokens';
 
 import type { AdPlacementId } from '../config';
 
@@ -19,16 +20,23 @@ try {
 }
 
 /**
- * A single banner, always labelled "Advertisement" and visually separated from toll data. Renders nothing when ads are off, purchased away, not consented,
- * not configured, or when the banner fails to load — the layout simply closes up.
+ * A single banner anchored to the bottom of a screen, outside its scrolling content. It is always labelled
+ * "Advertisement" and separated from toll data by a rule. Renders nothing when ads are off, purchased away, not
+ * consented, not configured, or when the banner fails to load: the screen simply gets that space back.
+ *
+ * `insetBottom` adds the device's bottom safe area, for screens without a tab bar below them.
  */
-export function AdSlot({ placement }: { placement: AdPlacementId }) {
+export function AdSlot({ placement, insetBottom = false }: { placement: AdPlacementId; insetBottom?: boolean }) {
   const { canShow, unitId, personalised } = useAds();
+  const { bottom } = useSafeAreaInsets();
   const [failed, setFailed] = useState(false);
   if (!mod || !unitId || !canShow(placement) || failed) return null;
   const { BannerAd, BannerAdSize } = mod;
   return (
-    <View style={styles.wrap} accessibilityLabel="Advertisement" testID={`ad-slot-${placement}`}>
+    <View
+      style={[styles.wrap, insetBottom && { paddingBottom: spacing.xs + bottom }]}
+      accessibilityLabel="Advertisement"
+      testID={`ad-slot-${placement}`}>
       <AppText variant="label" color={colors.ink500} style={styles.label}>
         Advertisement
       </AppText>
@@ -44,16 +52,13 @@ export function AdSlot({ placement }: { placement: AdPlacementId }) {
 
 const styles = StyleSheet.create({
   wrap: {
-    marginTop: spacing.lg,
-    paddingTop: spacing.sm,
-    paddingBottom: spacing.sm,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.borderStrong,
+    paddingTop: spacing.xs,
+    paddingBottom: spacing.xs,
+    borderTopWidth: 1,
+    borderTopColor: colors.borderStrong,
     backgroundColor: colors.surfaceMuted,
-    borderRadius: radii.sm,
     alignItems: 'center',
     gap: spacing.xs,
   },
-  label: { alignSelf: 'flex-start', paddingHorizontal: spacing.sm },
+  label: { alignSelf: 'flex-start', paddingHorizontal: spacing.lg },
 });

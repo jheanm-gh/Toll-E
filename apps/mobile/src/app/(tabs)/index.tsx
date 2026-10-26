@@ -83,7 +83,11 @@ export default function HomeScreen() {
   };
 
   return (
-    <Screen onRefresh={data.remoteConfigured ? refresh : undefined} refreshing={refreshing}>
+    <Screen
+      onRefresh={data.remoteConfigured ? refresh : undefined}
+      refreshing={refreshing}
+      testID="home-scroll"
+      footer={<AdSlot placement="home_footer" />}>
       <View style={styles.hero}>
         <Logo inverse />
         <AppText variant="display" color={colors.white} style={styles.tagline}>
@@ -269,7 +273,6 @@ export default function HomeScreen() {
           Toll-E is free and supported by advertising.
         </AppText>
       </Pressable>
-      <AdSlot placement="home_footer" />
     </Screen>
   );
 }

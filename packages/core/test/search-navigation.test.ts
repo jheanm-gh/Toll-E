@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest';
 
-import { availableRoutes, destinationUrl, journeyUrl, plazaNavigationTarget, searchPlazas } from '../src';
+import {
+  availableOperators,
+  availableRoutes,
+  destinationUrl,
+  journeyUrl,
+  plazaNavigationTarget,
+  searchPlazas,
+  sortPlazaResults,
+} from '../src';
 import { dataset, plaza } from './fixtures';
 
 const loc = (lat: number, lng: number, precision: 'verified' | 'approximate' = 'approximate') => ({
@@ -57,6 +65,68 @@ describe('searchPlazas', () => {
   });
   it('sorts routes naturally', () => {
     expect(availableRoutes(ds)).toEqual(['N1', 'N3', 'N9', 'N17']);
+  });
+});
+
+describe('sortPlazaResults', () => {
+  const all = searchPlazas(ds);
+  const ids = (rs: { plaza: { id: string } }[]) => rs.map((r) => r.plaza.id);
+  // Prices in cents for the class shown; Stormvoël and the Mooi ramp have none.
+  const price = (p: { id: string }) =>
+    (({ 'p-mooi': 9_000, 'p-grasmere': 4_500, 'p-n17': 4_500 }) as Record<string, number>)[p.id] ?? null;
+
+  it('sorts by name, ignoring accents and case', () => {
+    expect(ids(sortPlazaResults(all, 'name'))).toEqual(['p-n17', 'p-grasmere', 'p-mooi', 'p-mooi-ramp', 'p-stormvoel']);
+  });
+  it('sorts by price both ways, plazas without a current price always last', () => {
+    expect(ids(sortPlazaResults(all, 'price_low', price))).toEqual([
+      'p-grasmere',
+      'p-n17',
+      'p-mooi',
+      'p-stormvoel',
+      'p-mooi-ramp',
+    ]);
+    expect(ids(sortPlazaResults(all, 'price_high', price))).toEqual([
+      'p-mooi',
+      'p-grasmere',
+      'p-n17',
+      'p-stormvoel',
+      'p-mooi-ramp',
+    ]);
+  });
+  it('sorts by province name, plazas without a province last', () => {
+    const someUnknown = all.map((r) =>
+      r.plaza.id === 'p-stormvoel' ? { ...r, plaza: { ...r.plaza, province: null } } : r,
+    );
+    // Gauteng (N1 Grasmere, N17 Dalpark), then KwaZulu-Natal (both N3, by name), then no province.
+    expect(ids(sortPlazaResults(someUnknown, 'province'))).toEqual([
+      'p-grasmere',
+      'p-n17',
+      'p-mooi',
+      'p-mooi-ramp',
+      'p-stormvoel',
+    ]);
+  });
+  it('keeps best-match order for relevance and does not change its input', () => {
+    const found = searchPlazas(ds, { query: 'mooi' });
+    const before = ids(found);
+    expect(ids(sortPlazaResults(found, 'name'))).toEqual(['p-mooi', 'p-mooi-ramp']);
+    expect(ids(sortPlazaResults(found, 'relevance'))).toEqual(before);
+    expect(ids(found)).toEqual(before);
+  });
+  it('can re-sort distance results by another order', () => {
+    const near = searchPlazas(ds, {}, { lat: -26.26, lng: 28.3 });
+    expect(ids(sortPlazaResults(near, 'distance'))).toEqual(ids(near));
+    expect(sortPlazaResults(near, 'name')[0]?.plaza.id).toBe('p-n17');
+    expect(sortPlazaResults(near, 'name')[0]?.distanceMetres).toBeLessThan(5000);
+  });
+  it('lists only operators that have an active, published plaza', () => {
+    const base = dataset();
+    const withSpare = dataset({
+      plazas: ds.plazas,
+      operators: [...base.operators, { ...base.operators[0]!, id: 'op-unused', shortName: 'AAA' }],
+    });
+    expect(availableOperators(withSpare).map((o) => o.id)).toEqual(['op-a']);
   });
 });
 

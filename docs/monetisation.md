@@ -11,9 +11,12 @@ All placements and product identifiers are defined in one file:
 ### Policy built into the code
 
 - **Banners only.** No interstitial, rewarded, app-open or video ads.
-- **Three placements**, each at most once per screen: the bottom of Home (`home_footer`), one banner after the
-  8th result in the plaza list (`directory_inline`), and the bottom of a plaza page (`plaza_detail_footer`).
-- **Never** on the map, in the calculator, on the purchase screen, or next to directions.
+- **Three placements**, one banner per screen, each **fixed to the bottom edge** outside the scrolling content, so it
+  stays on screen while the page scrolls above it (closed-test feedback, October 2026): Home (`home_footer`, above
+  the tab bar), the plaza list (`directory_footer`) and a plaza page (`plaza_detail_footer`). Banners never sit
+  between list results or inside toll information.
+- **Never** on the map tab (including its list view), in the calculator, on the purchase screen or in the
+  directions picker. On a plaza page the Directions button scrolls past the banner but is never placed beside it.
 - Every banner is labelled "Advertisement" and separated from toll information. If a banner fails to load, the
   space closes up.
 - **Non-personalised by default.** Personalised ads only if the user switches them on in More → Privacy.

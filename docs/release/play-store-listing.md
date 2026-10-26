@@ -26,6 +26,7 @@ Toll-E shows what South African toll plazas charge, for cars and for heavy vehic
 
 TOLL PLAZA DIRECTORY
 • Search toll plazas by name, road (N1, N2, N3, N4, N17 …) or nearby town
+• Sort by price, name, province or distance; filter by road, province, operator or plaza type
 • Prices for Class 1 (light vehicles) to Class 4 (5+ axle heavy vehicles)
 • The tariff period, the source of every price, and whether it has been verified
 • Announced price changes shown in advance, with the date they take effect
@@ -48,7 +49,7 @@ WORKS OFFLINE, NO ACCOUNT
 Toll-E keeps the latest toll data on your phone, so it works with no signal. You do not need an account. Your settings and saved trips stay on your device.
 
 FREE
-Toll-E is free and shows a small number of clearly labelled banner ads. Ads never appear on the map, in the calculator or next to directions.
+Toll-E is free and shows one clearly labelled banner at the bottom of some screens. Ads never appear on the map or in the calculator.
 
 Toll-E is not a navigation app and is not affiliated with SANRAL, N3 Toll Concession, TRAC, Bakwena or any toll operator.
 ```

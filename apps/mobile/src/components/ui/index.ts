@@ -8,6 +8,7 @@ export * from './Divider';
 export * from './EmptyState';
 export * from './Icon';
 export * from './ListRow';
+export * from './OptionSheet';
 export * from './Price';
 export * from './Screen';
 export * from './SectionHeader';

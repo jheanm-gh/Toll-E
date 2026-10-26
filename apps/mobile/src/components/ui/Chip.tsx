@@ -10,12 +10,15 @@ export function Chip({
   selected,
   onPress,
   icon,
+  menu,
   accessibilityLabel,
 }: {
   label: string;
   selected?: boolean;
   onPress: () => void;
   icon?: IconName;
+  /** Opens a list of choices: shows a down arrow after the label. */
+  menu?: boolean;
   accessibilityLabel?: string;
 }) {
   return (
@@ -23,6 +26,7 @@ export function Chip({
       accessibilityRole="button"
       accessibilityState={{ selected: !!selected }}
       accessibilityLabel={accessibilityLabel ?? label}
+      accessibilityHint={menu ? 'Opens a list of choices' : undefined}
       onPress={onPress}
       hitSlop={{ top: 6, bottom: 6 }}
       style={({ pressed }) => [
@@ -34,6 +38,7 @@ export function Chip({
       <AppText variant="smallStrong" color={selected ? colors.white : colors.ink700}>
         {label}
       </AppText>
+      {menu ? <Icon name="chevron-down" size={16} color={selected ? colors.white : colors.ink700} /> : null}
     </Pressable>
   );
 }

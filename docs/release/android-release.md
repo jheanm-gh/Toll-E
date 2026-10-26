@@ -125,10 +125,14 @@ On the first closed-test build, check by hand:
 
 - [ ] Home shows notices, quick estimates and "Built into this app version" (or "Updated from the Toll-E server").
 - [ ] Plaza list: search "Machado" → plaza page shows Classes 1–4 with "Unverified" badges and sources.
+- [ ] Plaza list: Sort → "Price: lowest first" puts the cheapest first; Province → KwaZulu-Natal shows only KZN
+      plazas; "Clear filters" brings everything back.
 - [ ] Map: plazas appear; with flight mode on, the offline outline appears with its banner.
 - [ ] Calculator: Johannesburg → Durban, Class 4, return → total shown as an estimate, five plazas each way.
 - [ ] "Near me" asks for location only when tapped; denying it shows a message, not a crash.
-- [ ] A banner labelled "Advertisement" appears at the bottom of Home and is a **Test Ad**.
+- [ ] A banner labelled "Advertisement" is fixed to the bottom of Home, the plaza list and a plaza page, stays put
+      while the page scrolls, and is a **Test Ad**. The Toll map tab (map and list) shows no banner.
+- [ ] More → Privacy → Clear history empties Saved → Recent; Delete all saved items empties Saved after a warning.
 - [ ] More → Privacy: "Ad privacy choices" appears only for EEA/UK users.
 - [ ] Directions opens Google Maps or Waze at the plaza.
 - [ ] Report incorrect information sends (with Supabase configured) or opens email.

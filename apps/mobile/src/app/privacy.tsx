@@ -24,7 +24,7 @@ export default function PrivacyScreen() {
             heading: 'Stored only on your device',
             bullets: [
               'Your default vehicle class and settings',
-              'Favourite plazas, saved and recent calculations',
+              'Favourite plazas, saved and recent calculations, and recently viewed plazas (clear them in More → Privacy)',
               'A copy of the toll data, so the app works offline',
               'Whether you have removed ads',
               'A random code used only to limit spam in correction reports',

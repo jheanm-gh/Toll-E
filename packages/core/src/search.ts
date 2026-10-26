@@ -1,5 +1,5 @@
 import { haversineMetres, type LatLng } from './geo';
-import type { Dataset, Plaza, PlazaType, ProvinceCode } from './model';
+import type { Dataset, Operator, Plaza, PlazaType, ProvinceCode } from './model';
 
 export const PROVINCE_NAMES: Record<ProvinceCode, string> = {
   EC: 'Eastern Cape',
@@ -94,16 +94,61 @@ export function searchPlazas(dataset: Dataset, filter: PlazaFilter = {}, near?: 
     results.push(result);
   }
 
-  return results.sort((a, b) => {
-    if (near) {
-      const da = a.distanceMetres ?? Number.POSITIVE_INFINITY;
-      const db = b.distanceMetres ?? Number.POSITIVE_INFINITY;
-      if (da !== db) return da - db;
+  return sortPlazaResults(results, near ? 'distance' : 'relevance');
+}
+
+/**
+ * Orders for a list of plazas. `relevance` is the best match to the search text, then road order.
+ * The price orders use the price shown in the list (one vehicle class).
+ */
+export type PlazaSort = 'relevance' | 'name' | 'price_low' | 'price_high' | 'province' | 'distance';
+
+const byRoad = (a: Plaza, b: Plaza) =>
+  a.route.localeCompare(b.route, 'en', { numeric: true }) || a.name.localeCompare(b.name, 'en');
+const lastIfMissing = (a: unknown, b: unknown) => (a == null ? (b == null ? 0 : 1) : b == null ? -1 : 0);
+
+/**
+ * Sorts search results (a new array; the input is unchanged). Plazas missing the value being sorted on (no current
+ * price, no recorded province, no known position) always come last, in road order, whichever direction is chosen.
+ * `priceCents` returns the price to sort by, or null when there is no current tariff.
+ */
+export function sortPlazaResults(
+  results: readonly PlazaSearchResult[],
+  sort: PlazaSort,
+  priceCents: (plaza: Plaza) => number | null = () => null,
+): PlazaSearchResult[] {
+  const prices =
+    sort === 'price_low' || sort === 'price_high' ? new Map(results.map((r) => [r, priceCents(r.plaza)])) : null;
+  return [...results].sort((a, b) => {
+    switch (sort) {
+      case 'name':
+        return a.plaza.name.localeCompare(b.plaza.name, 'en', { sensitivity: 'base' }) || byRoad(a.plaza, b.plaza);
+      case 'price_low':
+      case 'price_high': {
+        const pa = prices!.get(a) ?? null;
+        const pb = prices!.get(b) ?? null;
+        const missing = lastIfMissing(pa, pb);
+        if (missing || pa === null || pb === null) return missing || byRoad(a.plaza, b.plaza);
+        return (sort === 'price_low' ? pa - pb : pb - pa) || byRoad(a.plaza, b.plaza);
+      }
+      case 'province': {
+        const pa = a.plaza.province ? PROVINCE_NAMES[a.plaza.province] : null;
+        const pb = b.plaza.province ? PROVINCE_NAMES[b.plaza.province] : null;
+        const missing = lastIfMissing(pa, pb);
+        if (missing || pa === null || pb === null) return missing || byRoad(a.plaza, b.plaza);
+        return pa.localeCompare(pb, 'en') || byRoad(a.plaza, b.plaza);
+      }
+      case 'distance': {
+        const missing = lastIfMissing(a.distanceMetres, b.distanceMetres);
+        if (missing) return missing;
+        const d = (a.distanceMetres ?? 0) - (b.distanceMetres ?? 0);
+        if (d !== 0) return d;
+        break;
+      }
+      case 'relevance':
+        break;
     }
-    if (b.score !== a.score) return b.score - a.score;
-    return (
-      a.plaza.route.localeCompare(b.plaza.route, 'en', { numeric: true }) || a.plaza.name.localeCompare(b.plaza.name)
-    );
+    return b.score - a.score || byRoad(a.plaza, b.plaza);
   });
 }
 
@@ -112,6 +157,14 @@ export function availableRoutes(dataset: Dataset): string[] {
   return [...new Set(dataset.plazas.filter((p) => p.publicationStatus === 'published').map((p) => p.route))].sort(
     (a, b) => a.localeCompare(b, 'en', { numeric: true }),
   );
+}
+
+/** Operators with at least one published, active plaza, by short name. */
+export function availableOperators(dataset: Dataset): Operator[] {
+  const ids = new Set(
+    dataset.plazas.filter((p) => p.publicationStatus === 'published' && p.status === 'active').map((p) => p.operatorId),
+  );
+  return dataset.operators.filter((o) => ids.has(o.id)).sort((a, b) => a.shortName.localeCompare(b.shortName, 'en'));
 }
 
 export function availableProvinces(dataset: Dataset): ProvinceCode[] {

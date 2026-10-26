@@ -111,7 +111,7 @@ export default function PlazaScreen() {
   const hasPast = history.some((h) => h.list.some((t) => t.effectiveTo !== null && t.effectiveTo < today));
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={[]} testID="plaza-scroll" footer={<AdSlot placement="plaza_detail_footer" insetBottom />}>
       <Stack.Screen
         options={{
           title: plaza.name,
@@ -424,8 +424,6 @@ export default function PlazaScreen() {
           onPress={() => router.push({ pathname: '/report', params: { plazaId: plaza.id } })}
         />
       ) : null}
-
-      <AdSlot placement="plaza_detail_footer" />
 
       <NavigateSheet
         visible={navOpen}

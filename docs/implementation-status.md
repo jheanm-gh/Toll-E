@@ -1,6 +1,6 @@
 # Implementation status
 
-_Last updated 23 October 2026._ This page says plainly what exists, what has been tested and how, and what is
+_Last updated 26 October 2026._ This page says plainly what exists, what has been tested and how, and what is
 still outstanding. "Tested" means an automated test or a manual check actually ran and passed in this
 repository. Nothing here was run on an Android device or emulator, and no external service (Expo/EAS,
 Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
@@ -14,7 +14,7 @@ Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
 | b. Routes only if sequence verified | ✅ Done | Production builds hide unverified routes (`offeredJourneys`, tested). Closed-test builds show them labelled "Plaza sequence not yet checked". |
 | b. Supabase + bundled fallback + dated offline cache | ✅ Built, ❌ not connected | Feed RPC, validation, cache and retrieval-date label are implemented and tested (Jest, SQL). No Supabase project exists yet ([release/backend-setup.md](release/backend-setup.md)). |
 | **c. Tariff updates without an app release** | ✅ Done (procedure), ❌ not rehearsed on real Supabase | `data:next-year` → `data:supabase-sql` → SQL Editor → `schedule_review` → `verify_schedule` → `publish_schedule`; plus `correct_tariff` and `verify_journey`. Rehearsed end to end in the SQL tests; the feed is then checked with the app's validator. Guide: [data-operations.md](data-operations.md). |
-| **d. AdMob banners**, central config, test ids, UMP | ✅ Built, ❌ not run on a device | Three banner placements, test ads in every non-production build, consent before requests, non-personalised by default, and ad-free users never start the SDK (a bug fixed and tested in this session). |
+| **d. AdMob banners**, central config, test ids, UMP | ✅ Built, ❌ not run on a device | Three banner placements, each fixed to the bottom of its screen (Home, plaza list, plaza page; never the map tab), test ads in every non-production build, consent before requests, non-personalised by default, and ad-free users never start the SDK. |
 | **e. Purchase / restore / entitlement** | ✅ Built behind a flag, **flag off** | `EXPO_PUBLIC_ENABLE_PURCHASES` is off until a licence-tester purchase works. With it off, no purchase controls exist (tested). The states are tested with the simulated store. Not tested against Google Play/RevenueCat. |
 | **f. Typecheck, lint, tests** | ✅ Pass | See "Checks run" below. |
 | f. Run on a real Android device | ✅ Done by the owner on a Samsung Galaxy S26 Ultra (23 Oct 2026, local test build 3) | Every screen works. The first two builds closed at launch because R8 code shrinking had removed classes native code needs; shrinking is now off. Not yet testable: sending a correction report (needs Supabase or a support email). The emulator cannot run in the build container (no hardware virtualisation). |
@@ -22,7 +22,15 @@ Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
 | f. Play listing material | ✅ Written | Name, descriptions, content rating and Data safety answers, feature graphic, icon and 7 screenshots ([release/play-store-listing.md](release/play-store-listing.md)). The screenshots come from the web build. |
 | f. Privacy policy and terms at a free URL | ✅ Written, ❌ not published | `site/` plus a manual GitHub Pages workflow → `https://jheanm-gh.github.io/Toll-E/`. The owner name, email and date are placeholders that block publishing until filled in ([release/legal-pages.md](release/legal-pages.md)). |
 
-## Checks run (22 October 2026)
+## Tester feedback (26 October 2026)
+
+| Feedback | Change |
+| --- | --- |
+| Let users clear their history | More → Privacy: **Clear history** (recent calculations and recently viewed plazas) and **Delete all saved items** (also saved trips and favourites), each after a confirmation. The Saved screen has a Clear button on each history section. Tested in `apps/mobile/test/history.test.tsx`. |
+| Sort and filter toll plazas by price, name, province | Plaza list: **Sort** (default, name, price lowest or highest first for your vehicle class, province, distance) and **Province** and **Operator** filters beside the road and type filters, with "Clear filters". Plazas missing the value (no current price, no province, no position) are listed last and the app says so. Sorting is in `@toll-e/core` (`sortPlazaResults`); tested in core and in `directory.test.tsx`. |
+| Keep the banner on screen while scrolling | Banners are anchored to the bottom edge, outside the scrolling content, on Home, the plaza list and plaza pages. The banner no longer appears between list results, and the map tab's list has none. Tested in `ads.test.tsx`. |
+
+## Checks run (26 October 2026)
 
 | Check | Result |
 | --- | --- |
@@ -30,9 +38,9 @@ Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
 | `npm run lint` (ESLint, Expo + React Compiler rules) | pass, 0 problems |
 | `npm run typecheck` (mobile, core, core tests, scripts) | pass |
 | `npm run data:validate` | pass: 75 plazas, 562 tariffs, 0 errors, 1 warning (insecure source URL) |
-| Core unit tests (vitest) | 158 passed |
-| Mobile UI tests (Jest + RNTL) | 23 passed |
-| `npm run test:db` (PostgreSQL 16, Supabase stand-ins) | 99 checks passed, plus feed parity and app validation of the feed |
+| Core unit tests (vitest) | 164 passed |
+| Mobile UI tests (Jest + RNTL) | 34 passed |
+| `npm run test:db` (PostgreSQL 16, Supabase stand-ins) | 99 checks passed, plus feed parity and app validation of the feed (22 Oct; no database change since) |
 | `npm run build:web` (Expo web export) | pass |
 | `npm run release:check` | **not ready**: 0 of 297 prices signed off by a person, 8 routes unverified, 0 missing |
 

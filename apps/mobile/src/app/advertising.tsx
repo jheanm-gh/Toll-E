@@ -20,9 +20,9 @@ export default function AdvertisingScreen() {
           {
             heading: 'Where ads appear',
             bullets: [
-              'At most one banner on the home screen, one in the plaza list and one at the bottom of a plaza page.',
+              'One banner, fixed to the bottom of the home screen, the plaza list and plaza pages. It never covers toll information: the page scrolls above it.',
               'Every ad is labelled “Advertisement” and kept apart from toll information.',
-              'Never on the map, in the calculator, on the purchase screen or next to directions.',
+              'Never on the map (including its list view), in the calculator, on the purchase screen or in the directions picker.',
               'No pop-up, full-screen or video ads.',
             ],
           },

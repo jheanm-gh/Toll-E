@@ -53,7 +53,10 @@ interface SavedState extends Saved {
   removeCalculation: (id: string) => void;
   recordRecentCalculation: (c: Omit<SavedCalculation, 'id' | 'savedAt'>) => void;
   recordPlazaView: (plazaId: string) => void;
-  clearRecent: () => void;
+  /** Clears history: recent calculations, recently viewed plazas, or both (the default). */
+  clearRecent: (what?: 'calculations' | 'plazas') => void;
+  /** Deletes everything this provider stores: saved trips, favourites and history. */
+  clearAll: () => void;
 }
 
 const Ctx = createContext<SavedState | null>(null);
@@ -122,7 +125,13 @@ export function SavedProvider({ children }: { children: ReactNode }) {
             ? s
             : { ...s, recentPlazaIds: [id, ...s.recentPlazaIds.filter((x) => x !== id)].slice(0, MAX_RECENT) },
         ),
-      clearRecent: () => mutate((s) => ({ ...s, recentCalculations: [], recentPlazaIds: [] })),
+      clearRecent: (what) =>
+        mutate((s) => ({
+          ...s,
+          recentCalculations: what === 'plazas' ? s.recentCalculations : [],
+          recentPlazaIds: what === 'calculations' ? s.recentPlazaIds : [],
+        })),
+      clearAll: () => mutate(() => EMPTY),
     }),
     [saved, loaded, mutate],
   );

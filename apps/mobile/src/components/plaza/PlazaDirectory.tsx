@@ -1,14 +1,35 @@
-import { STANDARD_CLASS_LABEL, availableRoutes, searchPlazas, type LatLng, type PlazaType } from '@toll-e/core';
-import { useMemo, useState, type ReactElement } from 'react';
+import {
+  PROVINCE_NAMES,
+  STANDARD_CLASS_LABEL,
+  availableOperators,
+  availableProvinces,
+  availableRoutes,
+  searchPlazas,
+  sortPlazaResults,
+  type LatLng,
+  type PlazaSort,
+  type PlazaType,
+  type ProvinceCode,
+} from '@toll-e/core';
+import { useMemo, useState, type ReactElement, type ReactNode } from 'react';
 import { FlatList, Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppText, Banner, Button, Chip, Divider, EmptyState, Icon, TextField } from '@/components/ui';
+import {
+  AppText,
+  Banner,
+  Button,
+  Chip,
+  Divider,
+  EmptyState,
+  Icon,
+  OptionSheet,
+  TextField,
+  type SheetOption,
+} from '@/components/ui';
 import { useData } from '@/data/DataProvider';
 import { computePlazaInfo } from '@/hooks/usePlazaInfo';
 import { useToday } from '@/hooks/useToday';
-import { AD_PLACEMENTS } from '@/monetisation/config';
-import { AdSlot } from '@/monetisation/ads/AdSlot';
 import { REFERENCE_TOWNS, getLocationOnce } from '@/services/location';
 import { usePreferences } from '@/state/preferences';
 import { useSaved } from '@/state/saved';
@@ -17,16 +38,28 @@ import { colors, radii, spacing } from '@/theme/tokens';
 import { PlazaRow } from './PlazaRow';
 
 type Near = { coords: LatLng; label: string } | null;
-type Row = { kind: 'plaza'; id: string; distance?: number } | { kind: 'ad' };
+type Sheet = 'sort' | 'province' | 'operator' | null;
+
+const SORT_CHIP_LABEL: Record<PlazaSort, string> = {
+  relevance: 'Sort',
+  name: 'Name A–Z',
+  price_low: 'Lowest price',
+  price_high: 'Highest price',
+  province: 'By province',
+  distance: 'Nearest',
+};
 
 export function PlazaDirectory({
   initialQuery = '',
   header,
   initialNear = false,
+  footer,
 }: {
   initialQuery?: string;
   header?: ReactElement;
   initialNear?: boolean;
+  /** Fixed below the list, outside the scrolling area. */
+  footer?: ReactNode;
 }) {
   const data = useData();
   const today = useToday();
@@ -35,27 +68,96 @@ export function PlazaDirectory({
   const [query, setQuery] = useState(initialQuery);
   const [route, setRoute] = useState<string | null>(null);
   const [type, setType] = useState<PlazaType | null>(null);
-  const [near, setNear] = useState<Near>(null);
+  const [province, setProvince] = useState<ProvinceCode | null>(null);
+  const [operatorId, setOperatorId] = useState<string | null>(null);
+  const [sort, setSort] = useState<PlazaSort>('relevance');
+  const [sheet, setSheet] = useState<Sheet>(null);
+  const [near, setNearState] = useState<Near>(null);
   const [locating, setLocating] = useState(false);
   const [locationMessage, setLocationMessage] = useState<string | null>(null);
   const [townPicker, setTownPicker] = useState(initialNear);
   const insets = useSafeAreaInsets();
 
   const routes = useMemo(() => availableRoutes(data.dataset), [data.dataset]);
-  const results = useMemo(
-    () => searchPlazas(data.dataset, { query, route: route ?? undefined, type: type ?? undefined }, near?.coords),
-    [data.dataset, query, route, type, near],
+  const provinces = useMemo(() => availableProvinces(data.dataset), [data.dataset]);
+  const operators = useMemo(() => availableOperators(data.dataset), [data.dataset]);
+  const withoutProvince = useMemo(
+    () => searchPlazas(data.dataset).filter((r) => !r.plaza.province).length,
+    [data.dataset],
+  );
+  const found = useMemo(
+    () =>
+      searchPlazas(
+        data.dataset,
+        {
+          query,
+          route: route ?? undefined,
+          type: type ?? undefined,
+          province: province ?? undefined,
+          operatorId: operatorId ?? undefined,
+        },
+        near?.coords,
+      ),
+    [data.dataset, query, route, type, province, operatorId, near],
   );
   const infos = useMemo(
-    () => new Map(results.map((r) => [r.plaza.id, computePlazaInfo(data, r.plaza, today)])),
-    [results, data, today],
+    () => new Map(found.map((r) => [r.plaza.id, computePlazaInfo(data, r.plaza, today)])),
+    [found, data, today],
   );
-  const rows = useMemo<Row[]>(() => {
-    const list: Row[] = results.map((r) => ({ kind: 'plaza', id: r.plaza.id, distance: r.distanceMetres }));
-    const after = AD_PLACEMENTS.directory_inline.afterItems ?? 8;
-    if (list.length > after) list.splice(after, 0, { kind: 'ad' });
-    return list;
-  }, [results]);
+  // Prices are sorted by the amount shown in each row: the default vehicle class.
+  const results = useMemo(
+    () =>
+      sortPlazaResults(found, sort, (p) => {
+        const r = infos.get(p.id)?.byClass[defaultClass];
+        return r?.kind === 'current' ? r.tariff.amountCents : null;
+      }),
+    [found, sort, infos, defaultClass],
+  );
+
+  // Choosing a location sorts by distance; clearing it goes back to the default order.
+  const setNear = (next: Near) => {
+    setNearState(next);
+    if (next) setSort('distance');
+    else if (sort === 'distance') setSort('relevance');
+  };
+  const filtered = route !== null || type !== null || province !== null || operatorId !== null;
+  const clearFilters = () => {
+    setRoute(null);
+    setType(null);
+    setProvince(null);
+    setOperatorId(null);
+  };
+  const classLabel = STANDARD_CLASS_LABEL[defaultClass].label;
+  const priceCaption = `${classLabel} price. Plazas without a current price are listed last.`;
+  const sortOptions: SheetOption<PlazaSort>[] = [
+    { value: 'relevance', label: 'Default', caption: 'Best match to your search, then by road (N1, N2 …)' },
+    { value: 'name', label: 'Name (A–Z)' },
+    { value: 'price_low', label: 'Price: lowest first', caption: priceCaption },
+    { value: 'price_high', label: 'Price: highest first', caption: priceCaption },
+    { value: 'province', label: 'Province', caption: 'Plazas without a recorded province are listed last.' },
+    ...(near
+      ? [
+          {
+            value: 'distance' as const,
+            label: 'Distance',
+            caption: `From ${near.label}. Plazas without a known position are listed last.`,
+          },
+        ]
+      : []),
+  ];
+  const provinceOptions: SheetOption<ProvinceCode | 'all'>[] = [
+    { value: 'all', label: 'All provinces' },
+    ...provinces.map((p) => ({ value: p, label: PROVINCE_NAMES[p] })),
+  ];
+  const operatorOptions: SheetOption<string>[] = [
+    { value: 'all', label: 'All operators' },
+    ...operators.map((o) => ({
+      value: o.id,
+      label: o.shortName,
+      caption: o.name === o.shortName ? undefined : o.name,
+    })),
+  ];
+  const operatorName = operators.find((o) => o.id === operatorId)?.shortName;
 
   const locate = async () => {
     setLocating(true);
@@ -101,6 +203,14 @@ export function PlazaDirectory({
       </ScrollView>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
         <Chip
+          label={SORT_CHIP_LABEL[sort]}
+          icon="sort"
+          menu
+          selected={sort !== 'relevance'}
+          onPress={() => setSheet('sort')}
+          accessibilityLabel={`Sort order: ${sortOptions.find((o) => o.value === sort)?.label ?? 'Default'}`}
+        />
+        <Chip
           label={near ? `Near ${near.label}` : locating ? 'Locating…' : 'Near me'}
           icon="crosshairs-gps"
           selected={!!near}
@@ -110,6 +220,22 @@ export function PlazaDirectory({
           }
         />
         <Chip label="Choose town" icon="city-variant-outline" onPress={() => setTownPicker(true)} />
+      </ScrollView>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+        <Chip
+          label={province ? PROVINCE_NAMES[province] : 'Province'}
+          menu
+          selected={province !== null}
+          onPress={() => setSheet('province')}
+          accessibilityLabel={`Province: ${province ? PROVINCE_NAMES[province] : 'all'}`}
+        />
+        <Chip
+          label={operatorName ?? 'Operator'}
+          menu
+          selected={operatorId !== null}
+          onPress={() => setSheet('operator')}
+          accessibilityLabel={`Operator: ${operatorName ?? 'all'}`}
+        />
         <Chip
           label="Mainline"
           selected={type === 'mainline'}
@@ -119,15 +245,16 @@ export function PlazaDirectory({
       </ScrollView>
       {locationMessage ? <Banner tone="info">{locationMessage}</Banner> : null}
       <View style={styles.countRow}>
-        <AppText variant="small" color={colors.ink500}>
-          {results.length} {results.length === 1 ? 'plaza' : 'plazas'} · prices for{' '}
-          {STANDARD_CLASS_LABEL[defaultClass].label} ({STANDARD_CLASS_LABEL[defaultClass].short.toLowerCase()})
+        <AppText variant="small" color={colors.ink500} style={styles.count}>
+          {results.length} {results.length === 1 ? 'plaza' : 'plazas'} · prices for {classLabel} (
+          {STANDARD_CLASS_LABEL[defaultClass].short.toLowerCase()})
         </AppText>
+        {filtered ? <Button label="Clear filters" variant="ghost" size="sm" onPress={clearFilters} /> : null}
       </View>
       {near && unlocated > 0 ? (
         <AppText variant="small" color={colors.ink500}>
           Distances are approximate. {unlocated} {unlocated === 1 ? 'plaza has' : 'plazas have'} no confirmed position
-          and {unlocated === 1 ? 'is' : 'are'} listed last.
+          {sort === 'distance' ? ` and ${unlocated === 1 ? 'is' : 'are'} listed last` : ''}.
         </AppText>
       ) : null}
     </View>
@@ -136,22 +263,22 @@ export function PlazaDirectory({
   return (
     <>
       <FlatList
-        data={rows}
-        keyExtractor={(r, i) => (r.kind === 'ad' ? `ad-${i}` : r.id)}
+        testID="plaza-list"
+        data={results}
+        keyExtractor={(r) => r.plaza.id}
         ListHeaderComponent={listHeader}
         ItemSeparatorComponent={() => <Divider inset={spacing.lg} />}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + spacing.huge }]}
         renderItem={({ item }) => {
-          if (item.kind === 'ad') return <AdSlot placement="directory_inline" />;
-          const info = infos.get(item.id);
+          const info = infos.get(item.plaza.id);
           if (!info) return null;
           return (
             <PlazaRow
               info={info}
               vehicleClass={defaultClass}
-              distanceMetres={item.distance}
-              favourite={favouritePlazaIds.includes(item.id)}
+              distanceMetres={item.distanceMetres}
+              favourite={favouritePlazaIds.includes(item.plaza.id)}
             />
           );
         }}
@@ -166,14 +293,43 @@ export function PlazaDirectory({
                 variant="outline"
                 onPress={() => {
                   setQuery('');
-                  setRoute(null);
-                  setType(null);
+                  clearFilters();
                 }}
               />
             }
           />
         }
         style={styles.list}
+      />
+      {footer}
+      <OptionSheet
+        visible={sheet === 'sort'}
+        title="Sort plazas"
+        options={sortOptions}
+        selected={sort}
+        onSelect={setSort}
+        onClose={() => setSheet(null)}
+      />
+      <OptionSheet
+        visible={sheet === 'province'}
+        title="Filter by province"
+        options={provinceOptions}
+        selected={province ?? 'all'}
+        onSelect={(v) => setProvince(v === 'all' ? null : v)}
+        onClose={() => setSheet(null)}
+        footnote={
+          withoutProvince > 0
+            ? `${withoutProvince} ${withoutProvince === 1 ? 'plaza has' : 'plazas have'} no province recorded yet and ${withoutProvince === 1 ? 'is' : 'are'} not shown when you choose a province.`
+            : undefined
+        }
+      />
+      <OptionSheet
+        visible={sheet === 'operator'}
+        title="Filter by operator"
+        options={operatorOptions}
+        selected={operatorId ?? 'all'}
+        onSelect={(v) => setOperatorId(v === 'all' ? null : v)}
+        onClose={() => setSheet(null)}
       />
       <Modal visible={townPicker} transparent animationType="slide" onRequestClose={() => setTownPicker(false)}>
         <Pressable
@@ -215,7 +371,8 @@ const styles = StyleSheet.create({
   content: { paddingTop: spacing.sm },
   header: { gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.md },
   chips: { gap: spacing.sm, paddingRight: spacing.lg },
-  countRow: { flexDirection: 'row', justifyContent: 'space-between' },
+  countRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: spacing.sm },
+  count: { flex: 1 },
   backdrop: { flex: 1, backgroundColor: colors.overlay },
   sheet: {
     backgroundColor: colors.surface,

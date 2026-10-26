@@ -1,6 +1,6 @@
 import { STANDARD_CLASS_LABEL, formatLongDate, formatZAR } from '@toll-e/core';
 import { router } from 'expo-router';
-import { Alert, Platform, Pressable, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import { PlazaRow } from '@/components/plaza/PlazaRow';
 import {
@@ -18,6 +18,7 @@ import {
 import { useData } from '@/data/DataProvider';
 import { computePlazaInfo } from '@/hooks/usePlazaInfo';
 import { useToday } from '@/hooks/useToday';
+import { confirmDestructive } from '@/services/confirm';
 import { usePreferences } from '@/state/preferences';
 import { useSaved, type SavedCalculation } from '@/state/saved';
 import { colors, spacing } from '@/theme/tokens';
@@ -29,17 +30,6 @@ function describe(c: SavedCalculation) {
     `${formatZAR(c.snapshot.totalCents)}${c.snapshot.confidence === 'partial' ? ' (partial)' : ''} on ${formatLongDate(c.savedAt.slice(0, 10))}`,
   ];
   return parts.join(' · ');
-}
-
-function confirm(message: string, onYes: () => void) {
-  if (Platform.OS === 'web') {
-    if (globalThis.confirm?.(message)) onYes();
-    return;
-  }
-  Alert.alert(message, undefined, [
-    { text: 'Cancel', style: 'cancel' },
-    { text: 'Delete', style: 'destructive', onPress: onYes },
-  ]);
 }
 
 export default function SavedScreen() {
@@ -90,7 +80,7 @@ export default function SavedScreen() {
                       accessibilityLabel={`Delete ${c.label}`}
                       hitSlop={10}
                       onPress={() =>
-                        confirm(`Delete “${c.label}”?`, () => {
+                        confirmDestructive({ title: `Delete “${c.label}”?`, action: 'Delete' }, () => {
                           saved.removeCalculation(c.id);
                           toast('Deleted');
                         })
@@ -123,7 +113,27 @@ export default function SavedScreen() {
         <>
           <SectionHeader
             title="Recent calculations"
-            action={<Button label="Clear recent" variant="ghost" size="sm" onPress={() => saved.clearRecent()} />}
+            action={
+              <Button
+                label="Clear"
+                variant="ghost"
+                size="sm"
+                accessibilityLabel="Clear recent calculations"
+                onPress={() =>
+                  confirmDestructive(
+                    {
+                      title: 'Clear recent calculations?',
+                      message: 'Saved trips are kept.',
+                      action: 'Clear',
+                    },
+                    () => {
+                      saved.clearRecent('calculations');
+                      toast('Recent calculations cleared');
+                    },
+                  )
+                }
+              />
+            }
           />
           <Card padded={false}>
             {saved.recentCalculations.map((c, i) => (
@@ -143,7 +153,30 @@ export default function SavedScreen() {
 
       {recentPlazas.length > 0 ? (
         <>
-          <SectionHeader title="Recently viewed plazas" />
+          <SectionHeader
+            title="Recently viewed plazas"
+            action={
+              <Button
+                label="Clear"
+                variant="ghost"
+                size="sm"
+                accessibilityLabel="Clear recently viewed plazas"
+                onPress={() =>
+                  confirmDestructive(
+                    {
+                      title: 'Clear recently viewed plazas?',
+                      message: 'Favourite plazas are kept.',
+                      action: 'Clear',
+                    },
+                    () => {
+                      saved.clearRecent('plazas');
+                      toast('Recently viewed plazas cleared');
+                    },
+                  )
+                }
+              />
+            }
+          />
           <Card padded={false} style={{ overflow: 'hidden' }}>
             {recentPlazas.map((p, i) => (
               <View key={p.id}>
@@ -161,7 +194,8 @@ export default function SavedScreen() {
 
       {!nothing ? (
         <AppText variant="small" color={colors.ink500}>
-          Saved items stay on this device. Uninstalling Toll-E removes them.
+          Saved items stay on this device. Uninstalling Toll-E removes them. To clear your history or delete everything,
+          go to More → Privacy.
         </AppText>
       ) : null}
     </Screen>

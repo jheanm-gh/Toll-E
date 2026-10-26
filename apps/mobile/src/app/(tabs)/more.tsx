@@ -9,9 +9,11 @@ import { appVersion, buildProfile, env, isDevelopment } from '@/config/env';
 import { useData } from '@/data/DataProvider';
 import { useAds } from '@/monetisation/ads/AdsProvider';
 import { useEntitlement } from '@/monetisation/purchases/EntitlementProvider';
+import { confirmDestructive } from '@/services/confirm';
 import { correctionChannel } from '@/services/corrections';
 import { openExternal } from '@/services/linking';
 import { usePreferences } from '@/state/preferences';
+import { useSaved } from '@/state/saved';
 import { colors, spacing } from '@/theme/tokens';
 
 export default function MoreScreen() {
@@ -19,7 +21,11 @@ export default function MoreScreen() {
   const entitlement = useEntitlement();
   const ads = useAds();
   const data = useData();
+  const saved = useSaved();
   const toast = useToast();
+  const historyCount = saved.recentCalculations.length + saved.recentPlazaIds.length;
+  const savedCount = saved.savedCalculations.length + saved.favouritePlazaIds.length + historyCount;
+  const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
   const open = async (url: string | null, label: string) => {
     if (!url) return;
@@ -106,6 +112,60 @@ export default function MoreScreen() {
             />
           </>
         ) : null}
+        <Divider inset={spacing.lg} />
+        <ListRow
+          icon="history"
+          title="Clear history"
+          subtitle={
+            historyCount === 0
+              ? 'No history on this device'
+              : `${plural(saved.recentCalculations.length, 'recent calculation', 'recent calculations')} and ${plural(saved.recentPlazaIds.length, 'recently viewed plaza', 'recently viewed plazas')}`
+          }
+          onPress={
+            historyCount === 0
+              ? undefined
+              : () =>
+                  confirmDestructive(
+                    {
+                      title: 'Clear your history?',
+                      message:
+                        'This removes recent calculations and recently viewed plazas from this device. Saved trips and favourites are kept.',
+                      action: 'Clear',
+                    },
+                    () => {
+                      saved.clearRecent();
+                      toast('History cleared');
+                    },
+                  )
+          }
+        />
+        <Divider inset={spacing.lg} />
+        <ListRow
+          icon="delete-outline"
+          title="Delete all saved items"
+          subtitle={
+            savedCount === 0
+              ? 'Nothing saved on this device'
+              : 'Saved trips, favourite plazas and history on this device'
+          }
+          onPress={
+            savedCount === 0
+              ? undefined
+              : () =>
+                  confirmDestructive(
+                    {
+                      title: 'Delete all saved items?',
+                      message:
+                        'This deletes your saved trips, favourite plazas and history from this device. It cannot be undone. Your settings are kept.',
+                      action: 'Delete all',
+                    },
+                    () => {
+                      saved.clearAll();
+                      toast('Saved items deleted');
+                    },
+                  )
+          }
+        />
         <Divider inset={spacing.lg} />
         <ListRow
           icon="bullhorn-outline"
