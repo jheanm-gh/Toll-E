@@ -4,12 +4,14 @@ import type { ConfigContext, ExpoConfig } from 'expo/config';
  * Toll-E app configuration.
  *
  * Build-time variables (native config, not secrets):
- *   TOLLE_BUNDLE_ID        reverse-DNS app id (replace before the first store submission)
  *   ADMOB_ANDROID_APP_ID   AdMob app id for Android  (ca-app-pub-…~…)
  *   ADMOB_IOS_APP_ID       AdMob app id for iOS
  * Runtime variables are EXPO_PUBLIC_* (see .env.example) and are bundled into the app, so they
  * must never contain secrets.
  */
+
+// Android package name and iOS bundle id. Google Play never lets it change after the first upload.
+const BUNDLE_ID = 'za.co.tolle.app';
 
 // Google's published sample AdMob app ids — safe for development, never for release.
 const ADMOB_SAMPLE_ANDROID = 'ca-app-pub-3940256099942544~3347511713';
@@ -18,7 +20,6 @@ const ADMOB_SAMPLE_IOS = 'ca-app-pub-3940256099942544~1458002511';
 export default ({ config }: ConfigContext): ExpoConfig => {
   const profile = process.env.EAS_BUILD_PROFILE ?? 'local';
   const isProductionBuild = profile === 'production';
-  const bundleId = process.env.TOLLE_BUNDLE_ID ?? 'za.co.tolle.app';
   const androidAppId = process.env.ADMOB_ANDROID_APP_ID ?? ADMOB_SAMPLE_ANDROID;
   const iosAppId = process.env.ADMOB_IOS_APP_ID ?? ADMOB_SAMPLE_IOS;
 
@@ -36,6 +37,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ...config,
     name: 'Toll-E',
     slug: 'toll-e',
+    owner: 'haxolotl',
     version: '0.1.0',
     orientation: 'portrait',
     icon: './assets/images/icon.png',
@@ -43,14 +45,14 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     userInterfaceStyle: 'light',
     backgroundColor: '#F6F4EF',
     ios: {
-      bundleIdentifier: bundleId,
+      bundleIdentifier: BUNDLE_ID,
       supportsTablet: false,
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false,
       },
     },
     android: {
-      package: bundleId,
+      package: BUNDLE_ID,
       adaptiveIcon: {
         backgroundColor: '#0B1F3A',
         foregroundImage: './assets/images/android-icon-foreground.png',
@@ -121,8 +123,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     },
     extra: {
       buildProfile: profile,
-      // After `eas init`, paste the project id it prints here (it is not a secret), e.g.
-      // eas: { projectId: '00000000-0000-0000-0000-000000000000' },
+      // EAS project @haxolotl/toll-e, created with `eas init` (the id is not a secret).
+      eas: { projectId: 'b174f428-b1dc-4d6c-bee6-e2c053fcd00c' },
     },
   };
 };

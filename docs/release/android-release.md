@@ -20,23 +20,21 @@ each public release.
 
 ## One-time set-up
 
-1. **Expo account**: create a free account at [expo.dev](https://expo.dev). The free plan includes a monthly
-   allowance of builds. Check the current limits on Expo's pricing page.
+1. **Expo project**: done on 27 October 2026. The app belongs to the Expo organisation `haxolotl`
+   (`owner` in `app.config.ts`) as project `@haxolotl/toll-e`, and its project id is in `app.config.ts`
+   (`extra.eas.projectId`). Builds can be started by any member of the organisation, or by its robot user
+   with `EXPO_TOKEN` set in the environment.
 2. **Install and sign in**, from the repository root:
 
    ```
    npm ci
    cd apps/mobile
-   npx eas-cli@latest login
-   npx eas-cli@latest init
+   npx eas-cli@latest login        # not needed when EXPO_TOKEN is set
+   npx eas-cli@latest project:info # should print @haxolotl/toll-e
    ```
 
-   `init` creates the project on expo.dev and prints a project id. Paste it into `app.config.ts` where the
-   comment says `eas: { projectId: … }`.
-
-3. **Choose the package name. It is permanent once uploaded to Play.** The default is `za.co.tolle.app`. To use
-   another (for example `io.github.jheanmgh.tolle`), set `TOLLE_BUNDLE_ID` in the EAS environment variables for
-   every environment *before the first upload*.
+3. **Package name: `za.co.tolle.app`** (Android package and iOS bundle id, a constant in `app.config.ts`). It is
+   permanent once the first `.aab` is uploaded to Play, so do not change it after that.
 
 4. **Environment variables**: expo.dev → project → *Environment variables*. All of these are public
    configuration, not secrets (the Supabase key is the restricted "anon" key; never use the service-role key).

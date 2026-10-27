@@ -20,7 +20,7 @@ Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
 | f. Run on a real Android device | ✅ Done by the owner on a Samsung Galaxy S26 Ultra (23 Oct 2026, local test build 3) | Every screen works. The first two builds closed at launch because R8 code shrinking had removed classes native code needs; shrinking is now off. Not yet testable: sending a correction report (needs Supabase or a support email). The emulator cannot run in the build container (no hardware virtualisation). |
 | f. EAS Android production profile | ✅ Configured; native build verified locally | `production` and `closed-test` profiles produce AABs. No EAS build yet (needs your Expo account). A local release build of the same native project succeeded on 23 Oct 2026 (arm64 AAB). Fixes found by it: unused template permissions and expo-location's background services removed. |
 | f. Play listing material | ✅ Written | Name, descriptions, content rating and Data safety answers, feature graphic, icon and 7 screenshots ([release/play-store-listing.md](release/play-store-listing.md)). The screenshots come from the web build. |
-| f. Privacy policy and terms at a free URL | ✅ Written, ❌ not published | `site/` plus a manual GitHub Pages workflow → `https://jheanm-gh.github.io/Toll-E/`. The owner name, email and date are placeholders that block publishing until filled in ([release/legal-pages.md](release/legal-pages.md)). |
+| f. Privacy policy and terms at a free URL | ✅ Written and filled in, ❌ not published | `site/` plus a manual GitHub Pages workflow → `https://jheanm-gh.github.io/Toll-E/`. Owner name, support email and effective date (27 October 2026) filled in ([release/legal-pages.md](release/legal-pages.md)). |
 
 ## Tester feedback (26 October 2026)
 
@@ -48,7 +48,7 @@ Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
 
 1. **Sign off the data** (owner, an hour if you accept SANRAL's poster; longer to check the Gazette yourself): [verification/README.md](verification/README.md).
 2. **Create the Supabase project** and load it: [release/backend-setup.md](release/backend-setup.md).
-3. **Publish the legal pages** after filling in the placeholders: [release/legal-pages.md](release/legal-pages.md).
+3. **Publish the legal pages** (details filled in; merge to `main`, then run the workflow): [release/legal-pages.md](release/legal-pages.md).
 4. **Set up EAS and build the closed-test AAB**, then run the smoke test on a phone. Fix whatever the first real
    build shows: [release/android-release.md](release/android-release.md).
 5. **Google Play**: developer account, listing, declarations, closed test with 12 testers for 14 days:

@@ -12,17 +12,18 @@ published free with GitHub Pages (the repository is public, so GitHub Pages cost
 
 **Not yet published.** Nothing has been deployed. Publishing is a deliberate step you take, below.
 
-## Before publishing: fill in three things
+## Owner details
 
-Search `site/` for `{{` and replace:
+Filled in on 27 October 2026:
 
-| Placeholder | Replace with |
+| Item | Value |
 | --- | --- |
-| `{{OWNER_NAME}}` | The full name of the person (or registered business) responsible for Toll-E. Under POPIA this is the "responsible party" and, for a one-person operation, also the Information Officer. |
-| `{{SUPPORT_EMAIL}}` | A support address you will monitor, e.g. a dedicated Gmail address. It is public. |
-| `{{EFFECTIVE_DATE}}` | The date the policy takes effect, e.g. `1 December 2026`. |
+| Responsible party and Information Officer (POPIA) | Jhean-Michael van der Merwe |
+| Support email (public) | support.tolle@gmail.com |
+| Effective date | 27 October 2026 |
 
-The publish workflow refuses to run while any placeholder remains.
+If any of these change, edit `site/` and give the policy a new effective date. The publish workflow refuses to
+run while a `{{...}}` placeholder remains in `site/`.
 
 Read the privacy policy once more against the build you are releasing. It describes AdMob, the optional
 RevenueCat purchase, Supabase, OpenFreeMap and on-device location. If you add an SDK or a new kind of data,
