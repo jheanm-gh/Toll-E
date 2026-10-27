@@ -1,9 +1,9 @@
 # Implementation status
 
-_Last updated 26 October 2026._ This page says plainly what exists, what has been tested and how, and what is
+_Last updated 27 October 2026._ This page says plainly what exists, what has been tested and how, and what is
 still outstanding. "Tested" means an automated test or a manual check actually ran and passed in this
-repository. Nothing here was run on an Android device or emulator, and no external service (Expo/EAS,
-Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
+repository. The only check on an Android device was the owner's, on a local build (below). Expo/EAS was connected
+on 27 October 2026. Supabase, AdMob, RevenueCat and Google Play are not connected yet.
 
 ## MVP scope (first release, Android)
 
@@ -18,7 +18,7 @@ Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
 | **e. Purchase / restore / entitlement** | ✅ Built behind a flag, **flag off** | `EXPO_PUBLIC_ENABLE_PURCHASES` is off until a licence-tester purchase works. With it off, no purchase controls exist (tested). The states are tested with the simulated store. Not tested against Google Play/RevenueCat. |
 | **f. Typecheck, lint, tests** | ✅ Pass | See "Checks run" below. |
 | f. Run on a real Android device | ✅ Done by the owner on a Samsung Galaxy S26 Ultra (23 Oct 2026, local test build 3) | Every screen works. The first two builds closed at launch because R8 code shrinking had removed classes native code needs; shrinking is now off. Not yet testable: sending a correction report (needs Supabase or a support email). The emulator cannot run in the build container (no hardware virtualisation). |
-| f. EAS Android production profile | ✅ Configured; native build verified locally | `production` and `closed-test` profiles produce AABs. No EAS build yet (needs your Expo account). A local release build of the same native project succeeded on 23 Oct 2026 (arm64 AAB). Fixes found by it: unused template permissions and expo-location's background services removed. |
+| f. EAS Android production profile | ✅ First EAS closed-test build succeeded (27 Oct 2026) | Project `@haxolotl/toll-e`, package `za.co.tolle.app`. The `closed-test` AAB (0.1.0, versionCode 2) built on EAS, signed with an EAS-managed upload key. It was built without EAS environment variables (no Supabase, support email or legal-page links), and it has not been uploaded to Play or run on a phone. Earlier, a local release build (23 Oct 2026) found and fixed unused template permissions and expo-location's background services. |
 | f. Play listing material | ✅ Written | Name, descriptions, content rating and Data safety answers, feature graphic, icon and 7 screenshots ([release/play-store-listing.md](release/play-store-listing.md)). The screenshots come from the web build. |
 | f. Privacy policy and terms at a free URL | ✅ Written and filled in, ❌ not published | `site/` plus a manual GitHub Pages workflow → `https://jheanm-gh.github.io/Toll-E/`. Owner name, support email and effective date (27 October 2026) filled in ([release/legal-pages.md](release/legal-pages.md)). |
 
@@ -49,8 +49,9 @@ Supabase, AdMob, RevenueCat, Google Play) has been connected yet.
 1. **Sign off the data** (owner, an hour if you accept SANRAL's poster; longer to check the Gazette yourself): [verification/README.md](verification/README.md).
 2. **Create the Supabase project** and load it: [release/backend-setup.md](release/backend-setup.md).
 3. **Publish the legal pages** (details filled in; merge to `main`, then run the workflow): [release/legal-pages.md](release/legal-pages.md).
-4. **Set up EAS and build the closed-test AAB**, then run the smoke test on a phone. Fix whatever the first real
-   build shows: [release/android-release.md](release/android-release.md).
+4. **Closed-test AAB**: EAS is set up and the first build succeeded. Add the EAS environment variables (support
+   email, legal-page URLs, Supabase once it exists), rebuild, then run the smoke test on a phone. Back up the
+   upload keystore from expo.dev → Credentials: [release/android-release.md](release/android-release.md).
 5. **Google Play**: developer account, listing, declarations, closed test with 12 testers for 14 days:
    [release/google-play-checklist.md](release/google-play-checklist.md).
 6. **AdMob** account, banner unit and consent message: [monetisation.md](monetisation.md).
