@@ -5,8 +5,9 @@ Toll-E is built with [EAS Build](https://docs.expo.dev/build/introduction/) into
 versionCode 3, from commit `0a9156c`, signed with the upload key that EAS generated and stores. The production
 environment then held the support email and the privacy and terms URLs, but no Supabase or AdMob values. The
 first EAS build (versionCode 2, 27 October) had no environment variables and should not be uploaded. Neither has
-been uploaded to Play or installed on a phone. Earlier, local release builds (from 23 October 2026) were
-installed and checked on a phone.
+been uploaded to Play. On 28 October 2026 the owner installed an EAS `preview` APK built from `d1aa7cb`, which
+adds the Expo SDK 58 patch updates, on a phone, and it works. Build a new closed-test AAB from that commit or
+later, so the upload matches what was tested.
 
 ## Build profiles (`apps/mobile/eas.json`)
 
