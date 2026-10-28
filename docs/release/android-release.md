@@ -1,11 +1,12 @@
 # Building the Android release
 
 Toll-E is built with [EAS Build](https://docs.expo.dev/build/introduction/) into a signed Android App Bundle
-(`.aab`) for Google Play. **The first EAS build ran on 27 October 2026**: profile `closed-test`, version 0.1.0,
-versionCode 2, from commit `69e4e24`, signed with an upload key that EAS generated and stores. It was built
-without any EAS environment variables, so it has no Supabase backend, support email or legal-page links. That
-build has not yet been uploaded to Play or installed on a phone. Earlier, local release builds (from 23 October
-2026) were installed and checked on a phone.
+(`.aab`) for Google Play. **Latest EAS build, 28 October 2026**: profile `closed-test`, version 0.1.0,
+versionCode 3, from commit `0a9156c`, signed with the upload key that EAS generated and stores. The production
+environment then held the support email and the privacy and terms URLs, but no Supabase or AdMob values. The
+first EAS build (versionCode 2, 27 October) had no environment variables and should not be uploaded. Neither has
+been uploaded to Play or installed on a phone. Earlier, local release builds (from 23 October 2026) were
+installed and checked on a phone.
 
 ## Build profiles (`apps/mobile/eas.json`)
 
