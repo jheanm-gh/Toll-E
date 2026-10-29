@@ -1,9 +1,12 @@
 # Building the Android release
 
 Toll-E is built with [EAS Build](https://docs.expo.dev/build/introduction/) into a signed Android App Bundle
-(`.aab`) for Google Play. **No EAS build has been run yet** (that needs your Expo account). On 23 October 2026
-the same native project was compiled locally into a release `.aab` (arm64 only, debug-signed). That shows the
-native code, plugins and JavaScript bundle build cleanly. The app has not yet been run on a phone or emulator.
+(`.aab`) for Google Play. **Build to upload: versionCode 4** (29 October 2026): profile `closed-test`, version
+0.1.0, from commit `719299a`, signed with the upload key that EAS generated and stores. It includes the Expo SDK 58
+patch updates. The production environment held the support email and the privacy and terms URLs, but no Supabase
+or AdMob values. On 28 October 2026 the owner installed an EAS `preview` APK built from `d1aa7cb` on a phone, and
+it works; versionCode 4 has the same app code (only documentation changed since). Do not upload versionCode 2 (no
+environment variables) or 3 (built before the Expo updates). Nothing has been uploaded to Play yet.
 
 ## Build profiles (`apps/mobile/eas.json`)
 
@@ -20,23 +23,21 @@ each public release.
 
 ## One-time set-up
 
-1. **Expo account**: create a free account at [expo.dev](https://expo.dev). The free plan includes a monthly
-   allowance of builds. Check the current limits on Expo's pricing page.
+1. **Expo project**: done on 27 October 2026. The app belongs to the Expo organisation `haxolotl`
+   (`owner` in `app.config.ts`) as project `@haxolotl/toll-e`, and its project id is in `app.config.ts`
+   (`extra.eas.projectId`). Builds can be started by any member of the organisation, or by its robot user
+   with `EXPO_TOKEN` set in the environment.
 2. **Install and sign in**, from the repository root:
 
    ```
    npm ci
    cd apps/mobile
-   npx eas-cli@latest login
-   npx eas-cli@latest init
+   npx eas-cli@latest login        # not needed when EXPO_TOKEN is set
+   npx eas-cli@latest project:info # should print @haxolotl/toll-e
    ```
 
-   `init` creates the project on expo.dev and prints a project id. Paste it into `app.config.ts` where the
-   comment says `eas: { projectId: … }`.
-
-3. **Choose the package name. It is permanent once uploaded to Play.** The default is `za.co.tolle.app`. To use
-   another (for example `io.github.jheanmgh.tolle`), set `TOLLE_BUNDLE_ID` in the EAS environment variables for
-   every environment *before the first upload*.
+3. **Package name: `za.co.tolle.app`** (Android package and iOS bundle id, a constant in `app.config.ts`). It is
+   permanent once the first `.aab` is uploaded to Play, so do not change it after that.
 
 4. **Environment variables**: expo.dev → project → *Environment variables*. All of these are public
    configuration, not secrets (the Supabase key is the restricted "anon" key; never use the service-role key).

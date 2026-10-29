@@ -1,7 +1,7 @@
 # Google Play checklist (plain language)
 
 Work through this from top to bottom. Each item says what to do, where, and how long it takes. Details are in the
-linked documents. Nothing here has been done yet.
+linked documents. Ticked items are done; nothing has been set up in Play Console yet.
 
 ## 1. Developer account (allow a few days)
 
@@ -16,13 +16,13 @@ linked documents. Nothing here has been done yet.
 
 - [ ] **Create app**: name "Toll-E: SA Toll Costs & Map", default language English (South Africa) if offered,
       otherwise English, **App**, **Free**, accept the declarations.
-- [ ] Decide the **package name** before the first upload. It can never change
+- [x] **Package name**: `za.co.tolle.app`. It can never change after the first upload
       ([android-release.md](android-release.md), step 3).
 
 ## 3. Privacy policy and support pages (30 minutes)
 
-- [ ] Fill in the owner name, support email and effective date in `site/`, then publish with GitHub Pages
-      ([legal-pages.md](legal-pages.md)).
+- [x] Fill in the owner name, support email and effective date in `site/` (done 27 October 2026).
+- [ ] Publish `site/` with GitHub Pages ([legal-pages.md](legal-pages.md)).
 - [ ] Privacy policy URL: `https://jheanm-gh.github.io/Toll-E/privacy.html`.
 
 ## 4. App content declarations (1 hour), under Policy → App content
